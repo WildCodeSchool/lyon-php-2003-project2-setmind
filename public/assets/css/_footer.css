@@ -1,0 +1,9 @@
+footer nav .navbar-brand {
+    margin-right: 0;
+}
+
+@media (min-width: 992px) {
+     {
+        justify-content: space-around;
+    }
+}
