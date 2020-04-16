@@ -1,0 +1,44 @@
+header {
+    z-index: 1000;
+    display: flex;
+    font-family: 'Blinker', sans-serif;
+}
+
+.bnj-login-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bnj-line {
+    height: 2px;
+    width: 95%;
+    background-color: white;
+}
+
+header .navbar-brand {
+    display: none;
+}
+
+header nav i {
+    height: 80%;
+    width: auto;
+}
+
+@media (min-width: 992px) {
+    header .navbar-brand {
+        display: block;
+    }
+}
