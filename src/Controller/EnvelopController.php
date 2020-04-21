@@ -1,13 +1,11 @@
 <?php
 
-
 namespace App\Controller;
-
 
 class EnvelopController extends AbstractController
 {
     /**
-     * Display home page
+     * Display envelops page
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -18,6 +16,5 @@ class EnvelopController extends AbstractController
     {
         return $this->twig->render('Envelop/envelops.html.twig');
     }
-
 
 }
