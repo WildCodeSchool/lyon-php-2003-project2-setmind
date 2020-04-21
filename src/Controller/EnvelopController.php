@@ -16,5 +16,4 @@ class EnvelopController extends AbstractController
     {
         return $this->twig->render('Envelop/envelops.html.twig');
     }
-
 }
