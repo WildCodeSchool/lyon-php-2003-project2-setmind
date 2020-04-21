@@ -1,0 +1,17 @@
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    z-index: 1000;
+    font-family: 'Blinker', sans-serif;
+}
+
+footer nav .navbar-brand {
+    margin-right: 0;
+}
+
+@media (min-width: 992px) {
+    footer .navbar-expand-lg {
+        justify-content: space-around;
+    }
+}
