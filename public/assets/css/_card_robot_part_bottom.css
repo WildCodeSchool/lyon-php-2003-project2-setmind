@@ -1,5 +1,5 @@
+/*############################### CSS part envelop card robot ( en basd de la card ) ################################"*/
 :root {
-
     --robot-card-width: 600px;
     --robot-card-min-width: var(--robot-card-width);
     --robot-card-min-height: 370px;
@@ -13,9 +13,6 @@
     --robot-card-base-column-straferight-left:  calc(var(--robot-card-base-column-start) + 0);
     --robot-card-base-column-straferight-center: calc(var(--robot-card-base-column-straferight-left) + -2);
     --robot-card-base-column-straferight-right: calc(var(--robot-card-base-column-straferight-center) + -2 );
-
-
-
 }
 
 .gc-container-global{
@@ -111,7 +108,7 @@
     transform:  var(--robot-card-all-over-tranform);
 }
 
-
+/*############################### FIN CSS part envelop card robot ( en basd de la card ) ############################"*/
 .gc-robot-right-arm{
     padding: 0px;
     object-fit: contain;
