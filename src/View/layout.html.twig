@@ -10,12 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <link rel="stylesheet" href="/assets/css/button.css">
-
+    <link rel="stylesheet" href="/assets/css/logo.css">
     <link rel="stylesheet" href="/assets/css/_header.css">
     <link rel="stylesheet" href="/assets/css/_footer.css">
-
 
     {% block stylesheet %}{% endblock %}
     <script src="https://kit.fontawesome.com/f0a8b2a9e8.js" crossorigin="anonymous"></script>
@@ -37,7 +35,7 @@
                 </div>
             </span>
         </button>
-        <a class="navbar-brand text-white" href="#">SetMind</a>
+        {% include 'Item/_logo.html.twig' %}
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav bnj-header-ul-navbar container-fluid flex-nowrap">
@@ -82,9 +80,7 @@
         <div class="nav-item">
             <a class="nav-link text-white" href="#">About Us</a>
         </div>
-        <div class="nav-item">
-            <a class="navbar-brand text-white" href="#">SetMind</a>
-        </div>
+        {% include 'Item/_logo.html.twig' %}
         <div class="nav-item">
             <a class="nav-link text-white" href="#">Legal Mentions</a>
         </div>
