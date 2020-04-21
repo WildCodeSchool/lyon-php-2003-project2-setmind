@@ -7,11 +7,7 @@ header {
 .bnj-login-icon {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-}
-
-i {
-    padding-top: 25%;
+    align-items: center;
 }
 
 .navbar-toggler {
@@ -52,6 +48,10 @@ header nav i {
 
     .bnj-header-ul-navbar {
         width: 100%;
+    }
+
+    .bnj-login-icon {
+        align-items: center;
     }
 
     .bnj-header-link-hover-effect {
