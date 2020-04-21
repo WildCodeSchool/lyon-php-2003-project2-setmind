@@ -1,0 +1,12 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/519164.jpg");
+    background-repeat: no-repeat;
+    object-fit: contain;
+    background-position: 72% 15%;
+}
+
+@media (min-width: 992px) {
+    body {
+        background-size: cover;
+    }
+}
