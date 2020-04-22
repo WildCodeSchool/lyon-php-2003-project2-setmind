@@ -10,12 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Blinker&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/style.css">
-
     <link rel="stylesheet" href="/assets/css/button.css">
-
     <link rel="stylesheet" href="/assets/css/_header.css">
+    <link rel="stylesheet" href="/assets/css/logo.css">
     <link rel="stylesheet" href="/assets/css/_footer.css">
-
 
     {% block stylesheet %}{% endblock %}
     <script src="https://kit.fontawesome.com/f0a8b2a9e8.js" crossorigin="anonymous"></script>
@@ -37,28 +35,25 @@
                 </div>
             </span>
         </button>
-        <a class="navbar-brand text-white" href="#">SetMind</a>
+        {% include 'Item/_logo.html.twig' %}
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav bnj-header-ul-navbar container-fluid flex-nowrap">
                 <li class="nav-item active col-lg-auto">
                     <a class="nav-link home" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item col-lg-auto">
-                    <a class="bnj-header-link-hover-effect nav-link text-white " href="#">Envelops</a>
+                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
+                    <a class="nav-link" href="#">Envelops</a>
                 </li>
-                <li class="nav-item col-lg-auto">
-                    <a class="bnj-header-link-hover-effect nav-link text-white " href="#">Evaluate Eligibility</a>
+                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
+                    <a class="nav-link" href="#">Evaluate Eligibility</a>
                 </li>
-                <li class="nav-item col-lg-auto">
-                    <a class="bnj-header-link-hover-effect nav-link text-white " href="#">About Us</a>
+                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
+                    <a class="nav-link" href="#">About Us</a>
                 </li>
-                <li class="nav-item col-lg-auto offset-lg-5">
-                    <a class="bnj-header-link-hover-effect nav-link text-white " href="#">My Envelop</a>
+                <li class="bnj-LT-header-nav-button nav-item col-lg-auto offset-lg-3">
+                    <a class="nav-link" href="#">My Envelop</a>
                 </li>
-
-
-
             </ul>
         </div>
 
@@ -80,11 +75,9 @@
 <footer>
     <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
         <div class="nav-item">
-            <a class="nav-link text-white" href="#">About Us</a>
+            <a class="nav-link text-white" href="#">Our Story</a>
         </div>
-        <div class="nav-item">
-            <a class="navbar-brand text-white" href="#">SetMind</a>
-        </div>
+        {% include 'Item/_logo.html.twig' %}
         <div class="nav-item">
             <a class="nav-link text-white" href="#">Legal Mentions</a>
         </div>
