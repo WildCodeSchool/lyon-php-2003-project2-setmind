@@ -29,6 +29,7 @@
     width: 280px;
 }
 
+
 @media all and (min-width: 500px) and (max-width: 900px){
     .LT_button_test {
         width: 380px;
