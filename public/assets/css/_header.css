@@ -4,14 +4,14 @@ header {
     font-family: 'Blinker', sans-serif;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
 .bnj-login-icon {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-}
-
-i {
-    padding-top: 25%;
+    align-items: center;
 }
 
 .navbar-toggler {
@@ -54,27 +54,25 @@ header nav i {
         width: 100%;
     }
 
-    .bnj-header-link-hover-effect {
-        display: block;
-        position: relative;
+    .bnj-login-icon {
+        align-items: center;
     }
 
-    .bnj-header-link-hover-effect:before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        bottom: 0;
-        left: 0;
-        background-color: #FFF;
-        visibility: hidden;
-        transform: scaleX(0);
-        transition: all 0.3s ease-in-out;
+    .bnj-LT-header-nav-button {
+        background-color: rgb(32, 29, 29);
+        border: none;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        box-shadow: 4px 3px 3px rgb(163, 163, 189);
     }
 
-    .bnj-header-link-hover-effect:hover:before {
-        visibility: visible;
-        transform: scaleX(1);
+    .bnj-LT-header-nav-button:hover {
+        background-color: rgb(245, 247, 249);
+        color: black;
+        border: solid black 1.5px;
+        box-shadow: 4px 3px 3px rgb(190, 190, 207);
     }
 
     .bnj-navbar-background-transparent {

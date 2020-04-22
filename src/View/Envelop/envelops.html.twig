@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Envelops
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/_card_robot_part_bottom.css">
+{% endblock %}
+
+{% block content %}
+    <h1>Hello wilder !</h1>
+    {% include 'Envelop/_card_robot_part.html.twig' %}
+
+{% endblock %}
+
