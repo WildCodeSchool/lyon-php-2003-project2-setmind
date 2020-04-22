@@ -9,12 +9,48 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 .bnj-catch-phrase {
     color: white;
     font-family: 'Blinker', sans-serif;
     font-size: 1.75rem;
+    font-weight: bold;
+    text-shadow:2px 1px 2px rgba(173,188,188,0.80);
+}
+
+.bnj-catch-phrase-1 {
+    animation: showup 25s;
+}
+
+.bnj-catch-phrase-2 {
+    animation: showup_2 25s;
+}
+
+.bnj-catch-phrase-3 {
+    animation: showup_3 25s;
+}
+
+@keyframes showup {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes showup_2 {
+    0% {opacity:0;}
+    5% {opacity:0;}
+    25% {opacity:1;}
+    100% {opacity:1;}
+}
+
+@keyframes showup_3 {
+    0% {opacity:0;}
+    10% {opacity:0;}
+    30% {opacity:1;}
+    100% {opacity:1;}
 }
 
 @media (min-width: 992px) {
@@ -28,8 +64,6 @@ body {
 
     .bnj-catch-phrase {
         font-size: 2.5rem;
-        font-weight: bold;
-        text-shadow:2px 1px 2px rgba(173,188,188,0.80);
     }
 
     .bnj-catch-phrase-1 {
