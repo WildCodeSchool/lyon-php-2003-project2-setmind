@@ -13,6 +13,12 @@ header nav .logo-gca {
     display: none;
 }
 
+@media (max-width: 400px) {
+    footer nav .logo-gca {
+        font-size: 2em;
+    }
+}
+
 @media (min-width: 992px) {
     /*############ Guillaume ####################################################*/
     /* Css pour le logo SetMind */

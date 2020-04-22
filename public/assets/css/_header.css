@@ -14,6 +14,10 @@ header {
     align-items: center;
 }
 
+#navbarTogglerDemo03 {
+    background-color: gray;
+}
+
 .navbar-toggler {
     border: none;
 }
@@ -60,6 +64,10 @@ header nav i {
 
     .bnj-login-icon {
         align-items: center;
+    }
+
+    #navbarTogglerDemo03 {
+        background-color: transparent;
     }
 
     .bnj-LT-header-nav-button {

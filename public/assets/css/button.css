@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
 .LT_button_test{
+    z-index: -1000;
     background-color: white;
     border: none;
     padding: 10px 15px;
