@@ -9,9 +9,9 @@ header {
 }
 
 .bnj-login-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 1.5%;
+    right: 5%;
 }
 
 #navbarTogglerDemo03 {
@@ -63,7 +63,8 @@ header nav i {
     }
 
     .bnj-login-icon {
-        align-items: center;
+        top: 3.5%;
+        right: 2.5%;
     }
 
     #navbarTogglerDemo03 {
