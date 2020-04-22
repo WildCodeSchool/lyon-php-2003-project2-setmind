@@ -5,8 +5,46 @@ body {
     background-position: 72% 15%;
 }
 
+.bnj-catch-phrase-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bnj-catch-phrase {
+    color: white;
+    font-family: 'Blinker', sans-serif;
+    font-size: 1.75rem;
+}
+
 @media (min-width: 992px) {
     body {
         background-size: cover;
+    }
+
+    .bnj-catch-phrase-container {
+        width: 66%;
+    }
+
+    .bnj-catch-phrase {
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-shadow:2px 1px 2px rgba(173,188,188,0.80);
+    }
+
+    .bnj-catch-phrase-1 {
+        margin-left: 50px;
+        margin-top: 15px;
+        align-self: flex-start;
+    }
+
+    .bnj-catch-phrase-2 {
+        margin-top: 15px;
+        align-self: center;
+    }
+
+    .bnj-catch-phrase-3 {
+        margin-top: 15px;
+        align-self: flex-end;
     }
 }
