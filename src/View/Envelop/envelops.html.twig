@@ -6,11 +6,16 @@
 
 {% block stylesheet %}
     <link rel="stylesheet" href="/assets/css/_card_robot_part_bottom.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_part_attribute.css">
 {% endblock %}
 
 {% block content %}
-    <h1>Hello wilder !</h1>
+    <h1> </h1>
+    {% include 'Envelop/_card_robot_attribute.html.twig' %}
+    <h1> </h1>
     {% include 'Envelop/_card_robot_part.html.twig' %}
 
+
 {% endblock %}
+
 
