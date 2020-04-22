@@ -4,10 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
 .LT_button_test{
-    background-color: rgb(32, 29, 29);
+    background-color: white;
     border: none;
     padding: 10px 15px;
-    color: white;
+    color: black;
     border-radius: 8px;
     width: 250px;
     cursor: pointer;
@@ -22,9 +22,9 @@
 }
 
 .LT_button_test:hover{
-    background-color: rgb(245, 247, 249);
-    color: black;
-    border: solid black 1.5px;
+    background-color: black;
+    color: white;
+    border: solid white 1.5px;
     box-shadow: 10px 9px 5px rgb(190, 190, 207);
     width: 280px;
 }
