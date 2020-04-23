@@ -15,9 +15,6 @@
     font-size: 18px;
     transition: all 1.5s ease-out;
     font-family: 'Blinker';
-    position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 10px 9px 5px rgb(163, 163, 189);
 }

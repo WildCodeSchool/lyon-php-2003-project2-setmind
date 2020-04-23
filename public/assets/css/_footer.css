@@ -1,7 +1,6 @@
 footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    height: 100px;
     z-index: 1000;
     font-family: 'Blinker', sans-serif;
 }
@@ -19,6 +18,7 @@ footer nav div a {
 }
 
 @media (min-width: 992px) {
+
     footer .navbar-expand-lg {
         justify-content: space-around;
     }
