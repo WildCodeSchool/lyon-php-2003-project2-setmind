@@ -54,9 +54,6 @@ body {
 }
 
 @media (min-width: 992px) {
-    body {
-        background-size: cover;
-    }
 
     .bnj-catch-phrase-container {
         width: 66%;
@@ -80,5 +77,11 @@ body {
     .bnj-catch-phrase-3 {
         margin-top: 15px;
         align-self: flex-end;
+    }
+}
+
+@media (min-width: 1210px) {
+    body {
+        background-size: cover;
     }
 }
