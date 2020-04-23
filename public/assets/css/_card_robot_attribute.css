@@ -9,6 +9,7 @@
 .gc-attribute-global-container{
     padding-right: 3%;
     padding-left: 2%;
+    margin-top: 20px;
     max-width: var(--robot-card-attribute-max-width);
     width: var(--robot-card-attribute-row-max-width);
 }
