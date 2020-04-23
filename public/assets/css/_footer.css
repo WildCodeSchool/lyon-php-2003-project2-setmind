@@ -6,8 +6,16 @@ footer {
     font-family: 'Blinker', sans-serif;
 }
 
+footer .navbar {
+    justify-content: space-evenly;
+}
+
 footer nav .navbar-brand {
     margin-right: 0;
+}
+
+footer nav div a {
+    text-decoration: none !important;
 }
 
 @media (min-width: 992px) {
