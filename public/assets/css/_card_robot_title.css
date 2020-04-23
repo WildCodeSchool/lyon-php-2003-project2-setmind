@@ -1,0 +1,34 @@
+/*######################Lisa############*/
+
+/*stylisation titre_card_envelop_robot*/
+
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+
+.LT_card_title h2 {
+    background-color: white;
+    text-transform: uppercase;
+    color: black;
+    width: 30%;
+    text-align: center;
+    transform: scale(1) translateX(80px);
+    transition: .6s ease-in-out;
+    margin-left: 20px;
+    font-family: 'Blinker', sans-serif;
+    box-shadow: inset 2px 2px 5px gray, -1px -1px 2px darkslategrey;
+    border-left: solid black 2px;
+    animation-duration: 8s;
+    animation-name: slide;
+    animation-iteration-count: 1;
+}
+.LT_card_title h2:hover {
+    transform: scale(1.1);
+    border-left: solid black 6px;
+    margin-left: 50px;
+}
+
+@keyframes slide {
+    from {
+        margin-left: 20px;
+        width: 20%;
+    }
+}
