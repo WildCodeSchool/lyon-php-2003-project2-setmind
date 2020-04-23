@@ -1,0 +1,18 @@
+.BL_icone {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width: 600px;
+    height: 50px;
+    justify-content: space-between;
+
+}
+
+.BL_icone > div {
+    margin: 10px;
+}
+
+/* TO DO Code à afficher quand les icones seront détourés
+a {
+    box-shadow: 2px 2px 2px gray;
+}
+*/
