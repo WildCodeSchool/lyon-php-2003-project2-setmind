@@ -32,3 +32,21 @@
         width: 20%;
     }
 }
+
+
+.bug-temp-title {
+    box-shadow:
+            0 -1px 0.5px rgba(0, 0, 0, 0.034),
+            0 -2px 1px rgba(0, 0, 0, 0.048),
+            0 -4px 3px rgba(0, 0, 0, 0.06),
+            0 -6px 5px rgba(0, 0, 0, 0.072),
+            0 -8px 7px rgba(0, 0, 0, 0.086),
+            0 -10px 9px rgba(0, 0, 0, 0.12)
+;
+    font-size: 3em;
+    font-family: 'blinker';
+    width: 600px;
+    background: white;
+    border-radius: 5px;
+
+}
