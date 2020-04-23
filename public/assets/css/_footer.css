@@ -1,17 +1,17 @@
 footer {
     width: 100%;
-    height: 10vh;
     z-index: 1000;
     font-family: 'Blinker', sans-serif;
     justify-self: flex-end;
 }
 
 footer .bnj-footer-navbar {
+    height: 10vh;
     display: flex;
     justify-content: space-evenly;
 }
 
-footer nav div a {
+footer section div a {
     text-decoration: none !important;
 }
 

@@ -3,6 +3,7 @@ body {
     background-repeat: no-repeat;
     object-fit: contain;
     background-position: 72% 15%;
+    height: 100vh;
 }
 
 .bnj-index-content-container {
