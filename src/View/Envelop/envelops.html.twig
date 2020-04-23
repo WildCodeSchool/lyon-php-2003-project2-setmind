@@ -5,18 +5,17 @@
 {% endblock %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/_card_robot_part_bottom.css">
-    <link rel="stylesheet" href="/assets/css/_card_robot_part_attribute.css">
     <link rel="stylesheet" href="/assets/css/_card_robot_title.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_attribute.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_button.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_icon.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_bottom.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot.css">
 {% endblock %}
 
 {% block content %}
-    {% include 'Envelop/_card_robot_title.html.twig' %}
-    <h1> </h1>
-    {% include 'Envelop/_card_robot_attribute.html.twig' %}
-    <h1> </h1>
-    {% include 'Envelop/_card_robot_part.html.twig' %}
 
+    {% include 'Envelop/_card_robot.html.twig' %}
 
 {% endblock %}
 

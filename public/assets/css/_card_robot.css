@@ -1,0 +1,14 @@
+.gc-robot-row-top-botom {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.gc-robot-row-top {
+    margin-top: 20px;
+}
+.gc-robot-bg-cadre {
+    background-color: ghostwhite;
+    border-radius: 8px;
+    width: 650px;
+    padding: 25px;
+
+}

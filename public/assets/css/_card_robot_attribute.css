@@ -7,9 +7,10 @@
     --robot-card-attribute-row-max-width: calc(var( --robot-card-attribute-width) - 50)px;;
    }
 .gc-attribute-global-container{
-    padding-right: 2%;
+    padding-right: 3%;
     padding-left: 2%;
     max-width: var(--robot-card-attribute-max-width);
+    width: var(--robot-card-attribute-row-max-width);
 }
 .gc-attribute-label{
     font-family: 'blinker';
