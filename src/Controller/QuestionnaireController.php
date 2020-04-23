@@ -4,17 +4,18 @@ namespace App\Controller;
 
 class QuestionnaireController extends AbstractController
 {
+
+
     /**
-     * Display envelops page
+     * Display item listing
      *
      * @return string
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
-    public function Questionnaire_structure ()
+    public function questionnaire()
     {
-    return $this->twig->render('Questionnaire/Questionnaire_structure.html.twig');
+        return $this->twig->render('Questionnaire/questionnaire.html.twig');
     }
 }
-

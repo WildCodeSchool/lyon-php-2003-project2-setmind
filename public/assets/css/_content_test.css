@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+
+h2, p, ul, li {
+    color: white;
+}
+
+:root {
+    /* Base font size */
+    font-size: 10px;
+
+    /* Set neon color */
+    --neon-text-color: white;
+
+}
+
+
+h2 {
+    font-size: 3em;
+    font-weight: 50;
+    font-style: italic;
+
+    text-transform: uppercase;
+    animation: flicker 3s infinite alternate;
+    width: 550px;
+    height: 40px;
+    text-align: center;
+    font-family: 'Blinker', sans-serif;
+}
+
+
+
+
+
+/* Animate neon flicker */
+@keyframes flicker {
+
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+
+        text-shadow:
+                -0.2rem -0.2rem 1rem #fff,
+
+
+
+
+                0 0 1rem var(--neon-text-color);
+
+        box-shadow:
+
+
+
+
+                inset 0 0 1rem var(--neon-border-color);
+    }
+
+    20%, 24%, 55% {
+        text-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.content_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

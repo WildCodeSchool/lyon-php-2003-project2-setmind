@@ -1,9 +1,21 @@
+
+
+
 <meta content="width=device-width" name="viewport">
 <main>
-<div>
+    {% block content %}
+
+        {% include 'Questionnaire/_content_questionnaire.html.twig' %}
+
+    {% endblock %}
+
     <div class="LT_card_test">
 
-        <form action="_card_questionnaire.html.twig" class="LT_card">
+
+        <form action="questionnaire.html.twig" class="LT_card">
+            <img class="LT_brain_digital" src="/assets/images/cerveau_digital.jpg" width="550px" height="250px" alt="">
+
+
 
             <div class="LT_card-head">
                 <span class="card_n_question">Question n°1</span>
@@ -27,5 +39,5 @@
 
         </form>
     </div>
-</div>
+
 </main>
