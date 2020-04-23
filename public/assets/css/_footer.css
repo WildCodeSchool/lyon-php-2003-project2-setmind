@@ -1,16 +1,14 @@
 footer {
     width: 100%;
-    height: 100px;
+    height: 10vh;
     z-index: 1000;
     font-family: 'Blinker', sans-serif;
+    justify-self: flex-end;
 }
 
-footer .navbar {
+footer .bnj-footer-navbar {
+    display: flex;
     justify-content: space-evenly;
-}
-
-footer nav .navbar-brand {
-    margin-right: 0;
 }
 
 footer nav div a {
@@ -19,7 +17,4 @@ footer nav div a {
 
 @media (min-width: 992px) {
 
-    footer .navbar-expand-lg {
-        justify-content: space-around;
-    }
 }

@@ -5,10 +5,16 @@ body {
     background-position: 72% 15%;
 }
 
+.bnj-index-content-container {
+    height: 100%;
+}
+
 .bnj-catch-phrase-container {
+    height: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-evenly;
     overflow: hidden;
 }
 
@@ -53,31 +59,29 @@ body {
     100% {opacity:1;}
 }
 
+.LT_button_test-container {
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (min-width: 992px) {
 
     .bnj-catch-phrase-container {
         width: 66%;
+        height: 65%;
     }
 
     .bnj-catch-phrase {
         font-size: 2.5rem;
     }
 
-    .bnj-catch-phrase-1 {
-        margin-left: 50px;
-        margin-top: 15px;
-        align-self: flex-start;
+    .LT_button_test-container {
+        height: 35%;
+        align-items: flex-start;
     }
 
-    .bnj-catch-phrase-2 {
-        margin-top: 15px;
-        align-self: center;
-    }
-
-    .bnj-catch-phrase-3 {
-        margin-top: 15px;
-        align-self: flex-end;
-    }
 }
 
 @media (min-width: 1210px) {
