@@ -2,9 +2,9 @@
 :root {
     --robot-card-width: 600px;
     --robot-card-min-width: var(--robot-card-width);
-    --robot-card-min-height: 50%;
+    --robot-card-min-height: 370px;
     --robot-card-max-width: var(--robot-card-width);
-    --robot-card-max-height: 50%;
+    --robot-card-max-height: 370px;
     --robot-card-all-bgover: ghostwhite;
     --robot-card-all-over-border: 1px solid;
     --robot-card-all-over-box-shadow:  4px 2px 1px rgb(190, 190, 207);
