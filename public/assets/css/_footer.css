@@ -1,25 +1,20 @@
 footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
     z-index: 1000;
     font-family: 'Blinker', sans-serif;
+    justify-self: flex-end;
 }
 
-footer .navbar {
+footer .bnj-footer-navbar {
+    height: 10vh;
+    display: flex;
     justify-content: space-evenly;
 }
 
-footer nav .navbar-brand {
-    margin-right: 0;
-}
-
-footer nav div a {
+footer section div a {
     text-decoration: none !important;
 }
 
 @media (min-width: 992px) {
-    footer .navbar-expand-lg {
-        justify-content: space-around;
-    }
+
 }

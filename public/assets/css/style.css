@@ -1,0 +1,10 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.bnj-page-content-container {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+}
