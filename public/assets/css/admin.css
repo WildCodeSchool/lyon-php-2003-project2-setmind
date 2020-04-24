@@ -1,0 +1,32 @@
+.root{
+
+}
+
+html{
+    height : 100%;
+
+}
+
+
+footer {
+    display: none;
+}
+
+.gc-bg-blue{
+    background-color: cornflowerblue;
+}
+
+.gc-bg-snow{
+    background-color: snow;
+}
+
+
+.gc-bg-gray{
+    background-color: lightgrey;
+}
+
+.fullpage{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
