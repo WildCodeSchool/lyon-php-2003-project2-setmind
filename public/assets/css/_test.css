@@ -2,19 +2,24 @@
 
 /*stylisation bloc question_answer test page*/
 body {
-    background-color: black;
 
+
+    margin-left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
 }
 main{
     width:100%;
 }
 .LT_card{
-    background:#fff;
+    background-image: url("https://image.freepik.com/photos-gratuite/abstrait-degrades-noir-blanc-pour-conception-toile-fond_1962-1011.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height:275px;
-    width:640px;
+    width:65%;
     color:#000;
     border-radius:15px;
-    border: solid 4px rgb(150, 201, 224) ;
     transition:all .6s cubic-bezier(.25,.8,.25,1);
     padding:40px;
     box-shadow:0 14px 14px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.22);
@@ -96,7 +101,7 @@ form{
 .LT_group_answers label {
     font-family: "Blinker";
     color:black;
-    font-size: 1.3em;
+    font-size: 20px;
     text-align: center;
     width: 9em;
     margin: 1em;
@@ -124,6 +129,13 @@ form{
     flex-direction: row;
 }
 
+.LT_brain_digital {
+    border-radius: 2%;
+
+}
+
+
+/*responsive design bloc question_answer test page*/
 @media screen and (min-width:630px) and (max-width:900px){
 
     .LT_card {
@@ -138,9 +150,6 @@ form{
         font-size: 1.2em;
     }
 }
-
-
-/*responsive design bloc question_answer test page*/
 
 @media screen and (min-width:440px) and (max-width:630px){
     .LT_group_answers {
@@ -157,6 +166,9 @@ form{
     .card_question {
         font-size: 1.2em;
     }
+    .LT_brain_digital {
+        width: 380px;
+    }
 }
 
 @media screen and (min-width:300px) and (max-width:440px){
@@ -171,6 +183,11 @@ form{
     .card_question {
         font-size: 1.2em;
         text-align: center;
+    }
+
+    .LT_brain_digital {
+        width: 300px;
+        height: 200px;
     }
 
 }
