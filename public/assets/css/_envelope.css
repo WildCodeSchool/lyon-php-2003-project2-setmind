@@ -1,0 +1,12 @@
+.gc-display-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.gc-display-card > *{
+    flex: 0 0 25%;
+    margin-top: 20px ;
+}
