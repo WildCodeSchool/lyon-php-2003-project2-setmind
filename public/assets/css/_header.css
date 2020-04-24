@@ -9,9 +9,13 @@ header {
 }
 
 .bnj-login-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 1.5%;
+    right: 5%;
+}
+
+#navbarTogglerDemo03 {
+    background-color: gray;
 }
 
 .navbar-toggler {
@@ -54,14 +58,22 @@ header nav i {
         width: 100%;
     }
 
+    .navbar-light .navbar-nav .nav-link {
+        color: black;
+    }
+
     .bnj-login-icon {
-        align-items: center;
+        top: 3.5%;
+        right: 2.5%;
+    }
+
+    #navbarTogglerDemo03 {
+        background-color: transparent;
     }
 
     .bnj-LT-header-nav-button {
-        background-color: rgb(32, 29, 29);
+        background-color: white;
         border: none;
-        color: white;
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.6s ease-in-out;
@@ -69,10 +81,13 @@ header nav i {
     }
 
     .bnj-LT-header-nav-button:hover {
-        background-color: rgb(245, 247, 249);
-        color: black;
-        border: solid black 1.5px;
+        background-color: black;
+        border: solid white 1.5px;
         box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    }
+
+    .bnj-LT-header-nav-button a:hover {
+        color: white !important;
     }
 
     .bnj-navbar-background-transparent {

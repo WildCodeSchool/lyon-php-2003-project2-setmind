@@ -132,6 +132,7 @@
     grid-row-start: 2;
     width: 100px;
     height: 100px;
+    padding: 0;
 }
 .gc-robot-brain:hover {
     background-color: var(--robot-card-all-bgover);
@@ -144,12 +145,13 @@
     border: none;
     grid-column-start: calc(var(--robot-card-base-column-straferight-right) + 36 );
     grid-row-start: 37;
-    width: 50px;
-    height: 91px;
+    width: 60px;
+    height: 101px;
+    padding: 0;
 }
 .gc-robot-batery:hover {
-    background-color: ghostwhite;
-    border: 1px solid;
-    box-shadow: 5px 4px 2px rgb(190, 190, 207);
-    transform: translate(-1%, -1%);
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
 }

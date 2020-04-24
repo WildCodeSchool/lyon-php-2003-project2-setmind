@@ -9,11 +9,12 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Blinker&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/button.css">
     <link rel="stylesheet" href="/assets/css/_header.css">
     <link rel="stylesheet" href="/assets/css/logo.css">
     <link rel="stylesheet" href="/assets/css/_footer.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+
 
     {% block stylesheet %}{% endblock %}
     <script src="https://kit.fontawesome.com/f0a8b2a9e8.js" crossorigin="anonymous"></script>
@@ -24,7 +25,7 @@
 <body>
 <header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-secondary col-11">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent col-lg-11">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon">
                 <div class="bnj-line">
@@ -39,11 +40,11 @@
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav bnj-header-ul-navbar container-fluid flex-nowrap">
-                <li class="nav-item active col-lg-auto">
-                    <a class="nav-link home" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item home col-lg-auto">
+                    <a class="nav-link" href="/">Home</a>
                 </li>
-                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
-                    <a class="nav-link" href="#">Envelops</a>
+                <li class="bnj-LT-header-nav-button nav-item col-lg-auto offset-lg-1">
+                    <a class="nav-link" href="/envelop/envelops">Envelops</a>
                 </li>
                 <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
                     <a class="nav-link" href="#">Evaluate Eligibility</a>
@@ -58,30 +59,33 @@
         </div>
 
     </nav>
-    <div class="bnj-login-icon bg-secondary col-1">
+    <div class="bnj-login-icon bg-transparent">
         <a href="#" class="text-white">
             <i class="fas fa-user-alt fa-2x"></i>
         </a>
     </div>
 
 </header>
-{% block content %}{% endblock %}
+<section class="bnj-page-content-container">
+    {% block content %}{% endblock %}
+</section>
 
 
 {% block javascript %}{% endblock %}
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!--<footer>
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-        <div class="nav-item">
-            <a class="nav-link text-white" href="#">Our Story</a>
+
+<footer>
+    <section class="bnj-footer-navbar bg-transparent">
+        <div>
+            <a class="text-white" href="#">Our Story</a>
         </div>
         {% include 'Item/_logo.html.twig' %}
-        <div class="nav-item">
-            <a class="nav-link text-white" href="#">Legal Mentions</a>
+        <div>
+            <a class="text-white" href="#">Legal Mentions</a>
         </div>
-    </nav>
+    </section>
 
 
 </footer> -->
