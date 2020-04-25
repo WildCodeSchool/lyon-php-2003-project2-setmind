@@ -1,0 +1,11 @@
+
+    <h2>Parts</h2>
+    <ul>
+        {% for item in items %}
+            <li><a href="Administration/showpart/{{ part.id }}">{{ part.id }}. {{ part.title }}</a></li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+    <a href="/item/add">Ajouter</a>
+

@@ -9,30 +9,10 @@
 
 <div class="container-fluid gc-bg-snow">
     <div class="row fullpage">
-        <div class="col-2 gc-bg-gray">
-            <h3>Administration</h3>
-            <ul>
-
-                <div class="row">
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-                <div class="row">
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-            </ul>
-        </div>
+            {% include "Administration/_menu.html.twig" %}
         <div class="col-10 gc-bg-blue">
             <h1> Table will apear here</h1>
-
+            {% include "Administration/_parts.html.twig" %}
         </div>
     </div>
 </div>
