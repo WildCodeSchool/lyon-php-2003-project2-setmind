@@ -18,18 +18,22 @@ class AdministrationController extends AbstractController
      */
     public function index()
     {
+
         return $this->twig->render('Administration/index.html.twig');
+
     }
 
     public function indexno()
     {
-        return $this->twig->render('Administration/indexno.html.twig');
+        $partManager = new PartManager();
+        $parts = $partManager->selectAll();
+        var_dump($parts);
+        return $this->twig->render('Administration/indexno.html.twig', ['parts' => $parts]);
     }
 
     public function showpart()
     {
-        $partManager = new PartManager();
-        $parts = $partManager->selectAll();
+
         return $this->twig->render('Administration/indexno.html.twig', ['items' => $parts]);
     }
 }

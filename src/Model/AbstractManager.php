@@ -52,6 +52,16 @@ abstract class AbstractManager
     }
 
     /**
+     * Get all row from database.
+     *
+     * @return array
+     */
+    public function selectAllByClass(): array
+    {
+        return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
+    }
+
+    /**
      * Get one row from database by ID.
      *
      * @param  int $id

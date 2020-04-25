@@ -1,7 +1,8 @@
 
     <h2>Parts</h2>
+    {{ dump(part) }}
     <ul>
-        {% for item in items %}
+        {% for part in parts %}
             <li><a href="Administration/showpart/{{ part.id }}">{{ part.id }}. {{ part.title }}</a></li>
         {% else %}
             <li>Nothing to display</li>
