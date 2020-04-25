@@ -18,9 +18,7 @@ class AdministrationController extends AbstractController
      */
     public function index()
     {
-
         return $this->twig->render('Administration/index.html.twig');
-
     }
 
     public function indexno()
@@ -33,7 +31,6 @@ class AdministrationController extends AbstractController
 
     public function showpart()
     {
-
-        return $this->twig->render('Administration/indexno.html.twig', ['items' => $parts]);
+        return $this->twig->render('Administration/indexno.html.twig');
     }
 }
