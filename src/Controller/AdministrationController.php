@@ -32,5 +32,4 @@ class AdministrationController extends AbstractController
         $parts = $partManager->selectAll();
         return $this->twig->render('Administration/indexno.html.twig', ['items' => $parts]);
     }
-
 }
