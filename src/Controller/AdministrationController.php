@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Model\ItemManager;
+use App\Model\PartManager;
 
 class AdministrationController extends AbstractController
 {
@@ -24,4 +25,12 @@ class AdministrationController extends AbstractController
     {
         return $this->twig->render('Administration/indexno.html.twig');
     }
+
+    public function showpart()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectAll();
+        return $this->twig->render('Administration/indexno.html.twig', ['items' => $parts]);
+    }
+
 }
