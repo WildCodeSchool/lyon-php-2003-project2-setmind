@@ -24,46 +24,36 @@
 
 <body>
 <header>
+    <div class="gc-container-grid-colomn">
+        <a class="logo-gca" href="/home/index">SetMind</a>
+        <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>
+        <a class="gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
+        <a class="gc-nav-button gc-aboutus" href="#">About Us</a>
+        <a class="gc-MyEnvelops gc-nav-button " href="#">My Envelop</a>
+        <a class="gc-connexion-desktop gc-nav-icon-conexion" href="#"> </a>
+    </div>
+    <div class="d-lg-none container-fluid ">
+        <div class="pos-f-t">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent col-lg-11">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">
-                <div class="bnj-line">
-                </div>
-                <div class="bnj-line">
-                </div>
-                <div class="bnj-line">
-                </div>
-            </span>
-        </button>
-        {% include 'Item/_logo.html.twig' %}
+            <div class="row ustify-content-between flex-nowrap gc-bgblack">
+                <nav class="col-11 navbar navbar-dark ">
+                    <button class="navbar-toggler gc-bgwhite" type="button" data-toggle="collapse"
+                            data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+                <a class="col-xs-1 gc-nav-icon-conexion" href="#"> </a>
+            </div>
+        </div>
+        <div class="collapse col-12" id="navbarToggleExternalContent">
+            <a class="row gc-nav-button gc-envelops align-middle" href="/envelop/envelops">Envelops</a>
+            <a class="row gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
+            <a class="row gc-nav-button gc-aboutus" href="#">About Us</a>
+            <a class="row gc-MyEnvelops gc-nav-button " href="#">My Envelop</a>
 
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav bnj-header-ul-navbar container-fluid flex-nowrap">
-                <li class="nav-item home col-lg-auto">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="bnj-LT-header-nav-button nav-item col-lg-auto offset-lg-1">
-                    <a class="nav-link" href="/envelop/envelops">Envelops</a>
-                </li>
-                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
-                    <a class="nav-link" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
-                </li>
-                <li class="bnj-LT-header-nav-button nav-item col-lg-auto">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="bnj-LT-header-nav-button nav-item col-lg-auto offset-lg-3">
-                    <a class="nav-link" href="#">My Envelop</a>
-                </li>
-            </ul>
         </div>
 
-    </nav>
-    <div class="bnj-login-icon bg-transparent">
-        <a href="/Questionnaire/questionnaire" class="text-white">
-            <i class="fas fa-user-alt fa-2x"></i>
-        </a>
-    </div>
 
 </header>
 <section class="bnj-page-content-container">
