@@ -1,9 +1,4 @@
-footer {
-    width: 100%;
-    z-index: 1000;
-    font-family: 'Blinker', sans-serif;
-    justify-self: flex-end;
-}
+
 
 footer .bnj-footer-navbar {
     height: 10vh;
