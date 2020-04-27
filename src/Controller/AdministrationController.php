@@ -8,6 +8,26 @@ use App\Model\PartManager;
 class AdministrationController extends AbstractController
 {
 
+    /**
+     * @param string $sortTableOrder
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function sort($sortTableOrder)
+    {
+        $explode = explode("=", $sortTableOrder);
+        $column = $explode[0];
+        $orderBy = $explode[1];
+        $method = "selectBy" . $column . $orderBy;
+        $partManager = new PartManager();
+        if (method_exists($partManager, $method)) {
+            $parts = call_user_func([$partManager, $method]);
+        }
+        /** @var TYPE_NAME $parts */
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
 
     public function index()
     {

@@ -15,7 +15,7 @@ class PartManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
-    public function selectByNameAsc()
+    public function selectByNameASC()
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table . " ORDER BY name ASC")->fetchAll();
     }
