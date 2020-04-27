@@ -22,10 +22,10 @@ class AdministrationController extends AbstractController
         $orderBy = $explode[1];
         $method = "selectBy" . $column . $orderBy;
         $partManager = new PartManager();
+        $parts= [];
         if (method_exists($partManager, $method)) {
             $parts = call_user_func([$partManager, $method]);
         }
-        /** @var TYPE_NAME $parts */
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
