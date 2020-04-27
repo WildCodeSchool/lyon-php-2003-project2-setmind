@@ -9,6 +9,7 @@ class AdministrationController extends AbstractController
 {
 
     /**
+     * suported parma format : <table name>=ASD or DESD
      * @param string $sortTableOrder
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -17,14 +18,16 @@ class AdministrationController extends AbstractController
      */
     public function sort($sortTableOrder)
     {
+        $parts = [];
         $explode = explode("=", $sortTableOrder);
         $column = $explode[0];
         $orderBy = $explode[1];
         $method = "selectBy" . $column . $orderBy;
         $partManager = new PartManager();
-        $parts= [];
         if (method_exists($partManager, $method)) {
-            $parts = call_user_func([$partManager, $method]);
+            $parts = $partManager->{$method}();
+        } else {
+            //TODO return 404
         }
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
