@@ -15,6 +15,13 @@ class PartManager extends AbstractManager
         parent::__construct(self::TABLE);
     }
 
+    public function filterBy(string $column, string $stringFilter)
+    {
+        $queryString="SELECT * FROM  parts WHERE " . $column . " like '%" . $stringFilter  . "%' ORDER BY name DESC";
+        return $this->pdo->query($queryString)->fetchAll();
+    }
+
+
     public function selectByNameAsc()
     {
         return $this->pdo->query('SELECT * FROM ' . $this->table . " ORDER BY name ASC")->fetchAll();

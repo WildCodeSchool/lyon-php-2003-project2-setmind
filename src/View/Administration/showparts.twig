@@ -4,7 +4,35 @@
         <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
                       class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
-            <form action="{{ filterName }}Asc">
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark indigo mb-4">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form method="post" action="/Administration/filter" class="col-12 form-inline ml-auto search-form">
+                        <div class="form-group">
+                            <label for="selectFilterParts">Filter By:</label>
+                            <select name="selectFilterParts" id="selectFilterParts" class="form-control gc-margin-left-25p">
+                                <option value="Name">Name</option>
+                                <option value="Type">Type</option>
+                                <option value="Color">Color</option>
+                            </select>
+                        </div>
+                        <div class="md-form my-0 gc-margin-left-25p">
+                            <input name="searchFilterParts" id="searchFilterParts" class="form-control" type="text" placeholder="filter string" aria-label="Search">
+                        </div>
+                        <button name="btnFilterParts" id="btnFilterParts" class="gc-search-button gc-searchSizeButton" type="submit">Apply</button>
+                    </form>
+
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <!--/.Navbar-->
             </form>
             <table class="table table-bordered table-responsive-md table-striped text-center">
                 <thead>
@@ -13,20 +41,20 @@
                     <th scope="col">Name
                         {% set filterName = ("/Administration/sort/Name=") %}
                         <form action="{{ filterName }}Asc" method="post">
-                            <input style="float:right;" id="selectByNameAsc" type="submit" value="&#8593;">
+                            <input class="gc-search-button" style="float:right;" id="selectByNameAsc" type="submit" value="&#8593;">
                         </form>
                         <form action="{{ filterName }}Desc" method="post">
-                            <input style="float:left;" id="sortByNameDesc" type="submit" value="&#8595;">
+                            <input class="gc-search-button" style="float:left;" id="sortByNameDesc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">Type
                         {% set filterName = ("/Administration/sort/Type=") %}
                         <form action="{{ filterName }}Asc"
                               method="post">
-                            <input style="float:right;" id="sortPartsByTypeAsc" type="submit" value="&#8593;">
+                            <input class="gc-search-button" style="float:right;" id="sortPartsByTypeAsc" type="submit" value="&#8593;">
                         </form>
                         <form action="{{ filterName }}Desc" method="post">
-                            <input style="float:left;" id="sort/Type/Desc" type="submit" value="&#8595;">
+                            <input class="gc-search-button" style="float:left;" id="sort/Type/Desc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Visual</th>
@@ -35,19 +63,19 @@
                     <th scope="col">Strenght
                         {% set filterName = ("strenght") %}
                         <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
-                            <input style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                            <input class="gc-search-button" style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
                         </form>
                         <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
-                            <input style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                            <input class="gc-search-button" style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Speed
                     {% set filterName = ("speed") %}
                         <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
-                            <input style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                            <input class="gc-search-button" style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
                         </form>
                         <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
-                            <input style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                            <input class="gc-search-button" style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Capacity</th>

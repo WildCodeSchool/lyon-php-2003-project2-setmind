@@ -8,8 +8,19 @@ use App\Model\PartManager;
 class AdministrationController extends AbstractController
 {
 
+
+    public function index()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectAll();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+
+
+    //TODO migrer cet usage en $post plutot que en explode url !!!
     /**
-     * suported parma format : <table name>=ASD or DESD
+     * supported param format : <table name>=ASD or DESD
      * @param string $sortTableOrder
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -32,39 +43,23 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
-    public function index()
-    {
-        $partManager = new PartManager();
-        $parts = $partManager->selectAll();
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
-    }
 
-    public function sortPartsByNameAsc()
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function filter()
     {
-        $partManager = new PartManager();
-        $parts = $partManager->selectByNameAsc();
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
-    }
-
-    public function sortPartsByNameDesc()
-    {
-        $partManager = new PartManager();
-        $parts = $partManager->selectByNameDesc();
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
-    }
-
-    public function sortPartsByTypeAsc()
-    {
-        $partManager = new PartManager();
-        $parts = $partManager->selectByTypeAsc();
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
-    }
-
-    public function sortPartsByTypeDesc()
-    {
-        $partManager = new PartManager();
-        $parts = $partManager->selectByTypeDesc();
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $partManager = new PartManager();
+            $column = $_POST["selectFilterParts"];
+            $searchString = $_POST["searchFilterParts"];
+            $parts = $partManager->filterBy($column, $searchString);
+            return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+        }
+        return $this->twig->render('Administration/index.html.twig');
     }
 
     public function sortPartsByStrenghtAsc()

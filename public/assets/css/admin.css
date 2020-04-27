@@ -1,9 +1,13 @@
-.root{
-
+* {
+    font-family: 'Blinker', sans-serif;
 }
 
 html{
     height : 100%;
+    font-family: 'Blinker', sans-serif;
+}
+.gc-margin-left-25p{
+    margin-left: 20px;
 }
 
 footer {
@@ -69,8 +73,31 @@ footer {
     pading : 3px;
 }
 
+.gc-search-button {
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+}
+
+.gc-searchSizeButton{
+    min-height: 50px;
+    min-width: 100px;
+
+}
+
+.gc-search-button:hover {
+    background-color: black;
+    border: solid white 1.5px;
+    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    color:white;
+
+}
+
 .gc-admin-img{
     max-width: 50px;
     height: 40px;
-
 }

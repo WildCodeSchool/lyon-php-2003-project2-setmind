@@ -11,13 +11,17 @@
 
 
 {% block content %}
-<div class="container-fluid gc-bg-snow">
-    <div class="row gc-fullpage">
+    <div class="container-fluid gc-bg-snow">
+        <div class="row gc-fullpage">
             {% include "Administration/_menu.html.twig" %}
-        <div class="col-11 gc-bg-blue">
-            <h1> Parts Administration V1 - Fonctionnlity preview : View ( V1 ) Delete ( V2 ) , duplicate ( V3 ) , Alter/create ( V4 ) </h1>
-            {% include "Administration/showparts.twig" %}
+            <div class="col-11 gc-bg-blue">
+                <h1> Parts Administration V1 - Fonctionnlity preview : View ( V1 ) Delete ( V2 ) , duplicate ( V3 ) ,
+                    Alter/create ( V4 ) </h1>
+                {% include "Administration/showparts.twig" %}
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}
+
+
+
