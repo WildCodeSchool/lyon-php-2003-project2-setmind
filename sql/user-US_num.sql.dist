@@ -1,0 +1,7 @@
+/* test de structuration requete sql */
+/* <Bigrame user>-<nom de l'us meme syntaxe que dans le nom git>.sql
+/* Pour chaque US_XX qui  modifier une donnée dans la base , creer un fichier YY_US_WW.sql
+/* Exemple pour Guillaume Cav qui  modifie des data dans l'US 91 , creer le fichier Sql/gc_US_91.sql */
+/* Stocker toutes les requetes sql utiles dans ce fichier */
+/* - Update ou create data , alter table , create table ... */
+

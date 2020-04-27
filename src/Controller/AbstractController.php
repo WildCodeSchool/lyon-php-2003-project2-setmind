@@ -13,9 +13,6 @@ use Twig\Environment;
 use Twig\Extension\DebugExtension;
 use Twig\Loader\FilesystemLoader;
 
-/**
- *
- */
 abstract class AbstractController
 {
     /**

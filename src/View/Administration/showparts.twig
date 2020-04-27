@@ -1,0 +1,117 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Parts list</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+      <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
+                      class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                <tr class=>
+                    <th data-field="id" data-sortable="true" scope="col">ID</th>
+                    <th scope="col">Name
+                        <form action="/Administration/sortPartsByNameAsc" method="post">
+                            <input style="float:right;" id="sortByNameAsc" type="submit" value="&#8593;">
+                        </form>
+                        <form action="/Administration/sortPartsByNameDesc" method="post">
+                            <input style="float:left;" id="sortByNameDesc" type="submit" value="&#8595;">
+                        </form>
+                    </th>
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">Type
+                        <form action="/Administration/sortPartsByTypeAsc"
+                              method="post">
+                            <input style="float:right;" id="sortPartsByTypeAsc" type="submit" value="&#8593;">
+                        </form>
+                        <form action="/Administration/sortPartsByTypeDesc" method="post">
+                            <input style="float:left;" id="sortPartsByTypeDesc" type="submit" value="&#8595;">
+                        </form>
+                    </th>
+                    <th scope="col">Visual</th>
+                    <th scope="col">color</th>
+                    <th scope="col">Special_ability</th>
+                    <th scope="col">Strenght
+                        {% set filterName = ("strenght") %}
+                        <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
+                            <input style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                        </form>
+                        <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
+                            <input style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                        </form>
+                    </th>
+                    <th scope="col">Speed
+                    {% set filterName = ("speed") %}
+                        <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
+                            <input style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                        </form>
+                        <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
+                            <input style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                        </form>
+                    </th>
+                    <th scope="col">Capacity</th>
+                    <th scope="col">Charge</th>
+                    <th scope="col">Pos. Left</th>
+                    <th scope="col">Pos. Right</th>
+                    <th scope="col">Pos. Bottom</th>
+                    <th scope="col">Pos. Top</th>
+                    <th scope="col">Pos. Center</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Creation Date</th>
+                    <th scope="col">Range ID</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for part in parts %}
+                <tr>
+                    {% set pngPath = part.visual %}
+                    <td class="pt-3-half" contenteditable="true" scope="col">{{ part.id }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.name }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.type }}</td>
+                    <td class="pt-3-half" contenteditable="true"><img class="gc-admin-img" src="{{ pngPath }}"></td>
+                    <td class="pt-3-half gc-admin-color-{{ part.color }}" contenteditable="false">{{ part.color }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.special_ability }}</td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ part.strenght }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ part.strenght }}%;background-color: black;">
+                                {{ part.strenght }}
+                            </div>
+                        </div>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ part.speed }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ part.speed }}%;background-color: yellow;color:black">
+                                {{ part.speed }}
+                            </div>
+                        </div>
+                    </td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.capacity }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.charge }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.left }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.right }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.bottom }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.top }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.center }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.grade }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.date_creation }}</td>
+                    <td class="pt-3-half" contenteditable="true">{{ part.range_id }}</td>
+                    <td>
+              <span class="table-remove"><button type="button"
+                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    </td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -3,34 +3,72 @@
 
 namespace App\Controller;
 
-use App\Model\ItemManager;
 use App\Model\PartManager;
 
 class AdministrationController extends AbstractController
 {
-    /**
-     * Display administration page
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
-    public function index()
-    {
-        return $this->twig->render('Administration/index.html.twig');
-    }
 
-    public function indexno()
+
+    public function index()
     {
         $partManager = new PartManager();
         $parts = $partManager->selectAll();
-        var_dump($parts);
-        return $this->twig->render('Administration/indexno.html.twig', ['parts' => $parts]);
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
-    public function showpart()
+    public function sortPartsByNameAsc()
     {
-        return $this->twig->render('Administration/indexno.html.twig');
+        $partManager = new PartManager();
+        $parts = $partManager->selectByNameAsc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsByNameDesc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByNameDesc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsByTypeAsc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByTypeAsc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsByTypeDesc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByTypeDesc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsByStrenghtAsc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByStrenghtAsc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsByStrenghtDesc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByStrenghtDesc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsBySpeedAsc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectBySpeedAsc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function sortPartsBySpeedDesc()
+    {
+        $partManager = new PartManager();
+        $parts = $partManager->selectByTypeDesc();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 }
