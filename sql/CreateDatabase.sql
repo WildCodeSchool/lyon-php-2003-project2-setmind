@@ -50,7 +50,7 @@ CREATE TABLE `profil_enveloppes` (
                                      `enveloppe_id` int
 );
 
-CREATE TABLE `enveloppe` (
+CREATE TABLE envelop (
                              `id` int PRIMARY KEY AUTO_INCREMENT,
                              `name` varchar(255),
                              `date_creation` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -118,20 +118,20 @@ ALTER TABLE `user` ADD FOREIGN KEY (`parts_id_right_leg`) REFERENCES `parts` (`i
 
 /*ALTER TABLE `enveloppe` ADD FOREIGN KEY (`enveloppe_id`) REFERENCES `profil_enveloppes` (`enveloppe_id`);*/
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_body`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_body`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_battery`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_battery`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_brain`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_brain`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_hemlet`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_hemlet`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_left_arm`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_left_arm`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_right_arm`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_right_arm`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_left_leg`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_left_leg`) REFERENCES `parts` (`id`);
 
-ALTER TABLE `enveloppe` ADD FOREIGN KEY (`parts_id_right_leg`) REFERENCES `parts` (`id`);
+ALTER TABLE envelop ADD FOREIGN KEY (`parts_id_right_leg`) REFERENCES `parts` (`id`);
 
 /*ALTER TABLE `range` ADD FOREIGN KEY (`id`) REFERENCES `parts` (`range_id`);*

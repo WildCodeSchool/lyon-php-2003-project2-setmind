@@ -17,3 +17,7 @@ INSERT INTO set_mind.parts (id, name, type, visual, color, special_ability, stre
 INSERT INTO set_mind.parts (id, name, type, visual, color, special_ability, strenght, speed, capacity, charge, `left`, `right`, bottom, top, center, grade, date_creation, range_id) VALUES (16, '2046-AA-hemlet', 'hemlet', '/assets/images/parts/2046-AA-hemlet.png', 'blue', 'cool', 0, 0, 50, 50, 0, 0, 0, 1, 1, 0, '2020-04-26 22:45:06', 1);
 INSERT INTO set_mind.parts (id, name, type, visual, color, special_ability, strenght, speed, capacity, charge, `left`, `right`, bottom, top, center, grade, date_creation, range_id) VALUES (17, '2046-AA-right_arm', 'Arm', '/assets/images/parts/2046-AA-right_arm.png', 'blue', 'cool', 10, 0, 50, 50, 0, 1, 0, 0, 0, 0, '2020-04-26 22:47:52', 1);
 INSERT INTO set_mind.parts (id, name, type, visual, color, special_ability, strenght, speed, capacity, charge, `left`, `right`, bottom, top, center, grade, date_creation, range_id) VALUES (18, '2046-AA-left_arm', 'Arm', '/assets/images/parts/2046-AA-left_arm.png', 'blue', 'cool', 10, 0, 50, 50, 1, 0, 0, 0, 0, 0, '2020-04-26 22:48:16', 1);
+
+rename table enveloppe to envelop;
+rename table profil_enveloppes to profil_envelops;
+alter table profil_envelops change enveloppe_id envelop_id int null;

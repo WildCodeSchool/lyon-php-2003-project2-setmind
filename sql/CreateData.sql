@@ -52,11 +52,11 @@ INSERT INTO set_mind.answer (contenu, question_id, next_question_id, value_score
 INSERT INTO set_mind.answer (contenu, question_id, next_question_id, value_score, user_id) VALUES ('Repartir dans le passer pour tuer mes enemis !', 5, null, 75, null);
 
 /* creation d'une envelope */
-INSERT INTO set_mind.enveloppe (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg) VALUES ('CarniLol_default', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
-INSERT INTO set_mind.enveloppe (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg) VALUES ('CarniLol_Barbar', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
-INSERT INTO set_mind.enveloppe (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg) VALUES ('CarniLol_Normal', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
-INSERT INTO set_mind.enveloppe (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg) VALUES ('CarniLol_Speed', DEFAULT,1, 2, 4, 3, 9, 5, 8, 7);
-INSERT INTO set_mind.enveloppe (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg) VALUES ('CarniLol_Genius', DEFAULT, 1, 2, 4, 3, 9, 5, 8, 7);
+INSERT INTO set_mind.envelop (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg)VALUES ('CarniLol_default', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
+INSERT INTO set_mind.envelop (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg)VALUES ('CarniLol_Barbar', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
+INSERT INTO set_mind.envelop (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg)VALUES ('CarniLol_Normal', DEFAULT, 1, 2, 4, 3, 6, 5, 8, 7);
+INSERT INTO set_mind.envelop (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg)VALUES ('CarniLol_Speed', DEFAULT,1, 2, 4, 3, 9, 5, 8, 7);
+INSERT INTO set_mind.envelop (name, date_creation, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg, parts_id_right_leg)VALUES ('CarniLol_Genius', DEFAULT, 1, 2, 4, 3, 9, 5, 8, 7);
 
 /* creation des profils */
 INSERT INTO set_mind.profil (name, image, score_max, score_min) VALUES ('Warior', 'null', 150, 125);
@@ -64,12 +64,12 @@ INSERT INTO set_mind.profil (name, image, score_max, score_min) VALUES ('Genius'
 INSERT INTO set_mind.profil (name, image, score_max, score_min) VALUES ('Normal','null', 50, 124);
 
 /* creation des données des liens profil_enveloppes */
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (1, 2);
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (3, 3);
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (3, 4);
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (3, 1);
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (2, 2);
-INSERT INTO set_mind.profil_enveloppes (profil_id, enveloppe_id) VALUES (2, 1);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (1, 2);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (3, 3);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (3, 4);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (3, 1);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (2, 2);
+INSERT INTO set_mind.profil_envelops (profil_id, envelop_id)VALUES (2, 1);
 
 /* Creation des parts */
 INSERT INTO set_mind.parts (name, type, visual, color, special_ability, strenght, speed, capacity, charge, `left`, `right`, bottom, top, center, grade, date_creation, range_id) VALUES ('body-2045-AA', 'Body', DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, DEFAULT, 1, DEFAULT, DEFAULT, 1);

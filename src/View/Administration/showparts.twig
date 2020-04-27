@@ -4,25 +4,29 @@
         <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2"><a href="#!" class="text-success"><i
                       class="fas fa-plus fa-2x" aria-hidden="true"></i></a></span>
+            <form action="{{ filterName }}Asc">
+            </form>
             <table class="table table-bordered table-responsive-md table-striped text-center">
                 <thead>
                 <tr class=>
                     <th data-field="id" data-sortable="true" scope="col">ID</th>
                     <th scope="col">Name
-                        <form action="/Administration/sort/Name=ASC" method="post">
-                            <input style="float:right;" id="sortByNameAsc" type="submit" value="&#8593;">
+                        {% set filterName = ("/Administration/sort/Name=") %}
+                        <form action="{{ filterName }}Asc" method="post">
+                            <input style="float:right;" id="selectByNameAsc" type="submit" value="&#8593;">
                         </form>
-                        <form action="/Administration/sortPartsByNameDesc" method="post">
+                        <form action="{{ filterName }}Desc" method="post">
                             <input style="float:left;" id="sortByNameDesc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">Type
-                        <form action="/Administration/sortPartsByTypeAsc"
+                        {% set filterName = ("/Administration/sort/Type=") %}
+                        <form action="{{ filterName }}Asc"
                               method="post">
                             <input style="float:right;" id="sortPartsByTypeAsc" type="submit" value="&#8593;">
                         </form>
-                        <form action="/Administration/sortPartsByTypeDesc" method="post">
-                            <input style="float:left;" id="sortPartsByTypeDesc" type="submit" value="&#8595;">
+                        <form action="{{ filterName }}Desc" method="post">
+                            <input style="float:left;" id="sort/Type/Desc" type="submit" value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Visual</th>
