@@ -1,0 +1,157 @@
+/*############################### CSS part envelop card robot ( en basd de la card ) ################################"*/
+:root {
+    --robot-card-width: 600px;
+    --robot-card-min-width: var(--robot-card-width);
+    --robot-card-min-height: 370px;
+    --robot-card-max-width: var(--robot-card-width);
+    --robot-card-max-height: 370px;
+    --robot-card-all-bgover: ghostwhite;
+    --robot-card-all-over-border: 1px solid;
+    --robot-card-all-over-box-shadow:  4px 2px 1px rgb(190, 190, 207);
+    --robot-card-all-over-tranform: translate(-2%, -2%);
+    --robot-card-base-column-start: 6;
+    --robot-card-base-column-straferight-left:  calc(var(--robot-card-base-column-start) + 0);
+    --robot-card-base-column-straferight-center: calc(var(--robot-card-base-column-straferight-left) + -2);
+    --robot-card-base-column-straferight-right: calc(var(--robot-card-base-column-straferight-center) + -2 );
+}
+
+.gc-container-global{
+    max-height: var(--robot-card-max-height) ;
+    min-height: var(--robot-card-min-height) ;
+    min-width: var(--robot-card-min-width);
+    max-width: var(--robot-card-max-width);
+    width:var(--robot-card-width);
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2%;
+    grid-template-rows: 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2% 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+
+.gc-container-global > * {
+    border: 1px dotted black;
+    border-radius: 5px;
+    padding: 10px;
+    background-repeat: no-repeat;
+}
+
+.gc-robot-head{
+    grid-column-start: calc(var( --robot-card-base-column-straferight-center) + 13 );
+    grid-row-start: 4;
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}
+.gc-robot-head:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+.gc-robot-body{
+    grid-column-start: calc(var( --robot-card-base-column-straferight-center)  + 11 );
+    grid-row-start: 10;
+    width: 100px;
+    height: 175px;
+    padding: 0;
+}
+.gc-robot-body:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+.gc-robot-left-arm{
+    grid-column-start: calc(var( --robot-card-base-column-straferight-left) + 0 );
+    grid-row-start: 10;
+    width: 100px;
+    height: 200px;
+    padding: 0;
+}
+.gc-robot-left-arm:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+
+.gc-robot-left-leg{
+    grid-column-start: calc(var( --robot-card-base-column-straferight-left) + 7 );
+    grid-row-start: 32;
+    width: 75px;
+    height: 150px;
+    padding: 0;
+}
+.gc-robot-left-leg:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+.gc-robot-right-leg{
+    grid-column-start: calc(var( --robot-card-base-column-straferight-right) + 18 );
+    grid-row-start: 32;
+    width: 75px;
+    height: 150px;
+    padding: 0;
+}
+.gc-robot-right-leg:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+/*############################### FIN CSS part envelop card robot ( en basd de la card ) ############################"*/
+.gc-robot-right-arm{
+    padding: 0px;
+    object-fit: contain;
+    grid-column-start: calc(var( --robot-card-base-column-straferight-right) + 22 );
+    grid-row-start: 10;
+    min-width: 100px;
+    max-width: 50px;
+    width: 100px;
+    height: 200px;
+ }
+.gc-robot-right-arm:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+.gc-robot-brain{
+    border: none;
+    grid-column-start: calc(var(--robot-card-base-column-straferight-right) + 34 );
+    grid-row-start: 2;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
+.gc-robot-brain:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}
+
+.gc-robot-batery{
+    border: none;
+    grid-column-start: calc(var(--robot-card-base-column-straferight-right) + 36 );
+    grid-row-start: 37;
+    width: 60px;
+    height: 101px;
+    padding: 0;
+}
+.gc-robot-batery:hover {
+    background-color: var(--robot-card-all-bgover);
+    border: var(--robot-card-all-over-border);
+    box-shadow: var(--robot-card-all-over-box-shadow);
+    transform:  var(--robot-card-all-over-tranform);
+}

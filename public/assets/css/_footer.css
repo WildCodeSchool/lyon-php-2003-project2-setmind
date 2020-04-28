@@ -1,0 +1,15 @@
+
+
+footer .bnj-footer-navbar {
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+footer section div a {
+    text-decoration: none !important;
+}
+
+@media (min-width: 992px) {
+
+}

@@ -1,0 +1,26 @@
+:root {
+    --robot-card-attribute-width: 550px;
+    --robot-card-attribute-min-width: calc(var( --robot-card-attribute-width) - 50)px;
+    --robot-card-attribute-max-width: calc(var( --robot-card-attribute-width) + 50)px;
+    --robot-card-attribute-row-max-width: calc(var( --robot-card-attribute-width) - 50)px;;
+}
+
+
+.BL_icone {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    width:  var(--robot-card-attribute-width);
+    height: 50px;
+    justify-content: space-around;
+
+}
+
+.BL_icone > div {
+    /*margin: 10px;*/
+}
+
+/* TO DO Code à afficher quand les icones seront détourés
+a {
+    box-shadow: 2px 2px 2px gray;
+}
+*/

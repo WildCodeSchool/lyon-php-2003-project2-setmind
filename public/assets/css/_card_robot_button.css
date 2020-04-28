@@ -1,0 +1,23 @@
+
+
+.BL_button_parts_view {
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 15px;
+    color: black;
+    border-radius: 8px;
+    width: 600px;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: 'blinker';
+    transition: 0.8s;
+    box-shadow: 3px 3px 3px rgb(169,169,169);
+    text-shadow: 2px 2px 2px rgb(169,169,169);
+}
+
+.BL_button_parts_view:hover {
+    background-color: black;
+    color: white;
+    border: none;
+}
+

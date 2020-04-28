@@ -1,5 +1,32 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <h1>Hello Wilder !</h1>
+{% block title %}
+    {{ parent() }} - Home
 {% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/index.css">
+{% endblock %}
+
+{% block content %}
+    <section class="bnj-page-content-container">
+
+    <section class="bnj-index-content-container">
+        <section class="bnj-catch-phrase-container">
+            <div class="bnj-catch-phrase bnj-catch-phrase-1">
+                Leave your body
+            </div>
+            <div class="bnj-catch-phrase bnj-catch-phrase-2">
+                Transfer your mind
+            </div>
+            <div class="bnj-catch-phrase bnj-catch-phrase-3">
+                In our premium envelops
+            </div>
+        </section>
+        {% include 'Item/_button.html.twig' %}
+    </section>
+    </section>
+
+{% endblock %}
+
+
