@@ -1,32 +1,103 @@
-.root{
-
+* {
+    font-family: 'Blinker', sans-serif;
 }
 
 html{
     height : 100%;
-
+    font-family: 'Blinker', sans-serif;
 }
-
+.gc-margin-left-25p{
+    margin-left: 20px;
+}
 
 footer {
     display: none;
 }
 
 .gc-bg-blue{
-    background-color: cornflowerblue;
+    background-color: mintcream;
 }
 
 .gc-bg-snow{
     background-color: snow;
 }
 
-
 .gc-bg-gray{
-    background-color: lightgrey;
+    background-color: snow;
 }
 
-.fullpage{
-    min-height: 100vh;
+.gc-fullpage{
+    min-height: 90vh;
     margin: 0;
     padding: 0;
+}
+
+.gc-admin-color-black{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    border-color : white;
+    color: white;
+    pading : 3px;
+}
+.gc-admin-color-red{
+    background-color: red;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: white;
+    border-width: 1px;
+    pading : 3px;
+}
+.gc-admin-color-blue{
+    background-color: blue;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: white;
+    border-width: 1px;
+    pading : 3px;
+}
+.gc-admin-color-white{
+    background-color: whitesmoke;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading : 3px;
+}
+
+.gc-search-button {
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+}
+
+.gc-searchSizeButton{
+    min-height: 50px;
+    min-width: 100px;
+
+}
+
+.gc-search-button:hover {
+    background-color: black;
+    border: solid white 1.5px;
+    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    color:white;
+
+}
+
+.gc-admin-img{
+    max-width: 50px;
+    height: 40px;
 }

@@ -5,43 +5,23 @@
 {% endblock %}
 
 {% block stylesheet %}
-    <div>
-        <link rel="stylesheet" href="/assets/css/admin.css">
-    </div>
+    <link rel="stylesheet" href="/assets/css/admin.css">
 {% endblock %}
+
+
 
 {% block content %}
     <div class="container-fluid gc-bg-snow">
-        <div class="col-2 gc-bg-gray">
-            <h3>Administration</h3>
-            <ul>
-                <div class="row">
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-                <div>
-                    <li>
-                        <a href="">Envelops</a>
-                    </li>
-                </div>
-            </ul>
-
-
+        <div class="row gc-fullpage">
+            {% include "Administration/_menu.html.twig" %}
+            <div class="col-11 gc-bg-blue">
+                <h1> Parts Administration V1 - Fonctionnlity preview : View ( V1 ) Delete ( V2 ) , duplicate ( V3 ) ,
+                    Alter/create ( V4 ) </h1>
+                {% include "Administration/showparts.twig" %}
+            </div>
         </div>
-
-        <div class="col-10 gc-bg-blue">
-
-
-        </div>
-
     </div>
-
 {% endblock %}
+
 
 
