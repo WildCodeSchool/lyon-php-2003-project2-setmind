@@ -5,7 +5,24 @@
 {% endblock %}
 
 {% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/login.css">
 {% endblock %}
 
 {% block content %}
+    <body>
+    <section class="bnj-login-tabs">
+
+    </section>
+
+    <section class="bnj-login-illustration">
+
+    </section>
+
+    <section class="bnj-login-form">
+        {% include 'Login/_form_connexion.html.twig' %}
+    </section>
+
+
+    </body>
+
 {% endblock %}
