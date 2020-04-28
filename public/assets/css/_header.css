@@ -1,97 +1,207 @@
-header {
-    z-index: 1000;
-    display: flex;
-    font-family: 'Blinker', sans-serif;
-}
 
-.navbar-light .navbar-nav .nav-link {
-    color: white;
-}
 
-.bnj-login-icon {
+/* tous le documents */
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+footer {
     position: absolute;
-    top: 1.5%;
-    right: 5%;
+    bottom: 0;
+    left: 0;
+    right: 0
 }
-
-#navbarTogglerDemo03 {
-    background-color: gray;
+* {-moz-box-sizing: border-box; box-sizing: border-box;}
+.gc-header{
+    pading-right: 25px;
+    background-color: black;
 }
-
-.navbar-toggler {
-    border: none;
+.gc-bgblack{
+    background-color: transparent;
 }
-
-.navbar-toggler-icon {
-    background-image: none !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.bnj-line {
-    height: 2px;
-    width: 95%;
+.gc-bgwhite{
     background-color: white;
 }
 
-header .navbar-brand {
-    display: none;
+
+/* menu burger -------------------------------------------------------------------------------------------------------*/
+.gc-menu-burger{
+    display :none; /* masque le menu  burger  en affichage desktop */
 }
 
-header nav i {
-    height: 80%;
-    width: auto;
+/* cofiugration de l'icone du  menu  burger --------------------------------------------------------------------------*/
+.gc-burger-icon {
+    background-color: black;
+    border: none;
+    min-height: 70px;
+    width : 60px;
+    height: 60px;
+    cursor: pointer;
+    padding-left: 20px;
+    background-image: url("../images/burger-50x50w.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.gc-burger-button {
+    display: flex;
+    align-items: center;
+    background-color: black;
+    opacity: 0.80;
+    color:white;
+    border: none;
+    min-height: 60px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Blinker', sans-serif;
+    padding-left: 25px;
+}
+.gc-burger-button:hover {
+    background-color: slategray;
+    color:white;
 }
 
-@media (min-width: 992px) {
-    header .navbar-brand {
-        display: block;
+/*
+.gc-connexion-burgeur {
+    grid-column-start: 2;
+    grid-row-start: 1;
+    aling-self:end;
+}
+*/
+
+
+
+/*  ----------------------------- Menu desktop -----------------------------------------------------------------------*/
+
+.gc-connexion-desktop {
+    grid-column-start: 7;
+    grid-column-end: 7;
+}
+
+/* conteneur principal de la navbar */
+.gc-container-grid-colomn {
+    display: grid;
+    grid-template-columns: 200px 100px 150px minmax(100px,2500px) 100px 1px 80px;
+    grid-template-rows: 60px;
+    justify-items: start;
+    align-items: stretch;
+}
+
+/* configuration des bouton de la navbar qui  doivent etre de type a  */
+.gc-container-grid-colomn a{
+
+}
+.gc-container-grid-colomn a:hover{
+    color: white;
+}
+
+/* configuration des bouton de la nav bar en desktop */
+.gc-nav-button {
+
+    /* centrage du  texte */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* traitement vuisual et divers */
+    text-decoration: none ;
+    cursor: pointer;
+    font-family: 'Blinker';
+    border: none;
+    white-space: nowrap;
+    color: black;
+    background-color: white;
+    color:black;
+    font-size: 1em;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
+    min-height: 50px;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top: 5px;
+}
+.gc-nav-button:hover {
+    background-color: black;
+    color:white;
+    border: solid white 1.5px;
+    box-shadow: 2px 1px 1px rgb(190, 190, 207);
+}
+
+/* traitement de l'icone de login a gauche dans le menu */
+.gc-nav-icon-conexion {
+    background-color: white;
+    color:black;
+    border: none;
+    min-width: 60px;
+    min-height: 60px;
+    height : 60px;
+    width: 60px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
+    background-image: url("../images/robot40x40.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: 25px;
+    margin-top: 3px;
+}
+.gc-nav-icon-conexion:hover {
+    background-color: black;
+    color:white;
+    border: solid white 1.5px;
+    box-shadow: 2px 1px 1px rgb(190, 190, 207);
+    background-image: url("../images/robot40x40w.png");
+}
+
+
+/*############ Guillaume ####################################################*/
+/* Css pour le logo SetMind */
+.logo-gca {
+    font-family: 'Blinker';
+    color:slategrey !important;
+    text-decoration: none !important;
+    font-weight:bold; /* mettre en gras */
+    font-size: 3em !important; /* Une taille de 6 fois la taille normale*/
+    text-shadow:1px 1px 2px rgba(0,0,0,0.80); /* une ombre de 8px decalÃ© de 3px et 1px avec une couleur noir Ã  80% d'opacitÃ©*/
+}
+
+
+/* media queries */
+@media (max-width: 960px) {
+    footer .logo-gca {
+        font-size: 2em;
     }
-
-    .home {
+    .gc-container-grid-colomn {
         display: none;
     }
-
-    .bnj-header-ul-navbar {
-        width: 100%;
+    header nav .logo-gca {
+        display: block;
     }
-
-    .navbar-light .navbar-nav .nav-link {
-        color: black;
+    .gc-menu-burger{
+        display :inline-flex;
     }
+}
 
-    .bnj-login-icon {
-        top: 3.5%;
-        right: 2.5%;
-    }
-
-    #navbarTogglerDemo03 {
-        background-color: transparent;
-    }
-
-    .bnj-LT-header-nav-button {
-        background-color: white;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.6s ease-in-out;
-        box-shadow: 4px 3px 3px rgb(163, 163, 189);
-    }
-
-    .bnj-LT-header-nav-button:hover {
-        background-color: black;
-        border: solid white 1.5px;
-        box-shadow: 4px 3px 3px rgb(190, 190, 207);
-    }
-
-    .bnj-LT-header-nav-button a:hover {
-        color: white !important;
-    }
-
-    .bnj-navbar-background-transparent {
-        background: transparent;
+@media (max-width: 400px) {
+    footer nav .logo-gca {
+        font-size: 1em;
     }
 
 }
+
+/* --------------- traitement du  footer -----------------------------------------------------------------------------*/
+
+footer div a {
+    display: flex;
+    justify-content: center;
+}
+
+
+
