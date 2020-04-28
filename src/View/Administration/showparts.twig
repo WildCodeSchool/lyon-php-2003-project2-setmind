@@ -34,6 +34,7 @@
             </nav>
             <!--/.Navbar-->
             </form>
+            <span id="resultat">valeur ici</span>
             <table class="table table-bordered table-responsive-md table-striped text-center">
                 <thead>
                 <tr class=>
@@ -91,17 +92,17 @@
                     <th scope="col">Delete</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="tableid">
                 {% for part in parts %}
                 <tr>
                     {% set pngPath = part.visual %}
-                    <td class="pt-3-half" contenteditable="true" scope="col">{{ part.id }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.name }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.type }}</td>
-                    <td class="pt-3-half" contenteditable="true"><img class="gc-admin-img" src="{{ pngPath }}"></td>
-                    <td class="pt-3-half gc-admin-color-{{ part.color }}" contenteditable="false">{{ part.color }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.special_ability }}</td>
-                    <td class="pt-3-half" contenteditable="true">
+                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="true" scope="col">{{ part.id }}</td>
+                    <td id="{{ 'name-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.name }}</td>
+                    <td id="{{ 'type-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.type }}</td>
+                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="true"><img class="gc-admin-img" src="{{ pngPath }}"></td>
+                    <td id="{{ 'color-' ~ part.id }}" class="pt-3-half gc-admin-color-{{ part.color }}" contenteditable="false">{{ part.color }}</td>
+                    <td id="{{ 'special_ability-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.special_ability }}</td>
+                    <td id="{{ 'strenght-' ~ part.id }}" class="pt-3-half" contenteditable="true">
                         <div class="progress">
                             <div class="progress-bar font-weight-bold" role="progressbar"
                                  aria-valuenow="{{ part.strenght }}"
@@ -111,7 +112,7 @@
                             </div>
                         </div>
                     </td>
-                    <td class="pt-3-half" contenteditable="true">
+                    <td id="{{ 'speed-' ~ part.id }}" class="pt-3-half" contenteditable="true">
                         <div class="progress">
                             <div class="progress-bar font-weight-bold" role="progressbar"
                                  aria-valuenow="{{ part.speed }}"
@@ -121,18 +122,18 @@
                             </div>
                         </div>
                     </td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.capacity }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.charge }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.left }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.right }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.bottom }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.top }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.center }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.grade }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.date_creation }}</td>
-                    <td class="pt-3-half" contenteditable="true">{{ part.range_id }}</td>
+                    <td id="{{ 'capacity-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.capacity }}</td>
+                    <td id="{{ 'charge-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.charge }}</td>
+                    <td id="{{ 'left-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.left }}</td>
+                    <td id="{{ 'right-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.right }}</td>
+                    <td id="{{ 'bottom-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.bottom }}</td>
+                    <td id="{{ 'top-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.top }}</td>
+                    <td id="{{ 'center-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.center }}</td>
+                    <td id="{{ 'grade-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.grade }}</td>
+                    <td id="{{ 'date_creation-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.date_creation }}</td>
+                    <td id="{{ 'range_id-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.range_id }}</td>
                     <td>
-              <span class="table-remove"><button type="button"
+                         <span class="table-remove"><button type="button"
                                                  class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
                     </td>
                     {% endfor %}
@@ -144,6 +145,15 @@
 </div>
 
 
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+    <script src="/assets/js/admin.js" ;></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            addOnChangeListenerToCells();
+        });
+    </script>
 
-
+{% endblock %}
 

@@ -62,6 +62,19 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/index.html.twig');
     }
 
+    /** TODO work inprogress
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function updateDataBySrcAjax()
+    {
+        //$partManager = new PartManager();
+       // $values = $_POST["name"];
+        return "success but impossible to read post";
+    }
+
     public function sortPartsByStrenghtAsc()
     {
         $partManager = new PartManager();
