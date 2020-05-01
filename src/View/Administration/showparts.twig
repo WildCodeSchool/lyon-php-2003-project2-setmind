@@ -16,16 +16,20 @@
                     <form method="post" action="/Administration/filter" class="col-12 form-inline ml-auto search-form">
                         <div class="form-group">
                             <label for="selectFilterParts">Filter By:</label>
-                            <select name="selectFilterParts" id="selectFilterParts" class="form-control gc-margin-left-25p">
+                            <select name="selectFilterParts" id="selectFilterParts"
+                                    class="form-control gc-margin-left-25p">
                                 <option value="Name">Name</option>
                                 <option value="Type">Type</option>
                                 <option value="Color">Color</option>
                             </select>
                         </div>
                         <div class="md-form my-0 gc-margin-left-25p">
-                            <input name="searchFilterParts" id="searchFilterParts" class="form-control" type="text" placeholder="filter string" aria-label="Search">
+                            <input name="searchFilterParts" id="searchFilterParts" class="form-control" type="text"
+                                   placeholder="filter string" aria-label="Search">
                         </div>
-                        <button name="btnFilterParts" id="btnFilterParts" class="gc-search-button gc-searchSizeButton" type="submit">Apply</button>
+                        <button name="btnFilterParts" id="btnFilterParts" class="gc-btn-search gc-btn-search-size"
+                                type="submit">Apply
+                        </button>
                     </form>
 
                 </div>
@@ -37,50 +41,127 @@
             <span id="resultat">valeur ici</span>
             <table class="table table-bordered table-responsive-md table-striped text-center">
                 <thead>
-                <tr class=>
-                    <th data-field="id" data-sortable="true" scope="col">ID</th>
-                    <th scope="col">Name
-                        {% set filterName = ("/Administration/sort/Name=") %}
-                        <form action="{{ filterName }}Asc" method="post">
-                            <input class="gc-search-button" style="float:right;" id="selectByNameAsc" type="submit" value="&#8593;">
+                {% set functionName = ("/Administration/sort") %}
+                <tr class="flex-nowrap justify-content-center align-items-center border-0">
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">Id
+                        {% set sortByValue = ("Id") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
                         </form>
-                        <form action="{{ filterName }}Desc" method="post">
-                            <input class="gc-search-button" style="float:left;" id="sortByNameDesc" type="submit" value="&#8595;">
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                    </th>
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col"
+                        scope="col">Name
+                        {% set sortByValue = ("Name") %}
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsByNameDesc" type="submit"
+                                   value="&#8593;">
+                        </form>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsByNameAsc" type="submit"
+                                   value="&#8595;">
                         </form>
                     </th>
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">Type
-                        {% set filterName = ("/Administration/sort/Type=") %}
-                        <form action="{{ filterName }}Asc"
-                              method="post">
-                            <input class="gc-search-button" style="float:right;" id="sortPartsByTypeAsc" type="submit" value="&#8593;">
+                        {% set sortByValue = ("Type") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsByTypeDesc" type="submit"
+                                   value="&#8593;">
                         </form>
-                        <form action="{{ filterName }}Desc" method="post">
-                            <input class="gc-search-button" style="float:left;" id="sort/Type/Desc" type="submit" value="&#8595;">
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsByTypeAsc" type="submit"
+                                   value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Visual</th>
                     <th scope="col">color</th>
                     <th scope="col">Special_ability</th>
                     <th scope="col">Strenght
-                        {% set filterName = ("strenght") %}
-                        <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
-                            <input class="gc-search-button" style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                        {% set sortByValue = ("Strenght") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
                         </form>
-                        <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
-                            <input class="gc-search-button" style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
                         </form>
                     </th>
                     <th scope="col">Speed
-                    {% set filterName = ("speed") %}
-                        <form action="/Administration/sortPartsBy{{ filterName }}Asc" method="post">
-                            <input class="gc-search-button" style="float:right;" id="sortPartsBy{{ filterName }}Asc" type="submit" value="&#8593;">
+                        {% set sortByValue = ("Speed") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
                         </form>
-                        <form action="/Administration/sortPartsBy{{ filterName }}Desc" method="post">
-                            <input class="gc-search-button" style="float:left;" id="sortPartsBy{{ filterName }}Desc" type="submit" value="&#8595;">
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
                         </form>
                     </th>
-                    <th scope="col">Capacity</th>
-                    <th scope="col">Charge</th>
+                    <th scope="col">Capacity
+                        {% set sortByValue = ("Capacity") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                    </th>
+                    <th scope="col">Charge
+                        {% set sortByValue = ("Charge") %}
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                        <form action="{{ funtionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                    </th>
                     <th scope="col">Pos. Left</th>
                     <th scope="col">Pos. Right</th>
                     <th scope="col">Pos. Bottom</th>
@@ -89,6 +170,7 @@
                     <th scope="col">Grade</th>
                     <th scope="col">Creation Date</th>
                     <th scope="col">Range ID</th>
+                    <th scope="col">Duplicate</th>
                     <th scope="col">Delete</th>
                 </tr>
                 </thead>
@@ -96,12 +178,16 @@
                 {% for part in parts %}
                 <tr>
                     {% set pngPath = part.visual %}
-                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="true" scope="col">{{ part.id }}</td>
+                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="true"
+                        scope="col">{{ part.id }}</td>
                     <td id="{{ 'name-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.name }}</td>
                     <td id="{{ 'type-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.type }}</td>
-                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="true"><img class="gc-admin-img" src="{{ pngPath }}"></td>
-                    <td id="{{ 'color-' ~ part.id }}" class="pt-3-half gc-admin-color-{{ part.color }}" contenteditable="false">{{ part.color }}</td>
-                    <td id="{{ 'special_ability-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.special_ability }}</td>
+                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="true"><img
+                                class="gc-admin-img" src="{{ pngPath }}"></td>
+                    <td id="{{ 'color-' ~ part.id }}" class="pt-3-half gc-admin-color-{{ part.color }}"
+                        contenteditable="false">{{ part.color }}</td>
+                    <td id="{{ 'special_ability-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="true">{{ part.special_ability }}</td>
                     <td id="{{ 'strenght-' ~ part.id }}" class="pt-3-half" contenteditable="true">
                         <div class="progress">
                             <div class="progress-bar font-weight-bold" role="progressbar"
@@ -122,7 +208,8 @@
                             </div>
                         </div>
                     </td>
-                    <td id="{{ 'capacity-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.capacity }}</td>
+                    <td id="{{ 'capacity-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="true">{{ part.capacity }}</td>
                     <td id="{{ 'charge-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.charge }}</td>
                     <td id="{{ 'left-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.left }}</td>
                     <td id="{{ 'right-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.right }}</td>
@@ -130,12 +217,22 @@
                     <td id="{{ 'top-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.top }}</td>
                     <td id="{{ 'center-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.center }}</td>
                     <td id="{{ 'grade-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.grade }}</td>
-                    <td id="{{ 'date_creation-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.date_creation }}</td>
-                    <td id="{{ 'range_id-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.range_id }}</td>
-                    <td>
-                         <span class="table-remove"><button type="button"
-                                                 class="btn btn-danger btn-rounded btn-sm my-0">Remove</button></span>
+                    <td id="{{ 'date_creation-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="true">{{ part.date_creation }}</td>
+                    <td id="{{ 'range_id-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="true">{{ part.range_id }}
                     </td>
+                    <td>
+                        <form method="post" action="/Administration/duplicate/{{ part.id }}" class="">
+                            <button type="submit" class="gc-btn-duplicate">Duplicate</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/Administration/delete/{{ part.id }}" class="">
+                            <button type="submit" class="gc-btn-delate">Remove</button>
+                        </form>
+                    </td>
+
                     {% endfor %}
                 </tr>
                 </tbody>
@@ -150,7 +247,7 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
     <script src="/assets/js/admin.js" ;></script>
     <script type="text/javascript">
-        $(document).ready(function() {
+        $(document).ready(function () {
             addOnChangeListenerToCells();
         });
     </script>

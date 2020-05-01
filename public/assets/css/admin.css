@@ -73,7 +73,7 @@ footer {
     pading : 3px;
 }
 
-.gc-search-button {
+.gc-btn-search {
     margin-left: 10px;
     background-color: white;
     border: none;
@@ -83,18 +83,57 @@ footer {
     box-shadow: 4px 3px 3px rgb(163, 163, 189);
 }
 
-.gc-searchSizeButton{
+.gc-btn-search-size{
     min-height: 50px;
     min-width: 100px;
 
 }
 
-.gc-search-button:hover {
+.gc-btn-search:hover {
     background-color: black;
     border: solid white 1.5px;
     box-shadow: 4px 3px 3px rgb(190, 190, 207);
     color:white;
 
+}
+
+/* uiliser dans les tableaux pour la colone duplicate */
+.gc-btn-duplicate {
+    margin-left: 10px;
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+    min-width: 100px;
+    min-height: 30px;
+}
+.gc-btn-duplicate:hover {
+    background-color: white;
+    border: solid white 1.5px;
+    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    color: black;
+}
+
+/* uiliser dans les tableaux pour la colone delte */
+.gc-btn-delate {
+    margin-left: 10px;
+    background-color: orangered;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+    min-width: 80px;
+    min-height: 30px;
+}
+
+.gc-btn-delate:hover {
+    background-color: white;
+    border: solid white 1.5px;
+    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    color: black;
 }
 
 .gc-admin-img{

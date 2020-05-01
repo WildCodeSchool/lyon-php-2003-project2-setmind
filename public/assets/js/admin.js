@@ -36,7 +36,7 @@ function updateDataToDb(url,id,column,value) {
 
     var http = new XMLHttpRequest();
 
-    var params = "?id=" +id + "&column=" + column + "&value=" + value;
+    var params = "id=" +id + "&column=" + column + "&value=" + value;
     var url2 = url +params ;
     http.open('POST', url, true);
 
@@ -45,7 +45,7 @@ function updateDataToDb(url,id,column,value) {
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-            alert(http.responseText);
+            // todo traitement du code retour du  serveur ==> contenue dans  http.responseText;
         }
     }
     http.send(params);
