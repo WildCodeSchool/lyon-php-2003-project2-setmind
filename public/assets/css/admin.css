@@ -14,6 +14,8 @@ footer {
     display: none;
 }
 
+
+
 .gc-bg-blue{
     background-color: mintcream;
 }
@@ -27,7 +29,7 @@ footer {
 }
 
 .gc-fullpage{
-    min-height: 90vh;
+    min-height: 95vh;
     margin: 0;
     padding: 0;
 }
@@ -82,13 +84,11 @@ footer {
     transition: all 0.1s ease-in-out;
     box-shadow: 4px 3px 3px rgb(163, 163, 189);
 }
-
 .gc-btn-search-size{
     min-height: 50px;
     min-width: 100px;
 
 }
-
 .gc-btn-search:hover {
     background-color: black;
     border: solid white 1.5px;
@@ -117,7 +117,7 @@ footer {
 }
 
 /* uiliser dans les tableaux pour la colone delte */
-.gc-btn-delate {
+.gc-btn-delete {
     margin-left: 10px;
     background-color: orangered;
     border: none;
@@ -128,15 +128,27 @@ footer {
     min-width: 80px;
     min-height: 30px;
 }
-
-.gc-btn-delate:hover {
+.gc-btn-delete:hover {
     background-color: white;
     border: solid white 1.5px;
     box-shadow: 4px 3px 3px rgb(190, 190, 207);
     color: black;
 }
 
+
 .gc-admin-img{
     max-width: 50px;
     height: 40px;
+}
+.gc-admin-table-central {
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color:ghostwhite;
+
+}
+.gc-admin-menu-left{
+    background-color: white;
+    border-radius: 0px 20px 20px 0px ;
+    margin-top: 30px;
+    margin-right: 2px;
 }
