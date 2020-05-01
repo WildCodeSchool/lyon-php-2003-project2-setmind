@@ -126,11 +126,32 @@ footer {
     box-shadow: 1px 1px 1px rgb(163, 163, 189);
     min-width: 60px;
     min-height: 40px;
-    background: url("../images/icon/trash-alt-solid.svg") 0 0;
+    background: url("../images/icon/trash-alt-solid.svg");
     background-repeat: no-repeat;
-    background-position: 50% 90%;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
 
 }
+
+/* affecter sur btn delete a l'aide de js  */
+.gc-btn-delete-disabled{
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: not-allowed; ;
+    transition: none;
+    box-shadow: 0px 0px 0px rgb(163, 163, 189);
+    min-width: 60px;
+    min-height: 40px;
+    width: 60px;
+    height: 40px;
+    background: url("../images/icon/trash-alt-solid-desabled.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
+
+}
+
 .gc-btn-delete:hover {
     border: solid red 1.5px;
     box-shadow: 2px 1px 1px rgb(190, 190, 207);

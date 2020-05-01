@@ -21,3 +21,4 @@ INSERT INTO set_mind.parts (id, name, type, visual, color, special_ability, stre
 rename table enveloppe to envelop;
 rename table profil_enveloppes to profil_envelops;
 alter table profil_envelops change enveloppe_id envelop_id int null;
+

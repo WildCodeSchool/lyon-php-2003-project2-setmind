@@ -96,4 +96,11 @@ class AdministrationController extends AbstractController
         $parts = $partManager->duplicateById($id);
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
+
+    public function isDeletablePart($id): string
+    {
+        $partManager = new PartManager();
+        $result =$partManager->isDeletablePart($id);
+        return $result;
+    }
 }
