@@ -9,20 +9,22 @@
 {% endblock %}
 
 {% block content %}
-    <body>
-    <section class="bnj-login-tabs">
+    <main>
+        <section class="bnj-login-composants-container">
+            <section class="bnj-login-tabs">
+                CHOICE
+            </section>
 
-    </section>
+            <section class="bnj-login-form">
+                {% include 'Login/_form_connexion.html.twig' %}
+            </section>
+        </section>
 
-    <section class="bnj-login-illustration">
-
-    </section>
-
-    <section class="bnj-login-form">
-        {% include 'Login/_form_connexion.html.twig' %}
-    </section>
+    </main>
 
 
-    </body>
+{% endblock %}
 
+{% block javascripts %}
+    <script src="/assets/js/login.js" ;></script>
 {% endblock %}
