@@ -9,11 +9,48 @@ main {
     justify-content: space-evenly;
 }
 
-form {
+.bnj-login-tabs {
+    display: flex;
+}
+
+.bnj-tab {
+    padding:20px;
+    transition:all 0.2s ease-in-out;
+    cursor:pointer;
+    background-color:black;
+    color:white;
+    font-family: 'Blinker', sans-serif;
+    font-size:16px;
+    text-transform:uppercase;
+    border:1px solid #efefef;
+}
+.bnj-tab:hover {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+.bnj-tab-active {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+
+.bnj-form-content {
+    display: none;
+}
+
+.bnj-form-content-visible {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+}
+
+.bnj-login-sign-up-catchphrase {
+    font-family: 'Blinker', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+
 }
 
 .bnj-login-mySlides {
