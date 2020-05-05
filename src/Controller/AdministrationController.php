@@ -56,14 +56,20 @@ class AdministrationController extends AbstractController
      */
     public function filter()
     {
+        $partManager = new PartManager();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $partManager = new PartManager();
             $column = $_POST["selectFilterParts"];
             $searchString = $_POST["searchFilterParts"];
-            $parts = $partManager->filterBy($column, $searchString);
-            return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+            if (!empty($searchString)) {
+                $parts = $partManager->filterBy($column, $searchString);
+                return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+            } else {
+                $parts = $partManager->selectAll();
+                return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+            }
         }
-        return $this->twig->render('Administration/index.html.twig');
+        $parts = $partManager->selectAll();
+        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
     /** TODO work inprogress scheduled implement in next feature
@@ -85,16 +91,76 @@ class AdministrationController extends AbstractController
 
     public function delete(int $id)
     {
+
         $partManager = new PartManager();
         $partManager->delete($id);
-        $parts = $partManager->duplicateById($id);
-        return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+        return $this->index();
     }
 
-    public function duplicate($id)
+    public function duplicate(int $id)
     {
         $partManager = new PartManager();
         $parts = $partManager->duplicateById($id);
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+    }
+
+    public function isDeletablePart($id): string
+    {
+        //todo implement visual  delete if noone part use associated image ( visual )
+        $partManager = new PartManager();
+        $result = $partManager->isDeletablePart($id);
+        return $result;
+    }
+
+    public function uploadPartImage(int $id)
+    {
+        // todo upgrade errors control and show errors on call  header
+        $errorsTrack = [];
+        $sizeLimit = 1024000;
+        $errorsTrack = [];
+        $authExtentions = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
+        $fileRootPath = $_SERVER['DOCUMENT_ROOT'];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            /* acquérir les infos sur la part traité */
+            $partManager = new PartManager();
+            $partInfos = $partManager->selectOneById($id);
+            // acquérir les données sur le file recu
+            $file = $_FILES['imgFile'];
+            $error = $file["error"];
+            $name = $file["name"];
+            $tmpName = $file["tmp_name"];
+            $typeMime = $file["type"];
+            $size = $file["size"];
+            $uniqIdForEndFileName = uniqid("", false);
+            if ($error === 0) {
+                // controle de la taille
+                if ($size >= $sizeLimit) {
+                    $errorsTrack[] = "Le fichier [" . $name . "] depasse la taille limite interne au  programme [ " .
+                        $sizeLimit . "] et a été refusé . Taille [ " . $size . "].<br>";
+                }
+                // recupération de l'extention du  fichier passer en parametre
+                $ext = pathinfo($name, PATHINFO_EXTENSION);
+                // controle du  typê de fichier
+                if (!in_array($typeMime, $authExtentions)) {
+                    $errorsTrack[] = "Le fichier [" . $name . "] est de type MIME [" . $typeMime . "] . 
+                        Ce type n'est authaurisé. <br>";
+                } else {
+                    $inSitelink = "/assets/images/parts/" . $partInfos["name"] . $uniqIdForEndFileName . "." . $ext;
+                        move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
+                    $partManager->updateVisualById($id, $inSitelink);
+                    // todo implement image delete ( visual ) if no envelops use it
+                    header("location:/Administration/index");
+                }
+            }
+
+            if ($error === 1) {
+                $errorsTrack[] = "Le fichier [" . $name . "] depasse la taille limite du serveur PHP
+                        et a été refusé par le controle de validation.<br>";
+            }
+        } else {
+            // message retourné a la XmlHttpRequest
+            header("location:/Administration/index");
+        }
+        header("location:/Administration/index");
     }
 }
