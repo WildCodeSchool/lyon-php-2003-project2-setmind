@@ -85,12 +85,13 @@ class AdministrationController extends AbstractController
 
     public function delete(int $id)
     {
+
         $partManager = new PartManager();
         $partManager->delete($id);
         return $this->index();
     }
 
-    public function duplicate($id)
+    public function duplicate(int $id)
     {
         $partManager = new PartManager();
         $parts = $partManager->duplicateById($id);
@@ -99,13 +100,15 @@ class AdministrationController extends AbstractController
 
     public function isDeletablePart($id): string
     {
+        //todo implement visual  delete if noone part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;
     }
 
-    public function uploadPartImage($id)
+    public function uploadPartImage(int $id)
     {
+        // todo upgrade errors control and show errors on call  header
         $errorsTrack = [];
         $sizeLimit = 1024000;
         $errorsTrack = [];
@@ -123,7 +126,6 @@ class AdministrationController extends AbstractController
             $typeMime = $file["type"];
             $size = $file["size"];
             $uniqIdForEndFileName = uniqid("", false);
-
             if ($error === 0) {
                 // controle de la taille
                 if ($size >= $sizeLimit) {
@@ -140,7 +142,8 @@ class AdministrationController extends AbstractController
                     $inSitelink = "/assets/images/parts/" . $partInfos["name"] . $uniqIdForEndFileName . "." . $ext;
                         move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
                     $partManager->updateVisualById($id, $inSitelink);
-                    return $this->index();
+                    // todo implement image delete ( visual ) if no envelops use it
+                    header("location:/Administration/index");
                 }
             }
 
@@ -150,7 +153,8 @@ class AdministrationController extends AbstractController
             }
         } else {
             // message retourné a la XmlHttpRequest
-            return "Unable to read send file , unknow problem";
+            header("location:/Administration/index");
         }
+        header("location:/Administration/index");
     }
 }
