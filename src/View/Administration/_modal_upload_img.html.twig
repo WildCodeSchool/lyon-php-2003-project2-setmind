@@ -15,7 +15,7 @@
             <div class="modal-body">
                 <div class="gc-admin-grid-modal">
                     <div>
-                        <p>Nom du fichier : {{ part.name }}.png</p>
+                        <h5>Nom du fichier : {{ part.name }}.png</h5>
                     </div>
                     <div>
                         <img id="gc-modal-part-visual" name="gc-modal-part-visual" class="gc-admin-img
@@ -28,18 +28,18 @@
                             <input type="hidden" name="fileOrigin" value="upload-parts"/>
                             <input type="hidden" name="fileName" value="{{ part.name }}"/>
                             <input type="hidden" name="idPart" value="{{ part.id }}"/>
-                            <input id="imgFile" name="imgFile" type="file" value="choisir fichier"/>
+                            <input class="gc-btn-search" id="imgFile" name="imgFile" type="file" value="choisir fichier"/>
                         </form>
                     </div>
                     <div>
-                        <img id="gc-modal-part-visual-new" name="gc-admin-img-new" class="gc-admin-img-new">
+                        <img id="gc-modal-part-visual-new" name="gc-admin-img-new" class="gc-admin-img-new"
+                             src="/assets/images/icon/send.svg">
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button typeof="submit" type="submit" form="gc-modal-part-form-{{ part.id }}" class="btn
-                    btn-primary">Save
+                <button type="button" class="gc-btn-search" data-dismiss="modal">Close</button>
+                <button typeof="submit" type="submit" form="gc-modal-part-form-{{ part.id }}" class="gc-btn-search">Save
                     changes
                 </button>
             </div>

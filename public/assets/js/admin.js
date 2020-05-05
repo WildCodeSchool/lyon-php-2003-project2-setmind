@@ -1,4 +1,7 @@
 function addOnChangeListenerToCells() {
+
+    // work in progress , feature us if we have time
+
     let cells = document.getElementsByTagName("td");
     //console.log("________", cells);
     let dest = document.getElementById("resultat");
@@ -16,7 +19,7 @@ function addOnChangeListenerToCells() {
             let id = chars[1];
             console.log(id)
             let column = chars[0];
-            dest.innerText = "id[" + id + "] column[" + column + "] value[" + cells[i].innerText + "]";
+            //dest.innerText = "id[" + id + "] column[" + column + "] value[" + cells[i].innerText + "]";
             if (changeDetected) {
                 console.log("__change detected and value updated____");
                 changeDetected = false;

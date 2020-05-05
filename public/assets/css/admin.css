@@ -99,10 +99,13 @@ footer {
 
 .gc-table-cell-conrtainer{
     display: flex;
-    justify-content: space-around;
     align-content: center;
+    justify-content: space-between;
 }
 
+.gc-table-cell-conrtainer div p {
+    margin-left: 10px;
+}
 
 /* uiliser dans les tableaux pour la colone visual pour appeler un modal */
 .gc-btn-upload {
@@ -114,7 +117,7 @@ footer {
     box-shadow: 1px 1px 1px rgb(163, 163, 189);
     min-width: 40px;
     min-height: 40px;
-    background: url("../images/icon/upload-folder.svg");
+    background: url("../images/icon/send.svg");
     background-repeat: no-repeat;
     background-position: 50% 80%;
     background-size: 50% 80%;
@@ -163,7 +166,6 @@ footer {
     background-repeat: no-repeat;
     background-position: 50% 80%;
     background-size: 50% 80%;
-
 }
 
 /* affecter sur btn delete a l'aide de js  */
@@ -184,7 +186,6 @@ footer {
     background-size: 50% 80%;
 
 }
-
 .gc-btn-delete:hover {
     border: solid red 1.5px;
     box-shadow: 2px 1px 1px rgb(190, 190, 207);
@@ -225,9 +226,8 @@ footer {
     padding: 5px;
 }
 .gc-admin-img-new {
-    width: 200px;
+    max-width: 200px;
     height: 200px;
-    background: url("../images/icon/upload-folder.svg");
     border-width: 2px;
     border-style: dotted;
     padding: 5px;
