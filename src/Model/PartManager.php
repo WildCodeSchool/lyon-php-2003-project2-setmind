@@ -30,12 +30,12 @@ class PartManager extends AbstractManager
      *
      * @param int $id
      */
-    public function delete(int $id): array
+    public function delete(int $id)
     {
         $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-        return $this->selectAll();
+        header("location:/administration/index");
     }
 
     /**
@@ -45,7 +45,7 @@ class PartManager extends AbstractManager
      *
      * @return array #list of all parts
      */
-    public function duplicateById(int $id): array
+    public function duplicateById(int $id)
     {
         $query = "INSERT INTO " . self::TABLE . "(name, type, visual, color, special_ability, strenght, speed, 
                   capacity, charge, `left`, `right`, bottom, top, center, grade, range_id)
@@ -56,7 +56,7 @@ class PartManager extends AbstractManager
         $statement = $this->pdo->prepare($query);
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-        return $this->selectAll();
+        header("location:/administration/index");
     }
 
     public function isDeletablePart($id): string
@@ -146,5 +146,15 @@ class PartManager extends AbstractManager
         } else {
             return "true";
         }
+    }
+
+    public function updateVisualById($idVal, $newValue)
+    {
+        $query ="UPDATE parts SET visual=:newValue WHERE id=:idVal";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":idVal", $idVal, \PDO::PARAM_INT);
+        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_STR);
+        $statement->execute();
+        header("location:/administration/index");
     }
 }

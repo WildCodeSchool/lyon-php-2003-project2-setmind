@@ -1,0 +1,49 @@
+<!-- Modal -->
+<div name="gc-modal-part" class="modal fade" id="exampleModalCenter-{{ part.id }}"
+     tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered gc-modalt-height" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Veuillez choisir une image : </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="gc-admin-grid-modal">
+                    <div>
+                        <p>Nom du fichier : {{ part.name }}.png</p>
+                    </div>
+                    <div>
+                        <img id="gc-modal-part-visual" name="gc-modal-part-visual" class="gc-admin-img
+                                gc-admin-img-old" src="{{ part.visual }}">
+                    </div>
+                    <div>
+                        <form id="gc-modal-part-form-{{ part.id }}" enctype="multipart/form-data"
+                              action="/Administration/uploadPartImage/{{ part.id }}" method="post">
+                            <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+                            <input type="hidden" name="fileOrigin" value="upload-parts"/>
+                            <input type="hidden" name="fileName" value="{{ part.name }}"/>
+                            <input type="hidden" name="idPart" value="{{ part.id }}"/>
+                            <input id="imgFile" name="imgFile" type="file" value="choisir fichier"/>
+                        </form>
+                    </div>
+                    <div>
+                        <img id="gc-modal-part-visual-new" name="gc-admin-img-new" class="gc-admin-img-new">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button typeof="submit" type="submit" form="gc-modal-part-form-{{ part.id }}" class="btn
+                    btn-primary">Save
+                    changes
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

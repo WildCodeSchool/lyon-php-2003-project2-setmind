@@ -94,8 +94,41 @@ footer {
     border: solid white 1.5px;
     box-shadow: 4px 3px 3px rgb(190, 190, 207);
     color:white;
-
 }
+
+
+.gc-table-cell-conrtainer{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+
+/* uiliser dans les tableaux pour la colone visual pour appeler un modal */
+.gc-btn-upload {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 1px 1px 1px rgb(163, 163, 189);
+    min-width: 40px;
+    min-height: 40px;
+    background: url("../images/icon/upload-folder.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
+}
+.gc-btn-upload:hover {
+    border: solid;
+    border-width: 1px;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: grab;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px black;
+}
+
 
 /* uiliser dans les tableaux pour la colone duplicate */
 .gc-btn-duplicate {
@@ -116,7 +149,7 @@ footer {
     color: black;
 }
 
-/* uiliser dans les tableaux pour la colone delte */
+/* uiliser dans les tableaux pour la colone delete */
 .gc-btn-delete {
     border: none;
     padding: 5px;
@@ -158,9 +191,48 @@ footer {
 }
 
 
+/* taille des images dans le tableau  et formulairte des parts */
 .gc-admin-img{
     max-width: 50px;
     height: 40px;
+}
+
+
+/* mise en forme pour les elements dans le body  du  modal selection d'image */
+.gc-modalt-height {
+    max-height: 600px !important;
+}
+.gc-admin-grid-modal{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 40% 10% 40% ;
+    grid-gap: 5px;
+}
+
+.gc-admin-grid-modal div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top : 0px;
+    margin-bottom: 20px;
+}
+
+.gc-admin-img-old {
+    max-width: 200px;
+    height: 200px;
+    border-width: 2px;
+    border-style: dotted;
+    padding: 5px;
+}
+.gc-admin-img-new {
+    width: 200px;
+    height: 200px;
+    background: url("../images/icon/upload-folder.svg");
+    border-width: 2px;
+    border-style: dotted;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .gc-admin-table-central {
     border-radius: 10px;
