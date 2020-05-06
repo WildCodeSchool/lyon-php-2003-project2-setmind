@@ -18,7 +18,6 @@
             <property name="maxmethods" value="20"/>
         </properties>
     </rule>
-
     <rule ref="rulesets/controversial.xml" >
         <exclude name="Superglobals" />
     </rule>
@@ -39,6 +38,6 @@
         </properties>
     </rule>
     <rule ref="rulesets/unusedcode.xml" />
-
+    ​
     <exclude-pattern>src/Migrations</exclude-pattern>
 </ruleset>
