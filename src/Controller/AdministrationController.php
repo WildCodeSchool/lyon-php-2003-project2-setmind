@@ -94,12 +94,20 @@ class AdministrationController extends AbstractController
 
     public function delete(int $id)
     {
-
         $partManager = new PartManager();
         $partManager->delete($id);
         return $this->index();
     }
 
+    /**
+     * Fontion intialle creer pour copier une PART , ne permet pas de copier une enveloppe ou user ou  question.
+     * @param int $id
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function duplicate(int $id)
     {
         $partManager = new PartManager();
@@ -109,7 +117,7 @@ class AdministrationController extends AbstractController
 
     public function isDeletablePart($id): string
     {
-        //todo implement visual  delete if noone part use associated image ( visual )
+        //todo implement visual ( file ) delete if none part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;
@@ -174,6 +182,14 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
     }
 
+    public function duplicateEnvelop($id)
+    {
+        $envelopManager = new EnvelopManager();
+        $envelopManager->duplicateById($id);
+        header("location:/administration/envelops");
+    }
+  
+  
     public function users()
     {
         $userManager = new UserManager();
