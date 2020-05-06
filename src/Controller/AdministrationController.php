@@ -196,4 +196,11 @@ class AdministrationController extends AbstractController
         $users = $userManager->selectAll();
         return $this->twig->render('Administration/users.html.twig', ['users' => $users]);
     }
+
+    public function deleteUser($id)
+    {
+        $userManager = new UserManager();
+        $users = $userManager->delete($id);
+        header("location:/administration/users");
+    }
 }

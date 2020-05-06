@@ -48,6 +48,7 @@
                     <th scope="col">Answer Id</th>
                     <th scope="col">Profil Id</th>
                     <th scope="col">Date Creation</th>
+                    <th scope="col">Delete</th>
                 </tr>
                 </thead>
                 <tbody id="tableid">
@@ -64,7 +65,7 @@
                     <td id="{{ 'profil_id-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.profil_id }}</td>
                     <td id="{{ 'date_creation-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.date_creation }}</td>
                     <td>
-                        <form method="post" action="/Administration/delete/{{ user.id }}" class="">
+                        <form method="post" action="/Administration/deleteUser/{{ user.id }}" class="">
                             <input type="hidden" id="deleteUser" name="idKeeper" value="{{ user.id }}">
                             <button name="btnDeleteUser" id="btnDeleteUser{{ user.id }}" type="submit"
                                     class="gc-btn-delete">
