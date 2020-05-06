@@ -5,34 +5,28 @@
 {% endblock %}
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/login.css">
+    <link rel="stylesheet" href="/assets/css/successlogin.css">
 {% endblock %}
 
 {% block content %}
-    <div class="modal fade" id="bnj-success-login-sign-up" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Thanks for joining us!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">
-                        <a href="/Questionnaire/questionnaire">Take our quizz!</a></button>
-                    <button type="button" class="btn btn-primary">
-                        <a href="/Envelop/envelops">Go check our envelops!</a></button>
-                </div>
+    <main>
+        <div class="card text-center bnj-success-login-sign-up">
+            <div class="card-header">
+                Welcome on board !
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Thanks for joining us!</h5>
+                <p class="card-text">Feeling adventurous? Explore more of SetMind!</p>
+                <a href="/questionnaire/questionnaire" class="btn btn-primary">Take our quizz!</a>
+                <a href="/envelop/envelops" class="btn btn-primary">Check our envelops!</a>
+            </div>
+            <div class="card-footer text-muted">
+                Have fun!
             </div>
         </div>
-    </div>
+    </main>
+
 {% endblock %}
 
 {% block javascripts %}
-    <script src="/assets/js/login.js"></script>
 {% endblock %}

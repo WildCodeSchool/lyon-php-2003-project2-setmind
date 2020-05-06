@@ -21,7 +21,8 @@ function showSlides()
     setTimeout(showSlides, 5000); // Change image every 5 seconds
 }
 
-function showTab(evt, tabButton) {
+function showTab(evt, tabButton)
+{
     let i = 0;
     let tabContentContainer = document.getElementsByClassName('bnj-form-content');
     let tab = document.getElementsByClassName('bnj-tab');
@@ -42,3 +43,4 @@ function showTab(evt, tabButton) {
     evt.currentTarget.className += " bnj-tab-active";
 
 }
+
