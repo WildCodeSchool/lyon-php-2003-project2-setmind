@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Model\EnvelopManager;
 use App\Model\PartManager;
 
 class AdministrationController extends AbstractController
@@ -162,5 +163,12 @@ class AdministrationController extends AbstractController
             header("location:/Administration/index");
         }
         header("location:/Administration/index");
+    }
+
+    public function envelops()
+    {
+        $envelopManager = new EnvelopManager();
+        $envelops= $envelopManager->selectAllWithParts();
+        return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
     }
 }

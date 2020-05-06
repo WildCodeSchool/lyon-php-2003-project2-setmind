@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Administration - Envelops
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row flex-nowrap gc-fullpage ">
+            {% include "Administration/_menu.html.twig" %}
+            <div class="container-fluid gc-admin-table-central">
+                <h1> Parts Administration V1 - Fonctionnlity preview : View ( V1 ) Delete ( V2 ) , duplicate ( V3 ) ,
+                    Alter/create ( V4 ) </h1>
+                {% include "Administration/_showenvelops.html.twig" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
