@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\LoginManager;
+
 class LoginController extends AbstractController
 {
 
@@ -16,5 +18,21 @@ class LoginController extends AbstractController
     public function connexion()
     {
         return $this->twig->render('Login/connexion.html.twig');
+    }
+
+    public function addUser()
+    {
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $loginManager = new LoginManager();
+            $user = [
+                'first_name' => $_POST['first_name'],
+                'last_name' => $_POST['last_name'],
+                'email' => $_POST['email'],
+                'password' => $_POST['password']
+            ];
+            $loginManager->signUp($user);
+            return $this->twig->render('Login/connexion.html.twig', ['user' => $user]);
+        }
     }
 }
