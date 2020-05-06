@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Model\EnvelopManager;
 use App\Model\PartManager;
+use App\Model\UserManager;
 
 class AdministrationController extends AbstractController
 {
@@ -14,6 +15,7 @@ class AdministrationController extends AbstractController
     {
         $partManager = new PartManager();
         $parts = $partManager->selectAll();
+
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
@@ -170,5 +172,12 @@ class AdministrationController extends AbstractController
         $envelopManager = new EnvelopManager();
         $envelops= $envelopManager->selectAllWithParts();
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
+
+    public function users()
+    {
+        $userManager = new UserManager();
+        $users = $userManager->selectAll();
+        return $this->twig->render('Administration/users.html.twig', ['users' => $users]);
     }
 }
