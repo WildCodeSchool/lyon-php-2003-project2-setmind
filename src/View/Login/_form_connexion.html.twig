@@ -1,4 +1,4 @@
-{{ dump(user) }}
+{{ dump(error) }}
 
 <form id="bnj-sign-up-login-content" class="bnj-form-content bnj-form-content-visible" method="post"
       action="/Login/addUser">
@@ -25,25 +25,37 @@
     <div class="form-group row bnj-login-form-row">
         <div class="col">
             <input type="text" class="form-control bnj-login-form-input" id="colFormLabel" name="last_name"
-                   placeholder="Lastname">
+                   placeholder="Lastname" value="{% if error is defined %}{{ user.last_name }}{% endif %}">
+            {% if error.lastName is defined %}
+                <span>{{ error.lastName }}</span>
+            {% endif %}
         </div>
     </div>
     <div class="form-group row bnj-login-form-row">
         <div class="col">
             <input type="text" class="form-control bnj-login-form-input" id="colFormLabel" name="first_name"
-                   placeholder="Firstname">
+                   placeholder="Firstname" value="{% if error is defined %}{{ user.first_name }}{% endif %}">
+            {% if error.firstName is defined %}
+                <span>{{ error.firstName }}</span>
+            {% endif %}
         </div>
     </div>
     <div class="form-group row bnj-login-form-row">
         <div class="col">
             <input type="email" class="form-control bnj-login-form-input" id="colFormLabel" name="email"
-                   placeholder="Email">
+                   placeholder="Email" value="{% if error is defined %}{{ user.email }}{% endif %}">
+            {% if error.email is defined %}
+                <span>{{ error.email }}</span>
+            {% endif %}
         </div>
     </div>
     <div class="form-group row bnj-login-form-row">
         <div class="col">
             <input type="password" class="form-control bnj-login-form-input" id="colFormLabel" name="password"
-                   placeholder="Password">
+                   placeholder="Password" value="{% if error is defined %}{{ user.password }}{% endif %}">
+            {% if error.password is defined %}
+                <span>{{ error.password }}</span>
+            {% endif %}
         </div>
     </div>
     <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#bnj-success-login-sign-up">
