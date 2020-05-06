@@ -5,3 +5,35 @@
     height: 100%;
     background-color: black;
 }
+
+.gc-layout-body-container{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto minmax(50px, 80px);
+}
+
+.gc-layout-body-container footer{
+    grid-row-start: 3;
+}
+
+
+/* --------------- traitement du  footer -----------------------------------------------------------------------------*/
+footer {
+    background-color: transparent;
+    opacity: 90%;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+.gc-footer-link{
+    opacity: 100%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+.gc-footer-link:hover {
+    text-decoration: none;
+}
+
