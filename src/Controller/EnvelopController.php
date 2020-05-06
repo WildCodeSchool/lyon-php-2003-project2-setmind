@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\EnvelopManager;
+
 class EnvelopController extends AbstractController
 {
     /**
@@ -12,8 +14,12 @@ class EnvelopController extends AbstractController
      * @throws \Twig\Error\RuntimeError
      * @throws \Twig\Error\SyntaxError
      */
+
     public function envelops()
     {
-        return $this->twig->render('Envelop/envelops.html.twig');
+        $envelopManager = new EnvelopManager();
+        $envelops = $envelopManager->selectAllWithParts();
+
+        return $this->twig->render('Envelop/envelops.html.twig', ['envelops' => $envelops]);
     }
 }

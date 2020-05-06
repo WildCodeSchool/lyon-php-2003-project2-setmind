@@ -1,0 +1,124 @@
+main {
+    background-color: #D4E1DC;
+    height: 80vh;
+}
+
+.bnj-login-composants-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.bnj-login-tabs {
+    display: flex;
+}
+
+.bnj-login-tabs button:first-child {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.bnj-login-tabs button:last-child {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bnj-tab {
+    padding:20px;
+    transition:all 0.2s ease-in-out;
+    cursor:pointer;
+    background-color:black;
+    color:white;
+    font-family: 'Blinker', sans-serif;
+    font-size:16px;
+    text-transform:uppercase;
+    border:1px solid #efefef;
+}
+.bnj-tab:hover {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+.bnj-tab-active {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+
+.bnj-form-content {
+    display: none;
+}
+
+.bnj-form-content-visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bnj-login-sign-up-catchphrase {
+    font-family: 'Blinker', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+.bnj-login-mySlides {
+    display: none;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 4.5s;
+    animation-name: fade;
+    animation-duration: 4.5s;
+}
+
+@keyframes fade {
+    0% {opacity:0;}
+    20% {opacity:1;}
+    80% {opacity:1;}
+    100% {opacity:0;}
+}
+
+.bnj-login-mySlides img {
+    height: 250px;
+    width: auto;
+}
+
+.bnj-login-dots-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bnj-login-form-dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.bnj-login-dot-active {
+    background-color: #717171;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+@media (min-width: 600px) {
+    .bnj-login-form-input {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .bnj-login-sign-up-catchphrase {
+        font-size: 2rem;
+    }
+}

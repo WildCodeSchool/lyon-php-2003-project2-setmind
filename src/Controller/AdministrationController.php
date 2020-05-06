@@ -3,6 +3,7 @@
 
 namespace App\Controller;
 
+use App\Model\EnvelopManager;
 use App\Model\PartManager;
 use App\Model\UserManager;
 
@@ -164,5 +165,19 @@ class AdministrationController extends AbstractController
             header("location:/Administration/index");
         }
         header("location:/Administration/index");
+    }
+
+    public function envelops()
+    {
+        $envelopManager = new EnvelopManager();
+        $envelops= $envelopManager->selectAllWithParts();
+        return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
+
+    public function users()
+    {
+        $userManager = new UserManager();
+        $users = $userManager->selectAll();
+        return $this->twig->render('Administration/users.html.twig', ['users' => $users]);
     }
 }
