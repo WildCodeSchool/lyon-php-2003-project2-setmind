@@ -2,20 +2,19 @@
 
 namespace App\Controller;
 
+use App\Model\QuestionnaireManager;
+
 class QuestionnaireController extends AbstractController
 {
-
-
-    /**
-     * Display item listing
-     *
-     * @return string
-     * @throws \Twig\Error\LoaderError
-     * @throws \Twig\Error\RuntimeError
-     * @throws \Twig\Error\SyntaxError
-     */
     public function questionnaire()
     {
-        return $this->twig->render('Questionnaire/questionnaire.html.twig');
+        $questionnaireManager = new QuestionnaireManager();
+        if (!empty($_POST["reponse_choisie_id"])) {
+            $question = $questionnaireManager->selectNextQuestion($_POST["reponse_choisie_id"]);
+            return $this->twig->render('Questionnaire/questionnaire.html.twig', ['question' => $question]);
+        }
+        $defaultQuestion = 1;
+        $question = $questionnaireManager->selectQuestion($defaultQuestion);
+        return $this->twig->render('Questionnaire/questionnaire.html.twig', ['question' => $question]);
     }
 }
