@@ -92,7 +92,6 @@ class AdministrationController extends AbstractController
 
     public function delete(int $id)
     {
-
         $partManager = new PartManager();
         $partManager->delete($id);
         return $this->index();
@@ -116,7 +115,7 @@ class AdministrationController extends AbstractController
 
     public function isDeletablePart($id): string
     {
-        //todo implement visual  delete if noone part use associated image ( visual )
+        //todo implement visual ( file ) delete if none part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;
