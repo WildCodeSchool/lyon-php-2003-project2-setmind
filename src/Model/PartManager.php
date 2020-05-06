@@ -48,8 +48,8 @@ class PartManager extends AbstractManager
     public function duplicateById(int $id)
     {
         $query = "INSERT INTO " . self::TABLE . "(name, type, visual, color, special_ability, strenght, speed, 
-                  capacity, charge, `left`, `right`, bottom, top, center, grade, range_id)
-                  SELECT  name, type, visual, color, special_ability, strenght, speed, capacity, charge, `left`,
+                  capacity, setmind, `left`, `right`, bottom, top, center, grade, range_id)
+                  SELECT  name, type, visual, color, special_ability, strenght, speed, capacity, setmind, `left`,
                   `right`, bottom, top, center, grade, range_id
                   FROM " . self::TABLE .
             " WHERE id=:id";

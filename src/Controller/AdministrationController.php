@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use App\Model\PartManager;
+use App\Model\UserManager;
 
 class AdministrationController extends AbstractController
 {
@@ -13,6 +14,7 @@ class AdministrationController extends AbstractController
     {
         $partManager = new PartManager();
         $parts = $partManager->selectAll();
+
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
