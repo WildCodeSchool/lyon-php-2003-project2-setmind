@@ -5,7 +5,27 @@
 {% endblock %}
 
 {% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/login.css">
 {% endblock %}
 
 {% block content %}
+    <main>
+        <section class="bnj-login-composants-container">
+            <section class="bnj-login-tabs">
+                <button onclick="showTab(event, 'bnj-sign-up-login-content')" id="bnj-sign-up-login-tab"
+                        class="bnj-tab bnj-tab-active">Sign up</button>
+                <button onclick="showTab(event, 'bnj-sign-in-login-content')" id="bnj-sign-in-login-tab"
+                        class="bnj-tab">Sign in</button>
+            </section>
+
+            {% include 'Login/_form_connexion.html.twig' %}
+        </section>
+
+    </main>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/assets/js/login.js" ;></script>
 {% endblock %}
