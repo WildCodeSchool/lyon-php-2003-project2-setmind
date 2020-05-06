@@ -20,22 +20,27 @@ class LoginController extends AbstractController
         return $this->twig->render('Login/connexion.html.twig');
     }
 
+    public function successSignUp()
+    {
+        return $this->twig->render('Login/successSignUp.html.twig');
+    }
+
     public function addUser()
     {
         if (!empty($_POST)) {
             $error = [];
             $user = [];
-            if (!empty($_POST['first_name'])) {
-                $userFirstName = trim($_POST['first_name']);
-                $user['first_name'] = $userFirstName;
-            } else {
-                $error['firstName'] = "Please insert your first name here!";
-            }
             if (!empty($_POST['last_name'])) {
                 $userLastName = trim($_POST['last_name']);
                 $user['last_name'] = $userLastName;
             } else {
                 $error['lastName'] = "Please insert your last name here!";
+            }
+            if (!empty($_POST['first_name'])) {
+                $userFirstName = trim($_POST['first_name']);
+                $user['first_name'] = $userFirstName;
+            } else {
+                $error['firstName'] = "Please insert your first name here!";
             }
             if (!empty($_POST['email'])) {
                 if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
@@ -62,7 +67,7 @@ class LoginController extends AbstractController
             } else {
                 $loginManager = new LoginManager();
                 $loginManager->signUp($user);
-                return $this->twig->render('Login/connexion.html.twig', ['user' => $user]);
+                header('Location: ./successSignUp');
             }
         }
     }
