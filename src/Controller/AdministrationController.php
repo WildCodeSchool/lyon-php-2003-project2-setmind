@@ -98,6 +98,15 @@ class AdministrationController extends AbstractController
         return $this->index();
     }
 
+    /**
+     * Fontion intialle creer pour copier une PART , ne permet pas de copier une enveloppe ou user ou  question.
+     * @param int $id
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function duplicate(int $id)
     {
         $partManager = new PartManager();
@@ -170,5 +179,12 @@ class AdministrationController extends AbstractController
         $envelopManager = new EnvelopManager();
         $envelops= $envelopManager->selectAllWithParts();
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
+
+    public function duplicateEnvelop($id)
+    {
+        $envelopManager = new EnvelopManager();
+        $envelopManager->duplicateById($id);
+        header("location:/administration/envelops");
     }
 }
