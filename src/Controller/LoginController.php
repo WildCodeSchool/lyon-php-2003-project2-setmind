@@ -17,10 +17,24 @@ class LoginController extends AbstractController
      */
     public function connexion()
     {
-        return $this->twig->render('Login/connexion.html.twig');
+        if ($_POST) {
+            if (!empty($_POST)) {
+                $loginManager = new LoginManager();
+                $user = [
+                    'first_name' => $_POST['first_name'],
+                    'last_name' => $_POST['last_name'],
+                    'email' => $_POST['email'],
+                    'password' => $_POST['password']
+                ];
+                $loginManager->signUp($user);
+                return $this->twig->render('Login/connexion.html.twig', ['user' => $user]);
+            }
+        } else {
+            return $this->twig->render('Login/connexion.html.twig');
+        }
     }
 
-    public function addUser()
+    /*public function addUser()
     {
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -34,5 +48,5 @@ class LoginController extends AbstractController
             $loginManager->signUp($user);
             return $this->twig->render('Login/connexion.html.twig', ['user' => $user]);
         }
-    }
+    }*/
 }
