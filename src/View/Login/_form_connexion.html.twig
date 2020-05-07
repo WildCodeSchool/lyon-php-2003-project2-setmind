@@ -4,7 +4,37 @@
     <div class="bnj-login-sign-up-catchphrase">
         Start your journey now!
     </div>
-    <div class="bnj-login-sign-up-carousel">
+    <div id="carouselformsignup" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselformsignup" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselformsignup" data-slide-to="1"></li>
+            <li data-target="#carouselformsignup" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item bnj-login-mySlides active">
+                <img class="d-block w-100"
+                     src="https://www.psm-enligne.org/wp-content/uploads/2018/01/2017_12_22_robot.jpg"
+                     alt="First slide">
+            </div>
+            <div class="carousel-item bnj-login-mySlides">
+                <img class="d-block w-100" src="https://images2.alphacoders.com/167/167502.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item bnj-login-mySlides">
+                <img class="d-block w-100"
+                     src="https://s1.best-wallpaper.net/wallpaper/m/1801/Robot-skull-creative-design_m.jpg"
+                     alt="Third slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselformsignup" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselformsignup" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!--<div class="bnj-login-sign-up-carousel">
         <div class="bnj-login-mySlides fade">
             <img src="https://www.psm-enligne.org/wp-content/uploads/2018/01/2017_12_22_robot.jpg" alt="robot1">
         </div>
@@ -20,13 +50,13 @@
         <span class="bnj-login-form-dot"></span>
         <span class="bnj-login-form-dot"></span>
         <span class="bnj-login-form-dot"></span>
-    </div>
+    </div>-->
     <div class="form-group row bnj-login-form-row">
         <div class="col">
             <input type="text" class="form-control bnj-login-form-input" id="colFormLabel" name="last_name"
                    placeholder="Lastname" value="{% if error is defined %}{{ user.last_name }}{% endif %}">
             {% if error.lastName is defined %}
-                <span>{{ error.lastName }}</span>
+                <span style="color: red">{{ error.lastName }}</span>
             {% endif %}
         </div>
     </div>
@@ -35,7 +65,7 @@
             <input type="text" class="form-control bnj-login-form-input" id="colFormLabel" name="first_name"
                    placeholder="Firstname" value="{% if error is defined %}{{ user.first_name }}{% endif %}">
             {% if error.firstName is defined %}
-                <span>{{ error.firstName }}</span>
+                <span style="color: red">{{ error.firstName }}</span>
             {% endif %}
         </div>
     </div>
@@ -44,7 +74,7 @@
             <input type="email" class="form-control bnj-login-form-input" id="colFormLabel" name="email"
                    placeholder="Email" value="{% if error is defined %}{{ user.email }}{% endif %}">
             {% if error.email is defined %}
-                <span>{{ error.email }}</span>
+                <span style="color: red">{{ error.email }}</span>
             {% endif %}
         </div>
     </div>
@@ -53,7 +83,7 @@
             <input type="password" class="form-control bnj-login-form-input" id="colFormLabel" name="password"
                    placeholder="Password" value="{% if error is defined %}{{ user.password }}{% endif %}">
             {% if error.password is defined %}
-                <span>{{ error.password }}</span>
+                <span style="color: red">{{ error.password }}</span>
             {% endif %}
         </div>
     </div>

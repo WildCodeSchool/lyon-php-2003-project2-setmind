@@ -1,4 +1,4 @@
-let slideIndex = 0;
+/*let slideIndex = 0;
 showSlides();
 
 function showSlides()
@@ -19,7 +19,7 @@ function showSlides()
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " bnj-login-dot-active";
     setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
+}*/
 
 function showTab(evt, tabButton)
 {

@@ -107,6 +107,10 @@ main {
     background-color: #717171;
 }
 
+.bnj-login-form-error {
+    border: solid 1px red;
+}
+
 input::placeholder {
     font-style: italic;
 }
