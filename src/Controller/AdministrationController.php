@@ -200,7 +200,7 @@ class AdministrationController extends AbstractController
     public function deleteUser($id)
     {
         $userManager = new UserManager();
-        $users = $userManager->delete($id);
+        $userManager->delete($id);
         header("location:/administration/users");
     }
 }
