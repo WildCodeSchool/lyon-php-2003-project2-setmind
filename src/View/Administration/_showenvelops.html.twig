@@ -1,0 +1,286 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Envelops list</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark indigo mb-4">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Title</a>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form method="post" action="/Administration/filter" class="col-12 form-inline ml-auto search-form">
+                        <div class="form-group">
+                            <label for="selectFilterEnvelops">Filter By:</label>
+                            <select name="selectFilterEnvelops" id="selectFilterEnvelops"
+                                    class="form-control gc-margin-left-25p">
+                                <option value="Name">Name</option>
+                                <option value="date_creation">Date Creation</option>
+                            </select>
+                        </div>
+                        <div class="md-form my-0 gc-margin-left-25p">
+                            <input name="searchFilterEnvelops" id="searchFilterEnvelops" class="form-control"
+                                   type="text"
+                                   placeholder="filter string" aria-label="Search">
+                        </div>
+                        <button name="btnFilterEnvelops" id="btnFilterEnvelops" class="gc-btn-search gc-btn-search-size"
+                                type="submit">Apply
+                        </button>
+                    </form>
+
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <!--/.Navbar-->
+            </form>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                {% set functionName = ("/Administration/sort") %}
+                <tr class="flex-nowrap justify-content-center align-items-center border-0">
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Id") %}
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;"
+                                       id="sortEnvelopsBy{{ sortByValue }}Desc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>Id</p>
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col"
+                        scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Name") %}
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;" id="sortPartsByNameDesc" type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <P>Name</p>
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortPartsByNameAsc" type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Strenght") %}
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;"
+                                       id="sortAnvelopBy{{ sortByValue }}Desc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>Strength</p>
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortEnvelopBy{{ sortByValue }}Asc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Strenght") %}
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;"
+                                       id="sortEnvelopBy{{ sortByValue }}Desc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>Speed</p>
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortEnvelopBy{{ sortByValue }}Asc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Strenght") %}
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;"
+                                       id="sortEnvelopBy{{ sortByValue }}Desc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>Capacity</p>
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortEnvelopBy{{ sortByValue }}Asc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Strenght") %}
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;"
+                                       id="sortEnvelopBy{{ sortByValue }}Desc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>SetMind</p>
+                            <form action="{{ funtionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortEnvelopBy{{ sortByValue }}Asc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th scope="col">Body</th>
+                    <th scope="col">Hemlet</th>
+                    <th scope="col">Left arm</th>
+                    <th scope="col">Right arm</th>
+                    <th scope="col">Left Leg</th>
+                    <th scope="col">Right Leg</th>
+                    <th scope="col">Battery</th>
+                    <th scope="col">Brain</th>
+                    <th scope="col">Duplicate</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody id="tableid">
+                {% for envelop in envelops %}
+                <tr>
+                    <td id="{{ 'id-' ~ envelop.id }}" class="pt-3-half" contenteditable="false" scope="col">
+                        {{ envelop.id }}
+                    </td>
+                    <td id="{{ 'name-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">{{ envelop.name }}</td>
+                    <td id="{{ 'strenght-' ~ envelop.id }}" class="pt-3-half" contenteditable="false">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ envelop.strenght }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ envelop.strenght }}%;background-color: black;">
+                                {{ envelop.strenght }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'strenght-' ~ envelop.id }}" class="pt-3-half" contenteditable="false">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ envelop.speed }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ envelop.speed }}%;background-color: black;">
+                                {{ envelop.speed }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'strenght-' ~ envelop.id }}" class="pt-3-half" contenteditable="false">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ envelop.capacity }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ envelop.capacity }}%;background-color: black;">
+                                {{ envelop.capacity }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'strenght-' ~ envelop.id }}" class="pt-3-half" contenteditable="false">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ envelop.setmind }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ envelop.setmind }}%;background-color: black;">
+                                {{ envelop.setmind }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.body_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.hemlet_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.larm_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.rarm_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.lleg_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.rleg_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.battery_visual }}">
+                    </td>
+                    <td id="{{ 'visual-' ~ envelop.id }}" class="pt-3-half" contenteditable="true">
+                        <img class="gc-admin-img" src="{{ envelop.brain_visual }}">
+                    </td>
+                    <td>
+                        <form method="post" action="/Administration/duplicateEnvelop/{{ envelop.id }}" class="">
+                            <button type="submit" class="gc-btn-duplicate">Duplicate</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/Administration/delete/{{ part.id }}" class="">
+                            <input type="hidden" id="deletePart" name="idKeeper" value="{{ part.id }}">
+                            <button name="btnDeletePart" id="btnDeletePart{{ part.id }}" type="submit"
+                                    class="gc-btn-delete">
+                            </button>
+                        </form>
+                    </td>
+
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+    <script src="/assets/js/admin.js" ;></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            addOnChangeListenerToCells();
+            btnDeletePartsManagement();
+            addListenerToUploadButton();
+        });
+    </script>
+{% endblock %}
+

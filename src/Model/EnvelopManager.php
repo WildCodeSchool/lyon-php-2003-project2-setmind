@@ -21,7 +21,7 @@ class EnvelopManager extends AbstractManager
        plarm.visual as larm_visual,prarm.visual as rarm_visual, plleg.visual as lleg_visual, 
        prleg.visual as rleg_visual, pbattery.visual as battery_visual, pbrain.visual as brain_visual, 
        plleg.speed + prleg.speed as speed, plarm.strenght + prarm.strenght as strenght, 
-       pbattery.capacity as capacity, pbrain.setmind as setmind
+       pbattery.capacity as capacity, pbrain.setmind as setmind, envelop.id as id
 from envelop
     join parts pbody on envelop.parts_id_body = pbody.id
     join parts phemlet on envelop.parts_id_hemlet = phemlet.id
@@ -33,9 +33,23 @@ from envelop
     join parts pbrain on envelop.parts_id_brain = pbrain.id
 ";
 
-        $statement = $this-> pdo->prepare($query);
-        $statement -> execute();
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function duplicateById($id) : bool
+    {
+        $query = "INSERT INTO " . self::TABLE . "(name, parts_id_body, parts_id_battery, parts_id_brain, 
+                  parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg,parts_id_right_leg)
+                  SELECT  name, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, 
+                  parts_id_right_arm, parts_id_left_leg,parts_id_right_leg
+                  FROM " . self::TABLE .
+            " WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return true;
     }
 }

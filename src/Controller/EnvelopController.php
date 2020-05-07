@@ -19,7 +19,6 @@ class EnvelopController extends AbstractController
     {
         $envelopManager = new EnvelopManager();
         $envelops = $envelopManager->selectAllWithParts();
-
         return $this->twig->render('Envelop/envelops.html.twig', ['envelops' => $envelops]);
     }
 }

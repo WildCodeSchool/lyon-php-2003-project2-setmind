@@ -2,40 +2,34 @@
 <main>
     {% block content %}
 
-        {% include 'Questionnaire/_content_questionnaire.html.twig' %}
-
-    {% endblock %}/
+    {% endblock %}
 
 
     <div class="LT_card_test">
 
 
-        <form action="questionnaire.html.twig" class="LT_card">
+        <form action="questionnaire" method="post" class="LT_card">
             <img class="LT_brain_digital" src="/assets/images/cerveau_digital.jpg" width="550px" height="250px" alt="">
-
-
 
             <div class="LT_card-head">
                 <span class="card_n_question">Question n°1</span>
-                <span  class="card_question">What does traveling mean for you ?</span>
+                <span class="card_question">{{question.nom}}</span>
             </div>
 
 
             <div class="LT_group_answers">
-                <input type="radio" id="a" name="radio"><label for="a">clear my head</label>
-                <input type="radio" id="b" name="radio"><label for="b">discover new cultures</label>
-            </div>
-
-            <div class="LT_group_answers">
-                <input type="radio" id="c" name="radio"><label for="c">feel new emotions</label>
-                <input type="radio" id="d" name="radio"><label for="d">purely professional</label>
+            {% for reponse in question.reponses %}
+                <input type="radio" id="{{reponse.id}}" value="{{reponse.id}}" name="reponse_choisie_id">
+                <label for="{{reponse.id}}">{{reponse.answer_c}}</label>
+            {% endfor %}  
             </div>
 
             <div class="LT_bloc_test_button-answer">
-                <button class="LT_test_button-answer">Next question</button>
+                <button  type="submit" class="LT_test_button-answer">Next question</button>
             </div>
 
         </form>
     </div>
 
 </main>
+
