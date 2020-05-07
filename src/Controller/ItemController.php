@@ -99,7 +99,6 @@ class ItemController extends AbstractController
         return $this->twig->render('Item/add.html.twig');
     }
 
-
     /**
      * Handle item deletion
      *
