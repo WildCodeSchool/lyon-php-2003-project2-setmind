@@ -1,4 +1,4 @@
-let slideIndex = 0;
+/*let slideIndex = 0;
 showSlides();
 
 function showSlides()
@@ -19,9 +19,10 @@ function showSlides()
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += " bnj-login-dot-active";
     setTimeout(showSlides, 5000); // Change image every 5 seconds
-}
+}*/
 
-function showTab(evt, tabButton) {
+function showTab(evt, tabButton)
+{
     let i = 0;
     let tabContentContainer = document.getElementsByClassName('bnj-form-content');
     let tab = document.getElementsByClassName('bnj-tab');
@@ -42,3 +43,4 @@ function showTab(evt, tabButton) {
     evt.currentTarget.className += " bnj-tab-active";
 
 }
+
