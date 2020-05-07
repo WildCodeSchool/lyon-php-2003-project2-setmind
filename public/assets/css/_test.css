@@ -11,7 +11,7 @@ body  {
 }
 
 main{
-    width:100%;
+    width:auto;
 }
 .LT_card{
 
@@ -47,6 +47,7 @@ main{
 .card_question{
     font-size:1.5em;
     font-family: 'Blinker';
+    text-align: center;
 }
 
 .LT_card_test{
@@ -55,6 +56,9 @@ main{
     align-items:center;
     flex-direction:column;
     margin-top: 50px;
+    animation-name: fade;
+    animation-duration: 13s;
+    opacity: 0.9;
 }
 
 .LT_card_test .LT_card{

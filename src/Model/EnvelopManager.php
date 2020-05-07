@@ -33,9 +33,23 @@ from envelop
     join parts pbrain on envelop.parts_id_brain = pbrain.id
 ";
 
-        $statement = $this-> pdo->prepare($query);
-        $statement -> execute();
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
 
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function duplicateById($id) : bool
+    {
+        $query = "INSERT INTO " . self::TABLE . "(name, parts_id_body, parts_id_battery, parts_id_brain, 
+                  parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg,parts_id_right_leg)
+                  SELECT  name, parts_id_body, parts_id_battery, parts_id_brain, parts_id_hemlet, parts_id_left_arm, 
+                  parts_id_right_arm, parts_id_left_leg,parts_id_right_leg
+                  FROM " . self::TABLE .
+            " WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        return true;
     }
 }

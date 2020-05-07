@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
- h2 {
+ .lt_h2 {
     background-color: black;
      color: white;
     width: 100%;
@@ -7,7 +7,23 @@
     text-align: center;
     transition: .6s ease-in-out;
     font-family: 'Blinker', sans-serif;
+    animation-name: title-animation;
+    animation-duration: 4s;
 }
+
+@keyframes title-animation {
+    from {
+      margin-left: -20px;
+      opacity:0;
+      filter:blur(5px);
+    }
+    to {
+      margin-left: 0px;
+      opacity:1;
+      filter:blur(0px);
+    }
+  }
+  
 .LT_content_main {
     background-color: black;
     width: 100%;
@@ -24,6 +40,7 @@ hr {
     background-color: black;
     width: 2px;
     margin-top: -10px;
+    margin-left: 15px;
 }
 
 .LT_content_main p {
@@ -31,8 +48,10 @@ hr {
     height: 30px;
 }
 
-.p {
+.lt_part_p {
     padding-left: 20px;
+    text-align: center;
+    line-height: 27px;
 }
 
 h3 {
@@ -51,14 +70,48 @@ h3 {
     display: flex;
     flex-direction: row;
     width: 80%;
-    height: 200px;
+    height: 256px;
     justify-content: space-around;
     align-items: center;
     border-radius: 20px;
     margin-top: 50px;
     background-color: whitesmoke;
     box-shadow:  2px 2px 2px gray;
+    margin-left: 50px;
+    animation-name: fade;
+    animation-duration: 9s;
+    opacity: 0.9;
 }
+
+@keyframes fade {
+    0% {
+      opacity:0;
+    }
+    50% {
+      opacity:0;
+    }
+    100% {
+      opacity:0.9;
+    }
+  }
+.lt_accroche {
+    text-align: center;
+    animation-name: accroche-animation;
+    animation-duration: 6s;
+}
+@keyframes accroche-animation {
+    from {
+      margin-left: 20px;
+      opacity:0;
+      filter:blur(5px);
+    }
+    to {
+      margin-left: 0px;
+      opacity:1;
+      filter:blur(0px);
+    }
+  }
+  
 
 .LT_main {
     display: flex;
@@ -67,7 +120,7 @@ h3 {
     justify-content: center;
 }
 
-.cerveau {
+.LT_img_cerveau {
     margin-top: 40px;
 }
 
@@ -75,15 +128,35 @@ h3 {
     border-radius: 20px;
 }
 
- @media screen and (max-width: 600px) {
+ @media screen and (max-width: 980px) {
      .LT_content_body {
          flex-direction: column;
          align-items: center;
          justify-content: space-around;
          height: 500px;
+         width: 80%;
+     }
+
+     .LT_content_body_2 {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         height: 200px;
+     } 
+
+     .p {
+         margin-top: -40px;
+     }
+
+     hr {
+         margin-top: 30px;
      }
      h3 {
          padding-right: 40px;
+     }
+     .img_test {
+         width: 390px;
+         margin-top: -15px;
      }
  }
 

@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Model\EnvelopManager;
 use App\Model\PartManager;
+use App\Model\UserManager;
 
 class AdministrationController extends AbstractController
 {
@@ -14,6 +15,7 @@ class AdministrationController extends AbstractController
     {
         $partManager = new PartManager();
         $parts = $partManager->selectAll();
+
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
@@ -92,12 +94,20 @@ class AdministrationController extends AbstractController
 
     public function delete(int $id)
     {
-
         $partManager = new PartManager();
         $partManager->delete($id);
         return $this->index();
     }
 
+    /**
+     * Fontion intialle creer pour copier une PART , ne permet pas de copier une enveloppe ou user ou  question.
+     * @param int $id
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
     public function duplicate(int $id)
     {
         $partManager = new PartManager();
@@ -107,7 +117,7 @@ class AdministrationController extends AbstractController
 
     public function isDeletablePart($id): string
     {
-        //todo implement visual  delete if noone part use associated image ( visual )
+        //todo implement visual ( file ) delete if none part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;
@@ -170,5 +180,20 @@ class AdministrationController extends AbstractController
         $envelopManager = new EnvelopManager();
         $envelops= $envelopManager->selectAllWithParts();
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
+
+    public function duplicateEnvelop($id)
+    {
+        $envelopManager = new EnvelopManager();
+        $envelopManager->duplicateById($id);
+        header("location:/administration/envelops");
+    }
+  
+  
+    public function users()
+    {
+        $userManager = new UserManager();
+        $users = $userManager->selectAll();
+        return $this->twig->render('Administration/users.html.twig', ['users' => $users]);
     }
 }
