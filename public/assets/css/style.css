@@ -9,7 +9,7 @@
 .gc-layout-body-container{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto auto minmax(50px, 80px);
+    grid-template-rows: minmax(61px, 70px) auto minmax(50px, 80px);
 }
 
 .gc-layout-body-container footer{
@@ -19,8 +19,7 @@
 
 /* --------------- traitement du  footer -----------------------------------------------------------------------------*/
 footer {
-    background-color: transparent;
-    opacity: 90%;
+    background-color: black;
     text-align: center;
     width: 100%;
     position: relative;
