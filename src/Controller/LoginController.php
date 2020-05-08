@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\LoginManager;
+use App\Model\UserManager;
 
 class LoginController extends AbstractController
 {
@@ -17,6 +18,7 @@ class LoginController extends AbstractController
      */
     public function connexion()
     {
+
         return $this->twig->render('Login/connexion.html.twig');
     }
 
@@ -70,5 +72,43 @@ class LoginController extends AbstractController
                 header('Location: ./successSignUp');
             }
         }
+    }
+
+
+    public function login()
+    {
+        $email = $password = "";
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!empty($_POST)) {
+                $email = trim($_POST['email']);
+                $password = trim($_POST['password']);
+                if (empty($email)) {
+                    $errors['email'] = "Required";
+                }
+                if (empty($email)) {
+                    $errors['password'] = "Required";
+                }
+                if (empty($errors)) {
+                    $userManager = new UserManager();
+                    $user = $userManager->selectOneByEmail($email);
+                    if (!$user) {
+                        $errors['email'] = "email not found";
+                    } else {
+                        if (password_verify($password, $user["password"])) {
+                            $_SESSION["user"] = [
+                                "id" => $user["id"],
+                                "username" => $user["name"],
+                                "email" => $user["email"],
+                            ];
+                            header("location: /");
+                        } else {
+                            $errors["password"] = "Wrong Password , receive $password";
+                        }
+                    }
+                }
+            }
+        }
+        return $this->twig->render('Login/connexion.html.twig', ["errors" => $errors]);
     }
 }
