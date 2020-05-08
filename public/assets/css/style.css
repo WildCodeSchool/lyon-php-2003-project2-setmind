@@ -9,7 +9,7 @@
 .gc-layout-body-container{
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: minmax(61px, 70px) auto minmax(50px, 80px);
+    grid-template-rows: minmax(61px, 70px) minmax(80%,100%) minmax(50px, 80px);
 }
 
 .gc-layout-body-container footer{

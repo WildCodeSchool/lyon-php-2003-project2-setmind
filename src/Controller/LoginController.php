@@ -93,7 +93,6 @@ class LoginController extends AbstractController
                 if (empty($errors)) {
                     $userManager = new UserManager();
                     $user = $userManager->selectOneByEmail($email);
-                    //var_dump($user);
                     if (!$user) {
                         $errors['email'] = "email not found";
                     } else {
@@ -101,7 +100,7 @@ class LoginController extends AbstractController
                         if (password_verify($password, $hash)) {
                             $_SESSION["user"] = [
                                 "id" => $user["id"],
-                                "username" => $user["first_name"] . " " . $user["last_name"] ,
+                                "username" => $user["first_name"] . " " . $user["last_name"],
                                 "email" => $user["email"],
                                 "final_score" => $user["final_score"]
                             ];
@@ -115,5 +114,9 @@ class LoginController extends AbstractController
         }
 
         return $this->twig->render('Login/connexion.html.twig', ["errors" => $errors]);
+    }
+
+    public function logout()
+    {
     }
 }

@@ -155,20 +155,24 @@ html {
     width: 60px;
     border-radius: var( --button-radius);
     cursor: pointer;
+    background-image: url("../images/icon/man-user_black.png");
     transition: all 0.4s ease-in-out;
     box-shadow: 2px 1px 1px rgb(163, 163, 189);
-    background-image: url("../images/robot40x40.png");
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 10px !important;
     margin-top: 3px;
+}
+
+.gc-nav-icon-conexion-connected {
+    background-image: url("../images/icon/man-user_green.png");
 }
 .gc-nav-icon-conexion:hover {
     background-color: black;
     color:white;
     border: solid white 1.5px;
     box-shadow: 2px 1px 1px rgb(190, 190, 207);
-    background-image: url("../images/robot40x40w.png");
+    background-image: url("../images/icon/man-user_white.png");
 }
 
 
