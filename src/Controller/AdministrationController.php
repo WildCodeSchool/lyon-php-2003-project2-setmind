@@ -10,12 +10,18 @@ use App\Model\UserManager;
 class AdministrationController extends AbstractController
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        if (!isset($_SESSION["user"])) {
+            header("location:/login/login");
+        }
+    }
 
     public function index()
     {
         $partManager = new PartManager();
         $parts = $partManager->selectAll();
-
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
