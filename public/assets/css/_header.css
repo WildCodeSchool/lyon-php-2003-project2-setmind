@@ -14,6 +14,7 @@ html {
 .gc-header{
     pading-right: 25px;
     background-color: black;
+    z-index: 100;
 }
 .gc-bgblack{
     background-color: black;
@@ -45,9 +46,9 @@ html {
 .gc-burger-icon {
     background-color: black;
     border: none;
-    min-height: 60px;
-    width : 60px;
-    height: 60px;
+    min-height: 50px;
+    width : 50px;
+    height: 50px;
     cursor: pointer;
     padding-left: 20px;
     background-image: url("../images/burger-50x50w.png");
@@ -58,10 +59,9 @@ html {
     display: flex;
     align-items: center;
     background-color: black;
-    opacity: 0.80;
     color:white;
     border: none;
-    min-height: 60px;
+    min-height: 50px;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     text-align: center;
@@ -86,20 +86,18 @@ html {
 
 /*  ----------------------------- Menu desktop -----------------------------------------------------------------------*/
 
-.gc-connexion-desktop {
-    grid-column-start: 7;
-    grid-column-end: 7;
-}
+
+
 
 /* conteneur principal de la navbar */
 .gc-container-grid-colomn {
     display: grid;
-    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 125px) 100px 80px;
-    grid-gap: 60px;
+    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 125px) 100px 80px 5px;
+    grid-gap: 25px;
     grid-template-rows: 61px;
     justify-items: start;
     align-items: stretch;
-    padding-bottom: 8px;
+    padding-bottom: 12px;
     padding-left: 25px;
 }
 
@@ -144,15 +142,19 @@ html {
     box-shadow: 4px 1px 1px rgb(190, 190, 207);
 }
 
+
 /* traitement de l'icone de login a gauche dans le menu */
+
 .gc-nav-icon-conexion {
+    grid-column-start: 7;
+    grid-column-end: 7;
     background-color: white;
     color:black;
     border: none;
-    min-width: 60px;
-    min-height:var(--button-min-height);;
-    height : 60px;
-    width: 60px;
+    min-width: 58px;
+    min-height:var(--button-min-height);
+    height : 58px;
+    width: 58px;
     border-radius: var( --button-radius);
     cursor: pointer;
     background-image: url("../images/icon/man-user_black.png");
@@ -163,17 +165,51 @@ html {
     margin-right: 10px !important;
     margin-top: 3px;
 }
-
-.gc-nav-icon-conexion-connected {
-    background-image: url("../images/icon/man-user_green.png");
-}
 .gc-nav-icon-conexion:hover {
     background-color: black;
-    color:white;
-    border: solid white 1.5px;
+    color: white;
+    border: solid white 1px;
     box-shadow: 2px 1px 1px rgb(190, 190, 207);
     background-image: url("../images/icon/man-user_white.png");
 }
+
+
+.gc-nav-icon-conected {
+    grid-column-start: 7;
+    grid-column-end: 7;
+    background-color: white;
+    color: black;
+    min-width: 58px;
+    min-height: var(--button-min-height);
+    height: 58px;
+    width: 58px;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
+    background-repeat: no-repeat;
+    margin-right: 10px !important;
+    margin-top: 3px;
+    border: solid white 1px;
+    padding: 5px;
+    background-size: cover;
+    background-image: url("../images/icon/logout-black.png");
+}
+
+.gc-nav-icon-conected:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 2px 1px 1px orangered;
+    border: solid red 1px;
+    background-image: url("../images/icon/logout-red.png");
+}
+.gc-nav-icon-conexion-connected {
+
+}
+.gc-nav-icon-conexion-connected:hover {
+
+}
+
 
 
 /*############ Guillaume ####################################################*/

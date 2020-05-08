@@ -118,5 +118,7 @@ class LoginController extends AbstractController
 
     public function logout()
     {
+        unset($_SESSION['user']);
+        header("Location: /");
     }
 }
