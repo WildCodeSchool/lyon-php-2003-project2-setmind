@@ -107,8 +107,7 @@ class LoginController extends AbstractController
                             ];
                             header("location: /");
                         } else {
-                            $errors["password"] = "Wrong Password ,user email :  $email user email  get in db : " .
-                                $user["email"] . " , receive $password  hash in DB : $hash ";
+                            $errors["password"] = "Wrong Password";
                         }
                     }
                 }
