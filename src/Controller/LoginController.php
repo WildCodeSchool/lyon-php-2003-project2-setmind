@@ -56,7 +56,7 @@ class LoginController extends AbstractController
             }
             if (!empty($_POST['password'])) {
                 if (empty($error)) {
-                    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+                    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user['password'] = $password;
                 } else {
                     $user['password'] = $_POST['password'];
@@ -77,7 +77,8 @@ class LoginController extends AbstractController
 
     public function login()
     {
-        $email = $password = "";
+        $email = "";
+        $password = "";
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (!empty($_POST)) {
@@ -92,23 +93,28 @@ class LoginController extends AbstractController
                 if (empty($errors)) {
                     $userManager = new UserManager();
                     $user = $userManager->selectOneByEmail($email);
+                    //var_dump($user);
                     if (!$user) {
                         $errors['email'] = "email not found";
                     } else {
-                        if (password_verify($password, $user["password"])) {
+                        $hash = $user["password"];
+                        if (password_verify($password, $hash)) {
                             $_SESSION["user"] = [
                                 "id" => $user["id"],
-                                "username" => $user["name"],
+                                "username" => $user["first_name"] . " " . $user["last_name"] ,
                                 "email" => $user["email"],
+                                "final_score" => $user["final_score"]
                             ];
                             header("location: /");
                         } else {
-                            $errors["password"] = "Wrong Password , receive $password";
+                            $errors["password"] = "Wrong Password ,user email :  $email user email  get in db : " .
+                                $user["email"] . " , receive $password  hash in DB : $hash ";
                         }
                     }
                 }
             }
         }
+
         return $this->twig->render('Login/connexion.html.twig', ["errors" => $errors]);
     }
 }
