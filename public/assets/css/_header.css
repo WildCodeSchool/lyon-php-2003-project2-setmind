@@ -231,6 +231,10 @@ html {
     }
     .gc-container-grid-colomn {
         display: none;
+        grid-template-columns: auto;
+        grid-gap: 1px;
+        padding-bottom: 0px;
+        padding-left: 0px;
     }
     header nav .logo-gca {
         display: block;

@@ -19,7 +19,7 @@
     <div class="d-lg-none container-fluid  gc-bgblack">
         <div class="pos-f-t">
             <div class="row ustify-content-between flex-nowrap gc-bgblack">
-                <nav class="col-11 navbar navbar-dark gc-bgblack">
+                <nav class="col-sm-11 navbar navbar-dark gc-bgblack">
                     <button class="navbar-toggler gc-burger-icon" type="button" data-toggle="collapse"
                             data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -27,9 +27,9 @@
                     </button>
                 </nav>
                 {% if not session.user is defined %}
-                <a class="gc-connexion-desktop gc-nav-icon-conexion" href="/login/connexion"> </a>
+                <a class="col-sm-1 gc-nav-icon-conexion" href="/login/connexion"> </a>
                 {% else %}
-                <a class="gc-connexion-desktop gc-nav-icon-conected"
+                <a class="col-sm-1 gc-nav-icon-conected"
                    href="/login/logout">
                 </a>
                 {% endif %}
