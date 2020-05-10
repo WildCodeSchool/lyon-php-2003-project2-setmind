@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\LoginManager;
+use App\Model\UserManager;
 
 class LoginController extends AbstractController
 {
@@ -17,6 +18,7 @@ class LoginController extends AbstractController
      */
     public function connexion()
     {
+
         return $this->twig->render('Login/connexion.html.twig');
     }
 
@@ -54,7 +56,7 @@ class LoginController extends AbstractController
             }
             if (!empty($_POST['password'])) {
                 if (empty($error)) {
-                    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
+                    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $user['password'] = $password;
                 } else {
                     $user['password'] = $_POST['password'];
@@ -70,5 +72,53 @@ class LoginController extends AbstractController
                 header('Location: ./successSignUp');
             }
         }
+    }
+
+
+    public function login()
+    {
+        $email = "";
+        $password = "";
+        $errors = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!empty($_POST)) {
+                $email = trim($_POST['email']);
+                $password = trim($_POST['password']);
+                if (empty($email)) {
+                    $errors['email'] = "Required";
+                }
+                if (empty($email)) {
+                    $errors['password'] = "Required";
+                }
+                if (empty($errors)) {
+                    $userManager = new UserManager();
+                    $user = $userManager->selectOneByEmail($email);
+                    if (!$user) {
+                        $errors['email'] = "email not found";
+                    } else {
+                        $hash = $user["password"];
+                        if (password_verify($password, $hash)) {
+                            $_SESSION["user"] = [
+                                "id" => $user["id"],
+                                "username" => $user["first_name"] . " " . $user["last_name"],
+                                "email" => $user["email"],
+                                "final_score" => $user["final_score"]
+                            ];
+                            header("location: /");
+                        } else {
+                            $errors["password"] = "Wrong Password";
+                        }
+                    }
+                }
+            }
+        }
+
+        return $this->twig->render('Login/connexion.html.twig', ["errors" => $errors]);
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user']);
+        header("Location: /");
     }
 }

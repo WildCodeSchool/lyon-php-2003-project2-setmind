@@ -17,8 +17,21 @@ class UserManager extends AbstractManager
 
     public function delete(int $id)
     {
-        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id=:id");
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id =: id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
+    }
+
+    public function selectOneByEmail(string $email) : array
+    {
+        $query = "SELECT * FROM " . self::TABLE . " WHERE email = :email";
+
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":email", $email, \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return $statement->fetch();
+        }
+        return [];
     }
 }
