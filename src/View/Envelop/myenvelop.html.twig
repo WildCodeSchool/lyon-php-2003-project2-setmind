@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="/assets/css/_card_robot_part.css">
     <link rel="stylesheet" href="/assets/css/_card_robot.css">
     <link rel="stylesheet" href="/assets/css/_envelope.css">
+    <link rel="stylesheet" href="/assets/css/myenvelop.css">
+
 {% endblock %}
 
 
 {% block content %}
     <!-- block conent container -->
-    <div class="container-fluid">
+    <div class="gc-myenvelop-container">
+        {{ dump(envelops) }}
         <!-- display here profile information and img -->
-        <div class="row mt-5 gc-resultat-profile">
+        <div class="gc-myenvelop-title mt-5">
+            {% include 'Envelop/_myenvelop_title.html.twig' %}
+        </div>
+        <div class="gc-myenvelop-text mt-5">
             {% include 'Envelop/_myenvelop_user.html.twig' %}
         </div>
-
         <!-- display envelops filtered by prifiles -->
-        <div class="row mt-3 gc-display-card">
+        <div class="gc-myenvelop-card mt-3 gc-display-card">
                 {% include 'Envelop/_card_robot.html.twig' %}
         </div>
     </div>

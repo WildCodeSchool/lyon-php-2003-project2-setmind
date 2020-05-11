@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\EnvelopManager;
+use App\Model\UserManager;
 
 class EnvelopController extends AbstractController
 {
@@ -34,6 +35,20 @@ class EnvelopController extends AbstractController
         //$envelops = $envelopManager->selectOneWithPartsById(18);
         // pass ids in array for wanted envelops ids
         $envelops = $envelopManager->selectWithPartsByIds([18,12]);
+
         return $this->twig->render('Envelop/resultat.html.twig', ['envelops' => $envelops]);
+    }
+
+    public function myEnvelop()
+    {
+        if (!isset($_SESSION["user"])) {
+            header("location:/login/login");
+        }
+        $envelopManager = new EnvelopManager();
+        $envelops = $envelopManager->selectWithPartsByIds([18]);
+        $envelop=$envelops[0];
+        $userManager = new UserManager();
+        $user = $userManager->selectOneById($_SESSION["user"]["id"]);
+        return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop, 'user' => $user]);
     }
 }

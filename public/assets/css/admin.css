@@ -1,6 +1,3 @@
-* {
-    font-family: 'Blinker', sans-serif;
-}
 
 html{
     height : 100%;
@@ -13,8 +10,6 @@ html{
 footer {
     display: none;
 }
-
-
 
 .gc-bg-blue{
     background-color: mintcream;
