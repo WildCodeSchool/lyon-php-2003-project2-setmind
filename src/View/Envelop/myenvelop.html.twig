@@ -20,17 +20,29 @@
 {% block content %}
     <!-- block conent container -->
     <div class="gc-myenvelop-container">
-        {{ dump(envelops) }}
         <!-- display here profile information and img -->
-        <div class="gc-myenvelop-title mt-5">
+        <div class="gc-myenvelop-title m-3">
             {% include 'Envelop/_myenvelop_title.html.twig' %}
         </div>
-        <div class="gc-myenvelop-text mt-5">
+        <div class="gc-myenvelop-text m-3">
             {% include 'Envelop/_myenvelop_user.html.twig' %}
         </div>
         <!-- display envelops filtered by prifiles -->
-        <div class="gc-myenvelop-card mt-3 gc-display-card">
-                {% include 'Envelop/_card_robot.html.twig' %}
+        <div class="gc-myenvelop-card m-3 gc-display-card">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <h1 style="color:white;">Here see your parts : </h1>
+                    <h5 style="color:white;">in the future , if you have replaced a part , you can see original and new
+                        part.</h5>
+                </div>
+                <div class="row">
+            {% include 'Envelop/_card_robot.html.twig' %}
+                </div>
+            </div>
+        </div>
+        <div class="gc-myenvelop-visualdpart-container m-3">
+            {% include 'Envelop/_myenvelop_visualparts.html.twig' %}
         </div>
     </div>
 {% endblock %}
