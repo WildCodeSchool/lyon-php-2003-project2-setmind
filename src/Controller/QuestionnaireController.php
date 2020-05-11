@@ -10,6 +10,9 @@ class QuestionnaireController extends AbstractController
 
     public function questionnaire()
     {
+        if (!isset($_SESSION["user"])) {
+            header("location:/login/login");
+        }
         $questionnaireManager = new QuestionnaireManager();
         if (!empty($_POST["reponse_choisie_id"])) {
             if (in_array($_POST["reponse_choisie_id"], self::LASTANSWERS)) {
