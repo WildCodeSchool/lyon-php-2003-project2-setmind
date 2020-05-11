@@ -6,7 +6,6 @@ class EnvelopManager extends AbstractManager
 {
     const TABLE = "envelop";
 
-
     /**
      *  Initializes this class.
      */
@@ -39,7 +38,7 @@ from envelop
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function duplicateById($id) : bool
+    public function duplicateById($id): bool
     {
         $query = "INSERT INTO " . self::TABLE . "(name, parts_id_body, parts_id_battery, parts_id_brain, 
                   parts_id_hemlet, parts_id_left_arm, parts_id_right_arm, parts_id_left_leg,parts_id_right_leg)
