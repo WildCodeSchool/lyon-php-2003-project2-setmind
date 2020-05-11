@@ -6,7 +6,6 @@ class EnvelopManager extends AbstractManager
 {
     const TABLE = "envelop";
 
-
     /**
      *  Initializes this class.
      */
@@ -53,6 +52,13 @@ from envelop
         return true;
     }
 
+    public function delete(int $id)
+    {
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id = :id");
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+    }
+
     public function selectOneWithPartsById(int $id)
     {
         $query = "select envelop.name as name, pbody.visual as body_visual, phemlet.visual as hemlet_visual, 
@@ -94,7 +100,7 @@ from envelop
     join parts prleg on envelop.parts_id_right_leg = prleg.id
     join parts pbattery on envelop.parts_id_battery = pbattery.id
     join parts pbrain on envelop.parts_id_brain = pbrain.id
-WHERE envelop.id IN (".implode(',', $ids).")";
+WHERE envelop.id IN (" . implode(',', $ids) . ")";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
