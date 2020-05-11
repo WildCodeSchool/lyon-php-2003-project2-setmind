@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Envelops
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/_card_robot_title.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_attribute.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_button.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_icon.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_part.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot.css">
+    <link rel="stylesheet" href="/assets/css/_envelope.css">
+{% endblock %}
+
+
+{% block content %}
+    <!-- block conent container -->
+    <div class="container-fluid">
+        <!-- display here profile information and img -->
+        <div class="row mt-5 gc-resultat-profile">
+            {% include 'Envelop/_myenvelop_user.html.twig' %}
+        </div>
+
+        <!-- display envelops filtered by prifiles -->
+        <div class="row mt-3 gc-display-card">
+                {% include 'Envelop/_card_robot.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+
+
