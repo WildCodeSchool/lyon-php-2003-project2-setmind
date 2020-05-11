@@ -43,25 +43,25 @@
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">
                         <div class="gc-table-cell-conrtainer">
                             {% set sortByValue = ("Id") %}
-                            <form action="{{ funtionName }}" method="post">
+                            <form action="{{ functionName }}" method="post">
                                 <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                                 <input type="hidden" id="orderBy" name="orderBy" value="Desc">
-                                <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                <input class="gc-btn-search" style="float:right;" id="sortPartsByIdDesc"
                                        type="submit"
                                        value="&#8593;">
                             </form>
                             <p>Id</p>
-                            <form action="{{ funtionName }}" method="post">
+                            <form action="{{ functionName }}" method="post">
                                 <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                                 <input type="hidden" id="orderBy" name="orderBy" value="Asc">
-                                <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                <input class="gc-btn-search" style="float:left;" id="sortPartsByIdAsc"
                                        type="submit"
                                        value="&#8595;">
                             </form>
                         </div>
                     </th>
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col"
-                        scope="col">
+                    >
                         <div class="gc-table-cell-conrtainer">
                             {% set sortByValue = ("Name") %}
                             <form action="{{ functionName }}" method="post">
@@ -82,14 +82,14 @@
                     <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">
                         {% set sortByValue = ("Type") %}
                         <div class="gc-table-cell-conrtainer">
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Desc">
                             <input class="gc-btn-search" style="float:right;" id="sortPartsByTypeDesc" type="submit"
                                    value="&#8593;">
                         </form>
                             <p>Type</p>
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Asc">
                             <input class="gc-btn-search" style="float:left;" id="sortPartsByTypeAsc" type="submit"
@@ -103,7 +103,7 @@
                     <th scope="col">
                         <div class="gc-table-cell-conrtainer">
                         {% set sortByValue = ("Strenght") %}
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Desc">
                             <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
@@ -111,7 +111,7 @@
                                    value="&#8593;">
                         </form>
                             <p>Strength</p>
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Asc">
                             <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
@@ -123,7 +123,7 @@
                     <th scope="col">
                         <div class="gc-table-cell-conrtainer">
                         {% set sortByValue = ("Speed") %}
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Desc">
                             <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
@@ -131,7 +131,7 @@
                                    value="&#8593;">
                         </form>
                             <p>Speed</p>
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Asc">
                             <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
@@ -143,7 +143,7 @@
                     <th scope="col">
                         <div class="gc-table-cell-conrtainer">
                         {% set sortByValue = ("Capacity") %}
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Desc">
                             <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
@@ -151,7 +151,7 @@
                                    value="&#8593;">
                         </form>
                             <p>Capacity</p>
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Asc">
                             <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
@@ -163,7 +163,7 @@
                     <th scope="col">
                         <div class="gc-table-cell-conrtainer">
                         {% set sortByValue = ("setmind") %}
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Desc">
                             <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
@@ -171,7 +171,7 @@
                                    value="&#8593;">
                         </form>
                             <p>SetMind</p>
-                        <form action="{{ funtionName }}" method="post">
+                        <form action="{{ functionName }}" method="post">
                             <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
                             <input type="hidden" id="orderBy" name="orderBy" value="Asc">
                             <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
