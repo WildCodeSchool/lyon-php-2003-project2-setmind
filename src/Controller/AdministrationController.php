@@ -209,4 +209,11 @@ class AdministrationController extends AbstractController
         $userManager->delete($id);
         header("location:/administration/users");
     }
+
+    public function deleteEnvelop(int $id)
+    {
+        $envelopManager = new EnvelopManager();
+        $envelopManager->delete($id);
+        header("location:/administration/envelops");
+    }
 }
