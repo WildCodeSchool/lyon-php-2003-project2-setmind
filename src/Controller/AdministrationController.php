@@ -67,14 +67,16 @@ class AdministrationController extends AbstractController
     {
         $partManager = new PartManager();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $column = $_POST["selectFilterParts"];
-            $searchString = $_POST["searchFilterParts"];
-            if (!empty($searchString)) {
-                $parts = $partManager->filterBy($column, $searchString);
-                return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
-            } else {
-                $parts = $partManager->selectAll();
-                return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+            if (isset($_POST["selectFilterParts"])) {
+                $column = $_POST["selectFilterParts"];
+                $searchString = $_POST["searchFilterParts"];
+                if (!empty($searchString)) {
+                    $parts = $partManager->filterBy($column, $searchString);
+                    return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+                } else {
+                    $parts = $partManager->selectAll();
+                    return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
+                }
             }
         }
         $parts = $partManager->selectAll();
