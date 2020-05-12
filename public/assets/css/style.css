@@ -91,12 +91,10 @@ footer {
     grid-row: 2 / 3;
     grid-column: 3 / 4;
 }
-
 .gc-myenvelop-visualdpart-container {
     grid-row: 2 / 3;
     grid-column: 4 / 5;
 }
-
 .gc-myenvelop-visualdpart-container div{
     display:grid;
     grid-template-columns: minmax(25%, 50%) 30%;
@@ -104,23 +102,30 @@ footer {
     border-radius: 5px;
     pading-left : 5px !important;
     margin-top: 3px;
-    /*display: flex;
+   /* align-content: center;*/
+    display: flex;
     justify-content: space-around;
     padding: 5px;
     width: 100%;
     align-content: center;
     align-items: center;
-    text-align: center;*/
+    text-align: center;
 }
-
-
 .gc-myenvelop-visualdpart-container div p {
     margin-top: 5px !important;
     margin-left: 10px !important;
 }
 .gc-myenvelop-visualdpart-container div img {
-    align-self: center;
-    margin-top: 5px !important;
+    background-color: darkgray;
+    margin: 0px !important;
+    border-radius: 0px 5px 5px 0px;
+    display: block;
+    max-width: 230px;
+    max-height: 95px;
+    width: auto;
+    height: auto;
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
 }
 
 /* --------------- traitement media query page my envelop media queries ----------------------------------------------*/
