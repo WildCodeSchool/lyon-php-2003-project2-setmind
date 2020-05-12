@@ -1,3 +1,32 @@
+
+
+
+.bnj-result-profile-picture {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33%;
+}
+
+.bnj-result-profile-content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 66%;
+}
+
+.bnj-result-profile-content-title {
+    width: 80%;
+    height: 15%;
+    text-align: center;
+}
+
+.bnj-result-profile-content {
+    width: 60%;
+    height: 50%;
+}
+
 .gc-display-card{
     display: flex;
     flex-direction: row;
