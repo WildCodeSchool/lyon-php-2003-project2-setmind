@@ -59,7 +59,7 @@ class PartManager extends AbstractManager
         header("location:/administration/index");
     }
 
-    public function isDeletablePart($id): string
+    public function isDeletablePartOld($id): string
     {
         $queryString = "SELECT DISTINCT p.id, p.name
         FROM parts AS p
@@ -141,6 +141,37 @@ class PartManager extends AbstractManager
         WHERE p.id IS NOT NULL
         ORDER BY id";
         $val = $this->pdo->query($queryString)->fetchAll();
+        if (empty($val)) {
+            return "false";
+        } else {
+            return "true";
+        }
+    }
+
+    public function isDeletablePart($id)
+    {
+        $query = "select envelop . id as id, envelop . name as name
+from envelop
+WHERE parts_id_battery =$id
+        or parts_id_body =$id
+        or parts_id_brain =$id
+        or parts_id_hemlet =$id
+        or parts_id_left_arm =$id
+        or parts_id_left_leg =$id
+        or parts_id_right_arm =$id
+        or parts_id_right_leg =$id
+UNION
+select user . envelop_id as id, user . email as name
+from user
+WHERE parts_id_battery =$id
+        or parts_id_body =$id
+        or parts_id_brain =$id
+        or parts_id_hemlet =$id
+        or parts_id_left_arm =$id
+        or parts_id_left_leg =$id
+        or parts_id_right_arm =$id
+        or parts_id_right_leg =$id";
+        $val = $this->pdo->query($query)->fetchAll();
         if (empty($val)) {
             return "false";
         } else {

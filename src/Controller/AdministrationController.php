@@ -140,7 +140,6 @@ class AdministrationController extends AbstractController
 
     public function isDeletablePart($id): string
     {
-        //todo implement visual ( file ) delete if none part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;

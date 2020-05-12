@@ -95,7 +95,6 @@ WHERE envelop.id = $id
        plleg.name as lleg_name, pbattery.name as battery_name, pbrain.name as brain_name, 
        plleg.speed as left_speed, prleg.speed as right_speed, 
        plarm.strenght as left_strenght, prarm.strenght as right_strenght, envelop.date_creation as date_creation 
-
 from envelop
     join parts pbody on envelop.parts_id_body = pbody.id
     join parts phemlet on envelop.parts_id_hemlet = phemlet.id

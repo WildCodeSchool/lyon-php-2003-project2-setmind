@@ -19,13 +19,13 @@ function addOnChangeListenerToCells() {
             let id = chars[1];
 
             let column = chars[0];
-            console.log("id[" + id + "]", "column[" + column + "]")
+            //console.log("id[" + id + "]", "column[" + column + "]")
             //dest.innerText = "id[" + id + "] column[" + column + "] value[" + cells[i].innerText + "]";
             if (changeDetected) {
-                console.log("__change detected and value updated____");
+                //console.log("__change detected and value updated____");
                 changeDetected = false;
                 const val = updateDataToDb("/Administration/updateDataBySrcAjax", id, column, cells[i].innerText, cells[i]);
-                console.log("valeur pour test cellI : ", val)
+                //console.log("valeur pour test cellI : ", val)
 
             }
         });
@@ -46,7 +46,7 @@ function btnDeletePartsManagement() {
         http.onreadystatechange = function () {//Call a function when the state changes.
             if (http.readyState == 4 && http.status == 200) {
                 returnValue = http.responseText;
-                //console.log("Return value avant fin du  tratement : ", returnValue);
+                console.log("Return value avant fin du  tratement : ", returnValue);
                 if (returnValue == "true") {
                     let btnKeeper = document.getElementById("btnDeletePart" + id);
                     btnKeeper.setAttribute('disabled', "disabled");
@@ -62,14 +62,14 @@ function btnDeletePartsManagement() {
 function addListenerToUploadButton() {
     // recuperer tous les objets modal
     const modals = document.getElementsByName("gc-modal-part");
-    console.log("modals ------", modals);
+    //console.log("modals ------", modals);
     // pour chaque modal  ajouter un listener qui affiche le modal  avec le bon id
 
     modals.forEach((item) => {
         const destImg = item.querySelector("#gc-modal-part-visual-new");
-        console.log("destImg ------", destImg);
+        //console.log("destImg ------", destImg);
         const imgFile = item.querySelector("#imgFile");
-        console.log("imgFile ------", imgFile);
+        //console.log("imgFile ------", imgFile);
 
         imgFile.addEventListener("change", (e) => {
             const file = imgFile.files[0];
@@ -97,7 +97,7 @@ function updateDataToDb(url, id, column, value, cell) {
     http.onreadystatechange = function () {//Call a function when the state changes.
         if (http.readyState == 4 && http.status == 200) {
             returnValue = http.responseText;
-            console.log("Return value avant fin du  traitement : ", returnValue);
+            //console.log("Return value avant fin du  traitement : ", returnValue);
             if (returnValue == "OK") {
                 cell.style.borderStyle = "solid";
                 cell.style.borderColor = "green";
