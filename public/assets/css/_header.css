@@ -92,7 +92,7 @@ html {
 /* conteneur principal de la navbar */
 .gc-container-grid-colomn {
     display: grid;
-    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 125px) 100px 80px 5px;
+    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 125px) auto 80px 3px;
     grid-gap: 25px;
     grid-template-rows: 61px;
     justify-items: start;
@@ -116,7 +116,6 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-
     /* traitement vuisual et divers */
     text-decoration: none ;
     cursor: pointer;

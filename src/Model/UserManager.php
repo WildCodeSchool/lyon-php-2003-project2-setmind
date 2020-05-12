@@ -47,7 +47,7 @@ class UserManager extends AbstractManager
        plleg.name as lleg_name, pbattery.name as battery_name, pbrain.name as brain_name,
        plleg.speed as left_speed, prleg.speed as right_speed, 
        plarm.strenght as left_strenght, prarm.strenght as right_strenght,
-       user.envelop_id as envelop_id
+       user.envelop_id as envelop_id, user.administrator as administrator
 from user
     join parts pbody on user.parts_id_body = pbody.id
     join parts phemlet on user.parts_id_hemlet = phemlet.id
