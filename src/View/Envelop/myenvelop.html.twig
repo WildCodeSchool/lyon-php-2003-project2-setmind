@@ -18,7 +18,8 @@
 
 
 {% block content %}
-    <!-- block conent container -->
+    <!-- block conent container npartname est la variable qui  sert [class]=definir le nom de la part vide -->
+    {% set nPartName="Nothing" %}
     <div class="gc-myenvelop-container">
         <!-- display here profile information and img -->
         <div class="gc-myenvelop-title m-3">
@@ -35,7 +36,7 @@
                     <h5 style="color:white;">if you have replaced a part you cant see here , refert to part list</h5>
                 </div>
                 <div class="row">
-            {% include 'Envelop/_card_robot.html.twig' %}
+            {% include 'Envelop/_card_robot_myenvelop.html.twig' %}
                 </div>
             </div>
         </div>

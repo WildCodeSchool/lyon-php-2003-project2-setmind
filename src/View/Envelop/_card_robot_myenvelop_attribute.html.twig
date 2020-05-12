@@ -1,0 +1,94 @@
+<div>
+    <form class="gc-attribute-global-container">
+        <div class="row gc-attribute-row-container">
+            <div class="col-5 justify-content-center align-self-center ">
+                <label class="gc-attribute-label" for="strenght">Strenght : </label>
+            </div>
+
+            <div class="col-7 gc-progress-bar">
+                {% set tStrenght= 0 %}
+                {% if user.larm_name == nPartName and user.rarm_name == nPartName %}
+                    {% set tStrenght= envelop.strenght %}
+                {% endif %}
+
+                {% if (user.larm_name == nPartName) and not (user.rarm_name == nPartName) %}
+                    {% set tStrenght = envelop.left_strenght + user.right_strenght %}
+                {% endif %}
+
+                {% if not (user.larm_name == nPartName) and (user.rarm_name == nPartName) %}
+                    {% set tStrenght = envelop.right_strenght + user.left_strenght %}
+                {% endif %}
+
+                {% if not (user.larm_name == nPartName) and not (user.rarm_name == nPartName) %}
+                    {% set tStrenght = user.right_strenght + user.left_strenght %}
+                {% endif %}
+                <progress id="strenght " max="100" value="{{ tStrenght }}" class="gc-progress-bar"></progress>
+            </div>
+        </div>
+
+        <div class="row gc-attribute-row-container">
+            <div class="col-5 justify-content-center align-self-center ">
+                {% set tSpeed= 0 %}
+                {% if user.lleg_name == nPartName and user.rleg_name == nPartName %}
+                    {% set tSpeed= envelop.strenght %}
+                {% endif %}
+
+                {% if (user.lleg_name == nPartName) and not (user.rleg_name == nPartName) %}
+                    {% set tSpeed = envelop.left_speed + user.right_speed %}
+                {% endif %}
+
+                {% if not (user.lleg_name == nPartName) and (user.rleg_name == nPartName) %}
+                    {% set tSpeed = envelop.right_speed + user.left_speed %}
+                {% endif %}
+
+                {% if not (user.lleg_name == nPartName) and not (user.rleg_name == nPartName) %}
+                    {% set tSpeed = user.right_speed + user.left_speed %}
+                {% endif %}
+                <label class="gc-attribute-label" for="speed">Speed : </label>
+            </div>
+            <div class="col-7 gc-progress-bar">
+                <progress id="speed" max="100" value="{{ tSpeed }}" class="gc-progress-bar"></progress>
+            </div>
+        </div>
+
+        <div class="row gc-attribute-row-container">
+            <div class="col-5 justify-content-center align-self-center ">
+                <label class="gc-attribute-label" for="autonomy">Autonomy : </label>
+                {% set tData= 0 %}
+                {% if not user.battery_name == nPartName %}
+                    {% set tData = envelop.capacity %}
+                {% else %}
+                    {% set tData = user.capacity %}
+                {% endif %}
+            </div>
+            <div class="col-7 gc-progress-bar">
+                <progress id="autonomy" max="100" value="{{ tData }}" class="gc-progress-bar"></progress>
+            </div>
+        </div>
+
+        <div class="row gc-attribute-row-container">
+            <div class="col-5 justify-content-center align-self-center ">
+                <label class="gc-attribute-label" for="setmind">SetMind &reg; : </label>
+                {% set tData= 0 %}
+                {% if not user.brain_name == nPartName %}
+                    {% set tData = envelop.setmind %}
+                {% else %}
+                    {% set tData = user.setmind %}
+                {% endif %}
+            </div>
+            <div class="col-7 gc-progress-bar">
+                <progress id="setmind" max="100" value="{{ tData }}" class="gc-progress-bar"></progress>
+            </div>
+        </div>
+
+        <div class="row gc-attribute-row-container">
+            <div class="col-5 justify-content-center align-self-center ">
+                <label class="gc-attribute-label" for="special">Special habilities : </label>
+            </div>
+            <div class="col-7 gc-progress-bar">
+                <progress id="sspecial" max="100" value="20" class="gc-progress-bar"></progress>
+            </div>
+        </div>
+    </form>
+
+</div>
