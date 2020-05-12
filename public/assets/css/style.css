@@ -60,7 +60,7 @@ footer {
 .gc-myenvelop-container{
     display:grid;
     grid-template-columns: minmax(50px,100px) minmax(10%, 500px) minmax(10%,800px) minmax(250px, auto) minmax(25px,50px);
-    grid-template-rows: minmax(150px ,100px) minmax(10px, 700px) auto;
+    grid-template-rows: minmax(150px ,100px) minmax(10px, 700px) minmax(auto,1500px);
     background-image: url("/assets/images/backgrounds/bg-myenvelop-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,7 +99,7 @@ footer {
 
 .gc-myenvelop-visualdpart-container div{
     display:grid;
-    grid-template-columns: minmax(25%, 70%) 30%;
+    grid-template-columns: minmax(25%, 50%) 30%;
     background-color: white;
     border-radius: 5px;
     pading-left : 5px !important;
