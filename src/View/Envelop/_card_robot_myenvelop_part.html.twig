@@ -1,0 +1,49 @@
+<div >
+    <div class="gc-container-global">
+
+        <div class="gc-robot-head">
+
+            <img src="{% if user.hemlet_name == nPartName %} {{ envelop.hemlet_visual }}
+                    {% else %} {{ user.hemlet_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-body">
+            <img src="
+                    {% if user.body_name == nPartName %} {{ envelop.body_visual }}
+                    {% else %} {{ user.body_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-left-arm">
+            <img src="{% if user.larm_name == nPartName %} {{ envelop.larm_visual }}
+                    {% else %} {{ user.larm_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-left-leg">
+            <img src="{% if user.lleg_name == nPartName %} {{ envelop.lleg_visual }}
+                    {% else %} {{ user.lleg_visual }}
+                    {% endif %}">
+
+        </div>
+        <div class="gc-robot-right-leg">
+            <img src="{% if user.rleg_name == nPartName %} {{ envelop.rleg_visual }}
+                    {% else %} {{ user.rleg_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-right-arm">
+
+            <img src="{% if user.rarm_name == nPartName %} {{ envelop.rarm_visual }}
+                    {% else %} {{ user.rarm_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-brain">
+            <img src="{% if user.brain_name == nPartName %} {{ envelop.brain_visual }}
+                    {% else %} {{ user.brain_visual }}
+                    {% endif %}">
+        </div>
+        <div class="gc-robot-batery">
+            <img src="{% if user.battery_name == nPartName %} {{ envelop.battery_visual }}
+                    {% else %} {{ user.battery_visual }}
+                    {% endif %}">
+        </div>
+    </div>
+</div>

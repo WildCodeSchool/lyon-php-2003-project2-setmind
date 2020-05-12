@@ -16,6 +16,9 @@ class AdministrationController extends AbstractController
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
         }
+        if ($_SESSION["user"]["administrator"] == 0) {
+            header("location:/login/login");
+        }
     }
 
     public function index()

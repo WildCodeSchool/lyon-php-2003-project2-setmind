@@ -44,12 +44,12 @@ class EnvelopController extends AbstractController
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
         }
-        $envelopManager = new EnvelopManager();
-        $envelops = $envelopManager->selectWithPartsByIds([18]);
-        $envelop=$envelops[0];
         $userManager = new UserManager();
-        //$user = $userManager->selectOneById($_SESSION["user"]["id"]);
         $user2 = $userManager->selectOneWithPartsByIds($_SESSION["user"]["id"])[0];
+        $envelopManager = new EnvelopManager();
+
+        $envelops = $envelopManager->selectWithPartsByIds([$user2["envelop_id"]]);
+        $envelop = $envelops[0];
         return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop, 'user' => $user2]);
     }
 }
