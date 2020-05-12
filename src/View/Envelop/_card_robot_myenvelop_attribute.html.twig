@@ -30,7 +30,7 @@
             <div class="col-5 justify-content-center align-self-center ">
                 {% set tSpeed= 0 %}
                 {% if user.lleg_name == nPartName and user.rleg_name == nPartName %}
-                    {% set tSpeed= envelop.strenght %}
+                    {% set tSpeed= envelop.speed %}
                 {% endif %}
 
                 {% if (user.lleg_name == nPartName) and not (user.rleg_name == nPartName) %}
@@ -54,15 +54,15 @@
         <div class="row gc-attribute-row-container">
             <div class="col-5 justify-content-center align-self-center ">
                 <label class="gc-attribute-label" for="autonomy">Autonomy : </label>
-                {% set tData= 0 %}
-                {% if not user.battery_name == nPartName %}
-                    {% set tData = envelop.capacity %}
+                {% set tBat= 0 %}
+                {% if user.battery_name == nPartName %}
+                    {% set tBat = envelop.capacity %}
                 {% else %}
-                    {% set tData = user.capacity %}
+                    {% set tBat = user.capacity %}
                 {% endif %}
             </div>
             <div class="col-7 gc-progress-bar">
-                <progress id="autonomy" max="100" value="{{ tData }}" class="gc-progress-bar"></progress>
+                <progress id="autonomy" max="100" value="{{ tBat }}" class="gc-progress-bar"></progress>
             </div>
         </div>
 
@@ -71,22 +71,13 @@
                 <label class="gc-attribute-label" for="setmind">SetMind &reg; : </label>
                 {% set tData= 0 %}
                 {% if not user.brain_name == nPartName %}
-                    {% set tData = envelop.setmind %}
-                {% else %}
                     {% set tData = user.setmind %}
+                {% else %}
+                    {% set tData = envelop.setmind %}
                 {% endif %}
             </div>
             <div class="col-7 gc-progress-bar">
                 <progress id="setmind" max="100" value="{{ tData }}" class="gc-progress-bar"></progress>
-            </div>
-        </div>
-
-        <div class="row gc-attribute-row-container">
-            <div class="col-5 justify-content-center align-self-center ">
-                <label class="gc-attribute-label" for="special">Special habilities : </label>
-            </div>
-            <div class="col-7 gc-progress-bar">
-                <progress id="sspecial" max="100" value="20" class="gc-progress-bar"></progress>
             </div>
         </div>
     </form>

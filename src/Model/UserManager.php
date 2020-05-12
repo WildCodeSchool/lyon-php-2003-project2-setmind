@@ -22,7 +22,7 @@ class UserManager extends AbstractManager
         $statement->execute();
     }
 
-    public function selectOneByEmail(string $email): array
+    public function selectOneByEmail(string $email)
     {
         $query = "SELECT * FROM " . self::TABLE . " WHERE email = :email";
 
