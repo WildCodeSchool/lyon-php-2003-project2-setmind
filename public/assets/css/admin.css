@@ -60,7 +60,7 @@ footer {
     pading : 3px;
 }
 .gc-admin-color-white{
-    background-color: whitesmoke;
+    background-color: white;
     display: flex;justify-content: center;
     align-items: stretch;
     border-style: dashed;
@@ -68,6 +68,42 @@ footer {
     color: black;
     border-width: 1px;
     pading : 3px;
+}
+
+.gc-admin-color-orange {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
+}
+
+.gc-admin-color-green {
+    background-color: forestgreen;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
+}
+
+.gc-admin-color-violet {
+    background-color: darkviolet;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
 }
 
 .gc-btn-search {

@@ -96,7 +96,18 @@ class AdministrationController extends AbstractController
     public function updateDataBySrcAjax()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            //TODO implement here POST router for jquery/ajax live edit
+            $column = $_POST["column"];
+            $id = $_POST["id"];
+            $value = $_POST["value"];
+            $partManager = new PartManager();
+            $method = "update" . ucwords($column);
+            if (method_exists($partManager, $method)) {
+                $result = $partManager->{$method}($id, $value);
+                return $result;
+            } else {
+                return "Cete demande ne peut pas etre prise en charge par le serveur.
+                 Valeur : $value / id PHP : $id / column PHP : $column";
+            }
         } else {
             // message retourné a la XmlHttpRequest
             return "Unable to read and parse send data, please send correct POST data";
@@ -112,6 +123,7 @@ class AdministrationController extends AbstractController
 
     /**
      * Fontion intialle creer pour copier une PART , ne permet pas de copier une enveloppe ou user ou  question.
+     *
      * @param int $id
      *
      * @return string
@@ -168,7 +180,7 @@ class AdministrationController extends AbstractController
                         Ce type n'est authaurisé. <br>";
                 } else {
                     $inSitelink = "/assets/images/parts/" . $partInfos["name"] . $uniqIdForEndFileName . "." . $ext;
-                        move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
+                    move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
                     $partManager->updateVisualById($id, $inSitelink);
                     // todo implement image delete ( visual ) if no envelops use it
                     header("location:/Administration/index");
@@ -189,7 +201,7 @@ class AdministrationController extends AbstractController
     public function envelops()
     {
         $envelopManager = new EnvelopManager();
-        $envelops= $envelopManager->selectAllWithParts();
+        $envelops = $envelopManager->selectAllWithParts();
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
     }
 
@@ -199,8 +211,8 @@ class AdministrationController extends AbstractController
         $envelopManager->duplicateById($id);
         header("location:/administration/envelops");
     }
-  
-  
+
+
     public function users()
     {
         $userManager = new UserManager();

@@ -61,60 +61,60 @@ class PartManager extends AbstractManager
 
     public function isDeletablePart($id): string
     {
-        $queryString ="SELECT DISTINCT p.id, p.name
+        $queryString = "SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_battery
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_body
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_brain
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_hemlet
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_left_arm
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_left_leg
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_right_arm
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN envelop AS E ON p.id = E.parts_id_right_leg
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN user AS U ON p.id = U.parts_id_right_leg
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
         JOIN user AS U ON p.id = U.parts_id_right_arm
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
                  JOIN user AS U ON p.id = U.parts_id_left_leg
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
@@ -123,17 +123,17 @@ class PartManager extends AbstractManager
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
                  JOIN user AS U ON p.id = U.parts_id_hemlet
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
                  JOIN user AS U ON p.id = U.parts_id_brain
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
                  JOIN user AS U ON p.id = U.parts_id_body
-        WHERE p.id= " .$id . "
+        WHERE p.id= " . $id . "
         UNION
         SELECT DISTINCT p.id, p.name
         FROM parts AS p
@@ -150,11 +150,70 @@ class PartManager extends AbstractManager
 
     public function updateVisualById($idVal, $newValue)
     {
-        $query ="UPDATE parts SET visual=:newValue WHERE id=:idVal";
+        $query = "UPDATE parts SET visual=:newValue WHERE id=:idVal";
         $statement = $this->pdo->prepare($query);
         $statement->bindValue(":idVal", $idVal, \PDO::PARAM_INT);
         $statement->bindValue(":newValue", $newValue, \PDO::PARAM_STR);
         $statement->execute();
-        header("location:/administration/index");
+    }
+
+    public function updateCapacity(int $id, int $newValue): string
+    {
+        if ($newValue > 100) {
+            return "[INSERT REFUSE] Max value is 100.";
+        } elseif ($newValue < 0) {
+            return "[INSERT REFUSE] Min value is 0.";
+        }
+        $query = "UPDATE parts SET capacity=:newValue WHERE id=:idVal";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
+        $statement->execute();
+        return "OK";
+    }
+
+    public function updateSetmind(int $id, int $newValue): string
+    {
+        if ($newValue > 100) {
+            return "[INSERT REFUSE] Max value is 100.";
+        } elseif ($newValue < 0) {
+            return "[INSERT REFUSE] Min value is 0.";
+        }
+        $query = "UPDATE parts SET setmind=:newValue WHERE id=:idVal";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
+        $statement->execute();
+        return "OK";
+    }
+
+    public function updateSpeed(int $id, int $newValue): string
+    {
+        if ($newValue > 50) {
+            return "[INSERT REFUSE] Max value is 50.";
+        } elseif ($newValue < 0) {
+            return "[INSERT REFUSE] Min value is 0.";
+        }
+        $query = "UPDATE parts SET speed=:newValue WHERE id=:idVal";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
+        $statement->execute();
+        return "OK";
+    }
+
+    public function updateStrenght(int $id, int $newValue): string
+    {
+        if ($newValue > 50) {
+            return "[INSERT REFUSE] Max value is 50.";
+        } elseif ($newValue < 0) {
+            return "[INSERT REFUSE] Min value is 0.";
+        }
+        $query = "UPDATE parts SET strenght=:newValue WHERE id=:idVal";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
+        $statement->execute();
+        return "OK";
     }
 }
