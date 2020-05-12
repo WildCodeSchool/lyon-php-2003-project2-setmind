@@ -15,6 +15,8 @@ class AdministrationController extends AbstractController
         parent::__construct();
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
+        } elseif ($_SESSION["user"]["administrator"] === 0) {
+            header("location:/login/login");
         }
     }
 
