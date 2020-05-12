@@ -15,7 +15,7 @@ class QuestionnaireManager extends AbstractManager
         $recuperationQuestion = "select question.contenu from question where question.id = $questionId";
         $nomQuestion = $this->pdo->query($recuperationQuestion)->fetchall()[0]["contenu"];
         $recuperationReponses = "select answer.id as id, answer.contenu as answer_c,
-         answer.next_question_id as next_q FROM $this->table WHERE question_id = $questionId";
+         answer.next_question_id as next_q, profil_id FROM $this->table WHERE question_id = $questionId";
         $reponses = $this->pdo->query($recuperationReponses)->fetchall();
 
         $question = array(

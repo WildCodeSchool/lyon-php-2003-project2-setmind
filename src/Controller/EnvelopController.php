@@ -30,7 +30,7 @@ class EnvelopController extends AbstractController
         }
         // todo create profile manager
         $envelopManager = new EnvelopManager();
-        // todo get list off id enveloppes from  prifile and build array with ids.
+        // todo get list off id envelops from  profile and build array with ids.
         //$envelops = $envelopManager->selectOneWithPartsById(18);
         // pass ids in array for wanted envelops ids
         $envelops = $envelopManager->selectWithPartsByIds([18,12]);

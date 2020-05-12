@@ -13,13 +13,19 @@ class QuestionnaireController extends AbstractController
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
         }
+        if (!isset($_SESSION["resultat"])) {
+            $_SESSION["resultat"] = [];
+        }
         $questionnaireManager = new QuestionnaireManager();
         if (!empty($_POST["reponse_choisie_id"])) {
-            if (in_array($_POST["reponse_choisie_id"], self::LASTANSWERS)) {
+            $arrayId = explode(" ", $_POST["reponse_choisie_id"]);
+            array_push($_SESSION["resultat"], $arrayId[1]);
+            if (in_array($arrayId[0], self::LASTANSWERS)) {
                 header('Location: /envelop/resultat');
             } else {
-                $question = $questionnaireManager->selectNextQuestion($_POST["reponse_choisie_id"]);
-                return $this->twig->render('Questionnaire/questionnaire.html.twig', ['question' => $question]);
+                $question = $questionnaireManager->selectNextQuestion(intval($arrayId[0]));
+                return $this->twig->render('Questionnaire/questionnaire.html.twig', ['question' => $question,
+                    'resultat' => $_SESSION["resultat"]]);
             }
         }
         $defaultQuestion = 1;
