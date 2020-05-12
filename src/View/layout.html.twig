@@ -19,13 +19,12 @@
 
 
 <body class="gc-layout-body-container gc-bgblack">
-    {% include '_header.html.twig' %}
 
-<div>
-    {% block content %}{% endblock %}
-</div>
+{% include '_header.html.twig' %}
 
-    {% include '_footer.html.twig' %}
+{% block content %}{% endblock %}
+
+{% include '_footer.html.twig' %}
 
 
 

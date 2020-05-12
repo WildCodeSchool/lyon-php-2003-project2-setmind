@@ -1,0 +1,48 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Envelops
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/_card_robot_title.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_attribute.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_button.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_icon.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot_part.css">
+    <link rel="stylesheet" href="/assets/css/_card_robot.css">
+    <link rel="stylesheet" href="/assets/css/_envelope.css">
+    <link rel="stylesheet" href="/assets/css/myenvelop.css">
+
+{% endblock %}
+
+
+{% block content %}
+    <!-- block conent container -->
+    <div class="gc-myenvelop-container">
+        <!-- display here profile information and img -->
+        <div class="gc-myenvelop-title m-3">
+            {% include 'Envelop/_myenvelop_title.html.twig' %}
+        </div>
+        <div class="gc-myenvelop-text m-3">
+            {% include 'Envelop/_myenvelop_user.html.twig' %}
+        </div>
+        <!-- display envelops filtered by prifiles -->
+        <div class="gc-myenvelop-card m-3 gc-display-card">
+            <div class="container-fluid">
+                <div class="row">
+                    <h3 style="color:white;">Here see your envelop.</h3>
+                    <h5 style="color:white;">if you have replaced a part you cant see here , refert to part list</h5>
+                </div>
+                <div class="row">
+            {% include 'Envelop/_card_robot.html.twig' %}
+                </div>
+            </div>
+        </div>
+        <div class="gc-myenvelop-visualdpart-container m-3">
+            {% include 'Envelop/_myenvelop_visualparts.html.twig' %}
+        </div>
+    </div>
+{% endblock %}
+
+

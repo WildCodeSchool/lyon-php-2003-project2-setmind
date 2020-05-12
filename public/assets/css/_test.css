@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
 /*stylisation bloc question_answer test page*/
-
+/*
 body  {
     background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
     background-repeat: no-repeat ;
@@ -9,7 +9,7 @@ body  {
     background-position: right;
     background-attachment:fixed;
 }
-
+*/
 main{
     width:auto;
 }
