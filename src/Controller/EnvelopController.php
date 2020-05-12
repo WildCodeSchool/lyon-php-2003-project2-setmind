@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Model\EnvelopManager;
 use App\Model\ProfilManager;
-
+use App\Model\UserManager;
 
 class EnvelopController extends AbstractController
 {
@@ -42,7 +42,6 @@ class EnvelopController extends AbstractController
         $profil = $profilManager->selectOneById($idProfil[0]);
         $envelops = $envelopManager->selectWithPartsByIds([18,12]);
         return $this->twig->render('Envelop/resultat.html.twig', ['envelops' => $envelops, 'profil' => $profil]);
-
     }
 
     public function myEnvelop()
