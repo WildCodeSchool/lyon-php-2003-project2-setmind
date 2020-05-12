@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Model\EnvelopManager;
 use App\Model\ProfilManager;
 
+
 class EnvelopController extends AbstractController
 {
     /**
@@ -41,5 +42,20 @@ class EnvelopController extends AbstractController
         $profil = $profilManager->selectOneById($idProfil[0]);
         $envelops = $envelopManager->selectWithPartsByIds([18,12]);
         return $this->twig->render('Envelop/resultat.html.twig', ['envelops' => $envelops, 'profil' => $profil]);
+
+    }
+
+    public function myEnvelop()
+    {
+        if (!isset($_SESSION["user"])) {
+            header("location:/login/login");
+        }
+        $userManager = new UserManager();
+        $user2 = $userManager->selectOneWithPartsByIds($_SESSION["user"]["id"])[0];
+        $envelopManager = new EnvelopManager();
+
+        $envelops = $envelopManager->selectWithPartsByIds([$user2["envelop_id"]]);
+        $envelop = $envelops[0];
+        return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop, 'user' => $user2]);
     }
 }

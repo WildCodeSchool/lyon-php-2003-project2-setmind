@@ -90,7 +90,12 @@ WHERE envelop.id = $id
        plarm.visual as larm_visual,prarm.visual as rarm_visual, plleg.visual as lleg_visual, 
        prleg.visual as rleg_visual, pbattery.visual as battery_visual, pbrain.visual as brain_visual, 
        plleg.speed + prleg.speed as speed, plarm.strenght + prarm.strenght as strenght, 
-       pbattery.capacity as capacity, pbrain.setmind as setmind, envelop.id as id
+       pbattery.capacity as capacity, pbrain.setmind as setmind, envelop.id as id,pbody.name as body_name,
+       phemlet.name as hemlet_name,  plarm.name as larm_name, prarm.name as rarm_name, prleg.name as rleg_name,
+       plleg.name as lleg_name, pbattery.name as battery_name, pbrain.name as brain_name, 
+       plleg.speed as left_speed, prleg.speed as right_speed, 
+       plarm.strenght as left_strenght, prarm.strenght as right_strenght, envelop.date_creation as date_creation 
+
 from envelop
     join parts pbody on envelop.parts_id_body = pbody.id
     join parts phemlet on envelop.parts_id_hemlet = phemlet.id

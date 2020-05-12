@@ -102,7 +102,8 @@ class LoginController extends AbstractController
                                 "id" => $user["id"],
                                 "username" => $user["first_name"] . " " . $user["last_name"],
                                 "email" => $user["email"],
-                                "final_score" => $user["final_score"]
+                                "final_score" => $user["final_score"],
+                                "administrator" => $user["administrator"]
                             ];
                             header("location: /");
                         } else {
