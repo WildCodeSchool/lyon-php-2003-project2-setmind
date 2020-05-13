@@ -26,7 +26,7 @@ class EnvelopController extends AbstractController
     }
 
 
-    public function resultat(int $id)
+    public function resultat(int $id = 5)
     {
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
@@ -37,8 +37,7 @@ class EnvelopController extends AbstractController
         // todo get list off id envelops from  profile and build array with ids.
         //$envelops = $envelopManager->selectOneWithPartsById(18);
         // pass ids in array for wanted envelops ids
-        $profil = 5; // profil 5 correspond au profil  vide
-        if (!isset($_SESSION["resultat"])) {
+        if (empty($_SESSION["resultat"])) {
             $profil = $profilManager->selectOneById($id);
         } else {
             $resultValues = array_count_values($_SESSION["resultat"]);
@@ -46,6 +45,8 @@ class EnvelopController extends AbstractController
             $idProfil = array_slice(array_keys($resultValues), 0, 1, true);
             $profil = $profilManager->selectOneById($idProfil[0]);
         }
+        //var_dump($_SESSION["resultat"]);
+        //$profil = $profilManager->selectOneById($id);
         $profilEnvelops = new ProfilEnvelopsManager();
         $envelops = $profilEnvelops->selectByProfilId($profil["id"]);
         $envelopIds = [];
@@ -53,7 +54,8 @@ class EnvelopController extends AbstractController
             $envelopIds[]= $envelop["env"];
         }
         $envelops = $envelopManager->selectWithPartsByIds($envelopIds);
-        return $this->twig->render('Envelop/resultat.html.twig', ['envelops' => $envelops, 'profil' => $profil]);
+        return $this->twig->render('Envelop/resultat.html.twig', ['envelops' => $envelops,
+            'profil' => $profil, "page" => "resultat"]);
     }
 
     public function myEnvelop()
@@ -61,6 +63,16 @@ class EnvelopController extends AbstractController
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
         }
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!empty($_POST["idSelectedEnvelop"])) {
+                $selectedEnvelop = $_POST["idSelectedEnvelop"];
+                $userId = $_SESSION["user"]["id"];
+                $userManager = new UserManager();
+                $userManager->updateEnvelopId($userId, $selectedEnvelop);
+            }
+        }
+
         $userManager = new UserManager();
         $user2 = $userManager->selectOneWithPartsByIds($_SESSION["user"]["id"])[0];
         $envelopManager = new EnvelopManager();
