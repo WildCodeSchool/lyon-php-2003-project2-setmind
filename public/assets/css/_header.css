@@ -228,13 +228,17 @@ html {
     .gc-nav-icon-conected{
         margin: 5px;
     }
+
+    .gc-menu-burger-margin-child a {
+        margin: 2px;
+    }
     footer .logo-gca {
         font-size: 2em;
     }
     .gc-container-grid-colomn {
         display: none;
         grid-template-columns: auto;
-        grid-gap: 1px;
+        grid-gap: 3px;
         padding-bottom: 0;
         padding-left: 0;
     }
