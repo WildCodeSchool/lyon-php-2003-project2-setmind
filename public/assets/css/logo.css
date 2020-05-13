@@ -2,6 +2,7 @@
 /* Css pour le logo SetMind */
 
 .logo-gca {
+    margin-top: -10px;
     font-family: 'Blinker', sans-serif;
     color:slategrey !important;
     text-decoration: none !important;
