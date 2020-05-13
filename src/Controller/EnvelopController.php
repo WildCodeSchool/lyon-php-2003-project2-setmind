@@ -57,4 +57,18 @@ class EnvelopController extends AbstractController
         $envelop = $envelops[0];
         return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop, 'user' => $user2]);
     }
+
+    public function details($id)
+    {
+        $envelopManager = new EnvelopManager();
+        $envelop = $envelopManager->selectWithPartsByIds([$id]);
+
+        if (empty($envelop)) {
+            header("HTTP/1.0 404 Not Found");
+            exit();
+        }
+        $envelop = $envelop[0];
+
+        return $this->twig->render('Envelop/details.html.twig', ['envelop' => $envelop]);
+    }
 }

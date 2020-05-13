@@ -1,6 +1,6 @@
 
 
-.BL_button_parts_view {
+.bl_parts_view {
     background-color: white;
     border: 1px solid black;
     padding: 10px 15px;
@@ -15,7 +15,7 @@
     text-shadow: 2px 2px 2px rgb(169,169,169);
 }
 
-.BL_button_parts_view:hover {
+.bl_parts_view:hover {
     background-color: black;
     color: white;
     border: none;
