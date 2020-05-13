@@ -1,3 +1,4 @@
+
 :root {
     --robot-card-attribute-width: 550px;
     --robot-card-attribute-min-width: calc(var( --robot-card-attribute-width) - 50)px;

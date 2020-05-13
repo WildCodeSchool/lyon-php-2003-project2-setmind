@@ -1,4 +1,5 @@
 /*############################### CSS part envelop card robot ( en basd de la card ) ################################"*/
+
 :root {
     --robot-card-width: 600px;
     --robot-card-min-width: var(--robot-card-width);

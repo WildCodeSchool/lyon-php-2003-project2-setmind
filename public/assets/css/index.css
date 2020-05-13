@@ -27,6 +27,7 @@
 
 .bnj-catch-phrase-1 {
     animation: showup 25s;
+    margin-top: 70px;
 }
 
 .bnj-catch-phrase-2 {
@@ -44,6 +45,7 @@
     100% {opacity:1;}
 }
 
+
 @keyframes showup_2 {
     0% {opacity:0;}
     5% {opacity:0;}
@@ -59,22 +61,18 @@
 }
 
 .LT_button_test-container {
-    height: 60%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 @media (min-width: 1210px) {
-    body {
-        background-size:cover;
-        background-repeat: no-repeat;
-        min-height: 100%;
-        margin: auto;
-    }
+
+
 }
 
-@media (min-width: 992px) {
+@media (min-width: 530px)  {
 
     body {
         background-size: cover;
@@ -92,7 +90,6 @@
     }
 
     .LT_button_test-container {
-        height: 20%;
         align-items: flex-start;
     }
 
