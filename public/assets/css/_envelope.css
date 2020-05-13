@@ -1,3 +1,13 @@
+.result_main{
+    width:auto;
+    background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: right;
+    background-attachment:fixed;
+}
+
+
 .bnj-result-profile-picture {
     display: flex;
     justify-content: flex-end;
@@ -20,8 +30,14 @@
 }
 
 .bnj-result-profile-content {
-    width: 60%;
+    width: 50%;
     height: 50%;
+    background-color: black;
+    color: #FFFFFF;
+    opacity: 0.7;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 50px;
 }
 
 .gc-display-card{

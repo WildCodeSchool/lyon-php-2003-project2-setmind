@@ -134,7 +134,7 @@ footer {
 
 /*
 --------------- traitement media query page my envelop media queries ----------------------------------------------*/
-@media (max-width: 2150px) {
+ @media (max-width: 2150px) {
     .gc-myenvelop-container {
         grid-template-columns: auto;
     }
@@ -147,10 +147,11 @@ footer {
 
 
 
-@media (max-width: 1256px) {
+@media (max-width: 600px) {
 
-
-
+    footer {
+        margin-top: 200px;
+    }
     .gc-myenvelop-visualdpart-container {
         grid-row: 4 / 20;
         grid-column: 1 / 3;

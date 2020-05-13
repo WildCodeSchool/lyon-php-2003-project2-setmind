@@ -78,10 +78,10 @@ html {
 }
 
 
-.gc-connexion-burgeur {
+.gc-connexion-burger {
     grid-column-start: 2;
     grid-row-start: 1;
-    aling-self:end;
+    align-self:end;
 }
 
 
@@ -95,7 +95,7 @@ html {
 /* conteneur principal de la navbar */
 .gc-container-grid-colomn {
     display: grid;
-    grid-template-columns: 200px 150px 150px minmax(100px,3500px) minmax(100px, 150px) auto 30px 3px;
+    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 150px) auto 20px 3px;
     grid-gap: 25px;
     grid-template-rows: 61px;
     justify-items: start;
@@ -135,7 +135,6 @@ html {
     padding: 5px;
     margin-top: 5px;
     opacity: 0.9;
-    width: 150px;
 }
 .gc-nav-button:hover {
     text-decoration: none ;
@@ -186,6 +185,7 @@ html {
     min-height: var(--button-min-height);
     height: 58px;
     width: 58px;
+    opacity: 0.9;
 
     border-radius: var(--button-radius);
     cursor: pointer;
@@ -202,9 +202,9 @@ html {
 .gc-nav-icon-conected:hover {
     background-color: black;
     color: white;
-    box-shadow: 1px 1px 1px darkolivegreen;
-    border: solid red 1px;
-    background-image: url("../images/icon/logout-red.png");
+    box-shadow: 1px 1px 1px midnightblue;
+    border: solid midnightblue 1px;
+    background-image: url("../images/icon/logout-white.png");
 }
 .gc-nav-icon-conexion-connected {
 
@@ -228,7 +228,8 @@ html {
 
 
 /* media queries */
-@media (max-width: 1000px) {
+
+@media (max-width: 985px) {
     footer .logo-gca {
         font-size: 2em;
     }
@@ -239,6 +240,7 @@ html {
         padding-bottom: 0;
         padding-left: 0;
     }
+    
     header nav .logo-gca {
         display: block;
     }
