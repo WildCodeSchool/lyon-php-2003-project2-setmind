@@ -62,12 +62,13 @@ footer {
 
 .gc-myenvelop-container{
     display:grid;
-    grid-template-columns: minmax(50px,100px) minmax(10%, 500px) minmax(10%,800px) minmax(250px, auto) minmax(25px,50px);
-    grid-template-rows: minmax(150px ,100px) minmax(10%, 50%) auto;
+    grid-template-columns: minmax(50px,100px) minmax(10%, 500px) minmax(10%,90%) minmax(250px, 90%) minmax(25px,50px);
+    grid-template-rows: repeat(auto-fill,1fr);
     background-image: url("/assets/images/backgrounds/bg-myenvelop-desktop.png");
     background-repeat: no-repeat;
     background-size: cover;
-
+    margin-top: 100px;
+    min-height: 95%;
 
 }
 
