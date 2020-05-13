@@ -102,14 +102,16 @@ footer {
 }
 .gc-myenvelop-visualdpart-container div{
     display:grid;
-    grid-template-columns: minmax(25%, 50%) 30%;
+    grid-template-columns: auto auto;
+    grid-template-row: repeat(auto-fill, 1fr);
     background-color: white;
+    grid-gap: 3px;
     border-radius: 5px;
     pading-left : 5px !important;
     margin-top: 3px;
    /* align-content: center;*/
-    display: flex;
-    justify-content: space-around;
+    /*display: flex;*/
+    justify-content: space-evenly;
     padding: 5px;
     width: 100%;
     align-content: center;
