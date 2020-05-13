@@ -283,7 +283,6 @@ class AdministrationController extends AbstractController
         header("location:/administration/envelops");
     }
 
-
     public function users()
     {
         $userManager = new UserManager();
