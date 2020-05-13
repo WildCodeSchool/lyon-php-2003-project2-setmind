@@ -12,10 +12,10 @@
     <main>
         <section class="bnj-login-composants-container">
             <section class="bnj-login-tabs">
-                <button onclick="showTab(event, 'bnj-sign-up-login-content')" id="bnj-sign-up-login-tab"
-                        class="bnj-tab bnj-tab-active">Sign up</button>
                 <button onclick="showTab(event, 'bnj-sign-in-login-content')" id="bnj-sign-in-login-tab"
-                        class="bnj-tab">Sign in</button>
+                        class="bnj-tab bnj-tab-active">Sign in</button>
+                <button onclick="showTab(event, 'bnj-sign-up-login-content')" id="bnj-sign-up-login-tab"
+                        class="bnj-tab">Sign up</button>
             </section>
 
             {% include 'Login/_form_connexion.html.twig' %}

@@ -5,7 +5,6 @@
 
     {% endblock %}
 
-
     <div class="LT_card_test">
 
 
@@ -20,9 +19,10 @@
 
             <div class="LT_group_answers">
             {% for reponse in question.reponses %}
-                <input  type="radio" id="{{reponse.id}}" value="{{reponse.id}}" name="reponse_choisie_id">
+                <input  type="radio" id="{{reponse.id}}" value="{{reponse.id}} {{ reponse.profil_id }}"
+                        name="reponse_choisie_id">
                 <label for="{{reponse.id}}">{{reponse.answer_c}}</label>
-            {% endfor %}  
+            {% endfor %}
             </div>
 
             <div class="LT_bloc_test_button-answer">

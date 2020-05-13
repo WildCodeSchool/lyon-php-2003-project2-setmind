@@ -1,4 +1,10 @@
-<div class="container">
-    <h1 style="color:white;">Viendra ici les information du  profile</h1>
-    <h1 style="color:white;">une image et une description</h1>
-</div>
+
+<section class="bnj-result-profile-picture">
+    <img src="{{ profil.image }}" alt="profile_picture" width="300" height="auto">
+</section>
+<section class="bnj-result-profile-content-container">
+    <div class="bnj-result-profile-content-title">
+        <h1>You are a/an {{ profil.name }}!</h1>
+    </div>
+    <div class="bnj-result-profile-content">{{ profil.contenu }}</div>
+</section>
