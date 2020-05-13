@@ -58,10 +58,17 @@ class EnvelopController extends AbstractController
             'profil' => $profil, "page" => "resultat"]);
     }
 
-    public function myEnvelop()
+    public function myEnvelop(int $idMessage = 99)
     {
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
+        }
+        if ($idMessage == 1) {
+            $welcomeMessage = "You already own an envelop.";
+            $spanWelcomeMessage = "If you want to eveluate your eligibility again , please contact support.";
+        } else {
+            $welcomeMessage = "Welcome in your account tracking.";
+            $spanWelcomeMessage = "You will find below all the informations which concern you.";
         }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -70,6 +77,9 @@ class EnvelopController extends AbstractController
                 $userId = $_SESSION["user"]["id"];
                 $userManager = new UserManager();
                 $userManager->updateEnvelopId($userId, $selectedEnvelop);
+                $_SESSION["user"]["envelop_id"] = $selectedEnvelop;
+                $welcomeMessage = "Congratulations, your selection process is done.";
+                $spanWelcomeMessage = "To keep on, consult this page in the future.";
             }
         }
 
@@ -78,6 +88,7 @@ class EnvelopController extends AbstractController
         $envelopManager = new EnvelopManager();
         $envelops = $envelopManager->selectWithPartsByIds([$user2["envelop_id"]]);
         $envelop = $envelops[0];
-        return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop, 'user' => $user2]);
+        return $this->twig->render('Envelop/myenvelop.html.twig', ['envelop' => $envelop,
+            'user' => $user2,"welcomeMessage" => $welcomeMessage, "spanWelcomeMessage" => $spanWelcomeMessage]);
     }
 }
