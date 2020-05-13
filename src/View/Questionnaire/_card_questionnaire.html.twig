@@ -5,6 +5,8 @@
 
     {% endblock %}
 
+    {{ dump(question) }}
+
     <div class="LT_card_test">
 
 
@@ -26,7 +28,13 @@
             </div>
 
             <div class="LT_bloc_test_button-answer">
-                <button  type="submit" class="LT_test_button-answer" id="submit">Next question</button>
+                <button  type="submit" class="LT_test_button-answer" id="submit">
+                    {% if question['reponses'][0]['next_q'] == null %}
+                        Discover your profile
+                    {% else %}
+                        Next question
+                    {% endif %}
+                </button>
             </div>
 
         </form>
