@@ -69,6 +69,9 @@ class LoginController extends AbstractController
             } else {
                 $loginManager = new LoginManager();
                 $loginManager->signUp($user);
+                $userManage = new UserManager();
+                $user = $userManage->selectOneByEmail($user["email"]);
+                $this->addValuesInSession($user);
                 header('Location: ./successSignUp');
             }
         }
@@ -98,13 +101,7 @@ class LoginController extends AbstractController
                     } else {
                         $hash = $user["password"];
                         if (password_verify($password, $hash)) {
-                            $_SESSION["user"] = [
-                                "id" => $user["id"],
-                                "username" => $user["first_name"] . " " . $user["last_name"],
-                                "email" => $user["email"],
-                                "final_score" => $user["final_score"],
-                                "administrator" => $user["administrator"]
-                            ];
+                            $this->addValuesInSession($user);
                             header("location: /");
                         } else {
                             $errors["password"] = "Wrong Password";
@@ -122,5 +119,16 @@ class LoginController extends AbstractController
         unset($_SESSION['user']);
         unset($_SESSION["resultat"]);
         header("Location: /");
+    }
+
+    private function addValuesInSession(array $user)
+    {
+        $_SESSION["user"] = [
+            "id" => $user["id"],
+            "username" => $user["first_name"] . " " . $user["last_name"],
+            "email" => $user["email"],
+            "administrator" => $user["administrator"],
+            "envelop_id" => $user["envelop_id"]
+        ];
     }
 }
