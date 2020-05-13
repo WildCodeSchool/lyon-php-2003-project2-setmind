@@ -113,7 +113,7 @@ footer {
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.1s ease-in-out;
-    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
 }
 .gc-btn-search-size{
     min-height: 50px;
@@ -122,8 +122,8 @@ footer {
 }
 .gc-btn-search:hover {
     background-color: black;
-    border: solid white 1.5px;
-    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    border: solid white 0.5px;
+    box-shadow: 1px 1px 1px rgb(190, 190, 207);
     color:white;
 }
 

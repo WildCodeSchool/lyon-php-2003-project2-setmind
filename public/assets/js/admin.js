@@ -113,7 +113,7 @@ function updateDataToDb(url, id, column, value, cell) {
     // http.send(params);
 }
 
-
+/*
 function controlIsPartDeletable(url) {
     var http = new XMLHttpRequest();
     var params = "";
@@ -131,8 +131,34 @@ function controlIsPartDeletable(url) {
         }
     }
     http.send(params);
+}
+*/
 
+function btnDeleteEnvelopManagement() {
 
+    var params = "";
+    let idKeepers = document.getElementsByName("idKeeper");
+    idKeepers.forEach(function (idkeeper) {
+        let id = idkeeper.value;
+        console.log("id : ", id);
+        var http = new XMLHttpRequest();
+        http.open('POST', "/Administration/isDeletableEnvelop/" + id, true);
+        http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        http.onreadystatechange = function () {//Call a function when the state changes.
+            if (http.readyState == 4 && http.status == 200) {
+                returnValue = http.responseText;
+                console.log("Return value avant fin du  tratement : ", returnValue);
+                if (returnValue == "true") {
+                    let btnKeeper = document.getElementById("btnDeleteEnvelop" +
+                        "" + id);
+                    btnKeeper.setAttribute('disabled', "disabled");
+                    btnKeeper.setAttribute('class', "gc-btn-delete-disabled");
+                    console.log(btnKeeper);
+                }
+            }
+        }
+        http.send(params);
+    });
 }
 
 

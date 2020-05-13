@@ -29,14 +29,30 @@ class ProfilEnvelopsManager extends AbstractManager
 
 
     /**
-     *
+     * liste des envelops ou la parts est presente
      */
-    public function selectByProfilId(int $profilId) : array
+    public function selectByProfilId(int $profilId): array
     {
-        // prepared request
         $statement = $this->pdo->prepare("SELECT envelop_id as env FROM $this->table WHERE profil_id=:id");
         $statement->bindValue('id', $profilId, \PDO::PARAM_INT);
         $statement->execute();
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * liste des profil ou  l'envelope est presente
+     */
+    public function selectByEnvelopId(int $envelopId): string
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE envelop_id=:id");
+        $statement->bindValue('id', $envelopId, \PDO::PARAM_INT);
+        $statement->execute();
+        $val = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        if (empty($val)) {
+            return "false";
+        } else {
+            return "true";
+        }
     }
 }
