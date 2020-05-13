@@ -148,7 +148,7 @@ class AdministrationController extends AbstractController
     public function uploadPartImage(int $id)
     {
         // todo upgrade errors control and show errors on call  header
-        $errorsTrack = [];
+        $errorsTrack = []; // use for errors
         $sizeLimit = 1024000;
         $errorsTrack = [];
         $authExtentions = ["image/jpg", "image/jpeg", "image/png", "image/gif"];

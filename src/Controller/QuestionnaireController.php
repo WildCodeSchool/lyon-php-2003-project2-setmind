@@ -12,10 +12,20 @@ class QuestionnaireController extends AbstractController
     {
         if (!isset($_SESSION["user"])) {
             header("location:/login/login");
+        } elseif (empty($_SESSION["user"])) {
+            header("location:/login/login");
         }
+
         if (!isset($_SESSION["resultat"])) {
             $_SESSION["resultat"] = [];
         }
+
+        if (isset($_SESSION["user"])) {
+            if ($_SESSION["user"]["envelop_id"] != 19) {
+                header("location:/envelop/myenvelop/1");
+            }
+        }
+
         $questionnaireManager = new QuestionnaireManager();
         if (!empty($_POST["reponse_choisie_id"])) {
             $arrayId = explode(" ", $_POST["reponse_choisie_id"]);
