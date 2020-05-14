@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
 /*stylisation bloc question_answer test page*/
-/*
-body  {
+
+main{
+    width:auto;
     background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
     background-repeat: no-repeat ;
     background-size: cover;
     background-position: right;
     background-attachment:fixed;
-}
-*/
-main{
-    width:auto;
 }
 .LT_card{
 
@@ -57,8 +54,8 @@ main{
     flex-direction:column;
     margin-top: 50px;
     animation-name: fade;
-    animation-duration: 13s;
-    opacity: 0.9;
+    animation-duration: 5s;
+    opacity: 0.7;
 }
 
 .LT_card_test .LT_card{
