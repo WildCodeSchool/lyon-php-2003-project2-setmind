@@ -2,8 +2,8 @@
     {% set inText = "View Details" %}
     {% if page == "resultat" %}
         {% set inText = "Select this envelop" %}
+        <input type="hidden" name="idSelectedEnvelop" value="{{ envelop.id }}" src="">
+        <button type="submit" class="BL_button_parts_view">{{ inText }}</button>
     {% endif %}
-    <input type="hidden" name="idSelectedEnvelop" value="{{ envelop.id }}" src="">
-    <button type="submit" class="BL_button_parts_view">{{ inText }}</button>
 </form>
 
