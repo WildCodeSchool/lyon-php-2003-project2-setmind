@@ -4,12 +4,12 @@
         {% if not session.user is defined %}
             <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>
             <a class="gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
-            <a class="gc-nav-button gc-aboutus" href="#">About Us</a>
+            <a class="gc-nav-button gc-aboutus" href="/About/about">About Us</a>
             <a class="gc-connexion-desktop gc-nav-icon-conexion" href="/login/connexion"> </a>
         {% else %}
             <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>
             <a class="gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
-            <a class="gc-nav-button gc-aboutus" href="#">About Us</a>
+            <a class="gc-nav-button gc-aboutus" href="/About/about">About Us</a>
             {% if not session.user.administrator == 1 %}
                 {% set visible = "display:none;" %}
             {% endif %}
@@ -43,12 +43,12 @@
                 <a class="gc-nav-button gc-envelops" href="/">Home</a>
                 <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>
                 <a class="gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
-                <a class="gc-nav-button gc-aboutus" href="#">About Us</a>
+                <a class="gc-nav-button gc-aboutus" href="/About/about">About Us</a>
             {% else %}
                 <a class="gc-nav-button gc-envelops" href="/">Home</a>
                 <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>
                 <a class="gc-nav-button gc-eveluate" href="/Questionnaire/questionnaire">Evaluate Eligibility</a>
-                <a class="gc-nav-button gc-aboutus" href="#">About Us</a>
+                <a class="gc-nav-button gc-aboutus" href="/About/about">About Us</a>
                 <a class="gc-MyEnvelops gc-nav-button " href="/envelop/myenvelop">My Envelop</a>
             {% endif %}
         </div>
