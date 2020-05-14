@@ -5,7 +5,7 @@ body {
 }
 
 main {
-    background-color: #D4E1DC;
+    background-color: darkgray;
     height: auto;
 }
 
@@ -85,6 +85,14 @@ main {
 
 input::placeholder {
     font-style: italic;
+}
+
+.carousel {
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
 }
 
 @media (min-width: 600px) {
