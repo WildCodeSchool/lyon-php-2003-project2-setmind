@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
  .lt_h2 {
     background-color: black;
@@ -27,7 +28,7 @@
 .LT_content_main {
     background-color: black;
     width: 100%;
-    height: 320px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,8 +80,8 @@ h3 {
     box-shadow:  2px 2px 2px gray;
     margin-left: 50px;
     animation-name: fade;
-    animation-duration: 9s;
-    opacity: 0.9;
+    animation-duration: 3s;
+    opacity: 0.8;
 }
 
 @keyframes fade {
@@ -88,16 +89,16 @@ h3 {
       opacity:0;
     }
     50% {
-      opacity:0;
+      opacity:0.6;
     }
     100% {
-      opacity:0.9;
+      opacity:0.7;
     }
   }
 .lt_accroche {
     text-align: center;
     animation-name: accroche-animation;
-    animation-duration: 6s;
+    animation-duration: 2s;
 }
 @keyframes accroche-animation {
     from {
@@ -121,7 +122,7 @@ h3 {
 }
 
 .LT_img_cerveau {
-    margin-top: 40px;
+    margin-top: 100px;
 }
 
 .img_test {
