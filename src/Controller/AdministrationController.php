@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Model\EnvelopManager;
 use App\Model\PartManager;
+use App\Model\ProfilEnvelopsManager;
 use App\Model\UserManager;
 
 class AdministrationController extends AbstractController
@@ -30,7 +31,7 @@ class AdministrationController extends AbstractController
 
 
     /**
-     *
+     * fontion de trie pour les parts , manque un nommage correct de type sortParts()
      * @return string redered page built by twig render.
      * @throws \Twig\Error\LoaderError
      * @throws \Twig\Error\RuntimeError
@@ -59,6 +60,35 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
+    /**
+     * fpnction de trie pour les enveloppes
+     * @return string redered page built by twig render.
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function sortEnvelops()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!empty($_POST["sortBy"])) {
+                $columnName = $_POST["sortBy"];
+                $orderBy = $_POST["orderBy"];
+                $method = "selectBy";
+                $envelopManager = new EnvelopManager();
+                if (method_exists($envelopManager, $method)) {
+                    $envelops = $envelopManager->{$method}($columnName, $orderBy);
+                    return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+                } else {
+                    $envelopManager = new EnvelopManager();
+                    $envelops = $envelopManager->selectAllWithParts();
+                    return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+                }
+            }
+        }
+        $envelopManager = new EnvelopManager();
+        $envelops = $envelopManager->selectAllWithParts();
+        return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
 
     /**
      * @return string
@@ -86,6 +116,32 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
+    /**
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function filterEnvelops()
+    {
+        $envelopManager = new envelopManager();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (isset($_POST["selectFilterEnvelops"])) {
+                $column = $_POST["selectFilterEnvelops"];
+                $searchString = $_POST["searchFilterEnvelops"];
+                if (!empty($searchString)) {
+                    $envelops = $envelopManager->filterBy($column, $searchString);
+                    return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+                } else {
+                    $envelops = $envelopManager->selectAllWithParts();
+                    return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+                }
+            }
+        }
+        $envelops = $envelopManager->selectAllWithParts();
+        return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
+    }
+
     /** TODO work inprogress scheduled implement in next feature
      *
      * @return string
@@ -96,7 +152,18 @@ class AdministrationController extends AbstractController
     public function updateDataBySrcAjax()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            //TODO implement here POST router for jquery/ajax live edit
+            $column = $_POST["column"];
+            $id = $_POST["id"];
+            $value = $_POST["value"];
+            $partManager = new PartManager();
+            $method = "update" . ucwords($column);
+            if (method_exists($partManager, $method)) {
+                $result = $partManager->{$method}($id, $value);
+                return $result;
+            } else {
+                return "Cete demande ne peut pas etre prise en charge par le serveur.
+                 Valeur : $value / id PHP : $id / column PHP : $column";
+            }
         } else {
             // message retourné a la XmlHttpRequest
             return "Unable to read and parse send data, please send correct POST data";
@@ -112,6 +179,7 @@ class AdministrationController extends AbstractController
 
     /**
      * Fontion intialle creer pour copier une PART , ne permet pas de copier une enveloppe ou user ou  question.
+     *
      * @param int $id
      *
      * @return string
@@ -126,18 +194,33 @@ class AdministrationController extends AbstractController
         return $this->twig->render('Administration/index.html.twig', ['parts' => $parts]);
     }
 
+    /**
+     * pour requettes http ( ajax ) pour determiner si la parts est utilisée par une envelope ou un user
+     *
+     */
     public function isDeletablePart($id): string
     {
-        //todo implement visual ( file ) delete if none part use associated image ( visual )
         $partManager = new PartManager();
         $result = $partManager->isDeletablePart($id);
         return $result;
     }
 
+    /**
+     * pour requettes http ( ajax ) pour determiner si l'envelop est utilisée par un profil
+     *
+     */
+    public function isDeletableEnvelop($id): string
+    {
+        $profilEnvManager = new ProfilEnvelopsManager();
+        $result = $profilEnvManager->selectByEnvelopId($id);
+        return $result;
+    }
+
+
     public function uploadPartImage(int $id)
     {
         // todo upgrade errors control and show errors on call  header
-        $errorsTrack = [];
+        $errorsTrack = []; // use for errors
         $sizeLimit = 1024000;
         $errorsTrack = [];
         $authExtentions = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
@@ -168,7 +251,7 @@ class AdministrationController extends AbstractController
                         Ce type n'est authaurisé. <br>";
                 } else {
                     $inSitelink = "/assets/images/parts/" . $partInfos["name"] . $uniqIdForEndFileName . "." . $ext;
-                        move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
+                    move_uploaded_file($tmpName, $fileRootPath . $inSitelink);
                     $partManager->updateVisualById($id, $inSitelink);
                     // todo implement image delete ( visual ) if no envelops use it
                     header("location:/Administration/index");
@@ -189,7 +272,7 @@ class AdministrationController extends AbstractController
     public function envelops()
     {
         $envelopManager = new EnvelopManager();
-        $envelops= $envelopManager->selectAllWithParts();
+        $envelops = $envelopManager->selectAllWithParts();
         return $this->twig->render('Administration/envelops.html.twig', ['envelops' => $envelops]);
     }
 
@@ -199,8 +282,7 @@ class AdministrationController extends AbstractController
         $envelopManager->duplicateById($id);
         header("location:/administration/envelops");
     }
-  
-  
+
     public function users()
     {
         $userManager = new UserManager();

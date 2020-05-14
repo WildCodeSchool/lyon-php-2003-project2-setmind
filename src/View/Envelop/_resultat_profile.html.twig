@@ -1,14 +1,16 @@
 
-<section class="bnj-result-profile-picture">
-    <img src="{{ profil.image }}" alt="profile_picture" width="300" height="auto">
-</section>
-<section class="bnj-result-profile-content-container">
-    <div>
-        <h1>CONGRATULATIONS !</h1>
-        <h2>You have completed the questionnaire. Now discover your profile and the envelopes that suit you.</h2>
-    </div>
-    <div class="bnj-result-profile-content-title">
-        <h2>You are a/an {{ profil.name }}!</h2>
-    </div>
-    <div class="bnj-result-profile-content">{{ profil.contenu }}</div>
-</section>
+<article class="display_result_profil">
+    <section class="bnj-result-profile-picture">
+        <img class="img_profil" src="{{ profil.image }}" alt="profile_picture" width="300" height="300px">
+    </section>
+    <section class="bnj-result-profile-content-container">
+        <div>
+          <h1>CONGRATULATIONS !</h1>
+          <h2>You have completed the questionnaire. Now discover your profile and the envelopes that suit you.</h2>
+        </div>
+        <div class="bnj-result-profile-content-title">
+          <h1 class="h1_profil"> You are a/an {{ profil.name }}!</h1>
+        </div>
+        <div class="bnj-result-profile-content">{{ profil.contenu }}</div>
+    </section>
+</article>

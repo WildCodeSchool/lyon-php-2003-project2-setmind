@@ -19,9 +19,9 @@
             </a>
         {% endif %}
     </div>
-    <div class="d-lg-none container-fluid  gc-bgblack">
+    <div class="d-lg-none container-fluid  mt-1 pr-4 gc-bgblack">
         <div class="pos-f-t">
-            <div class="row ustify-content-between flex-nowrap gc-bgblack">
+            <div class="row justify-content-between flex-nowrap gc-bgblack">
                 <nav class="col-sm-11 navbar navbar-dark gc-bgblack">
                     <button class="navbar-toggler gc-burger-icon" type="button" data-toggle="collapse"
                             data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
@@ -38,7 +38,7 @@
                 {% endif %}
             </div>
         </div>
-        <div class="collapse col-12" id="navbarToggleExternalContent">
+        <div class="collapse col-12 gc-menu-burger-margin-child" id="navbarToggleExternalContent">
             {% if not session.user is defined %}
                 <a class="gc-nav-button gc-envelops" href="/">Home</a>
                 <a class="gc-nav-button gc-envelops" href="/envelop/envelops">Envelops</a>

@@ -1,4 +1,5 @@
 /*############################### CSS part envelop card robot ( en basd de la card ) ################################"*/
+
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 :root {
     --robot-card-attribute-width: 550px;
@@ -17,6 +18,7 @@
     font-family: 'blinker';
     font-size: 22px; /* Une taille de 6 fois la taille normale*/
 }
+
 .gc-attribute-row-container{
     max-width: var(--robot-card-attribute-row-max-width);
     min-width: auto;
@@ -24,6 +26,7 @@
 }
 
 /*** traitement de la progress bar **/
+
 progress {
     width: 100%;
     margin: 1em auto;
@@ -41,16 +44,20 @@ progress::-moz-progress-bar {
     0 2px 5px 0px rgba(0,0,0,0.3);
 }
 /* une méthode pour ne cibler que Chrome */
+
 @media screen and (-webkit-min-device-pixel-ratio:0) {
     progress {
         height: 25px; /* légèrement plus fin sur Chrome par défaut */
     }
 }
+
 /* on enlève le fond de cet élément supplémentaire */
+
 progress::-webkit-progress-bar {
     background: transparent;
 }
 /* on applique les mêmes styles que sur ::-moz-progress-bar */
+
 progress::-webkit-progress-value {
     background: #FFF;
     border-radius: 4px;

@@ -180,12 +180,6 @@
                         </form>
                         </div>
                     </th>
-                    <th scope="col">Pos. Left</th>
-                    <th scope="col">Pos. Right</th>
-                    <th scope="col">Pos. Bottom</th>
-                    <th scope="col">Pos. Top</th>
-                    <th scope="col">Pos. Center</th>
-                    <th scope="col">Grade</th>
                     <th scope="col">Creation Date</th>
                     <th scope="col">Range ID</th>
                     <th scope="col">Duplicate</th>
@@ -196,12 +190,12 @@
                 {% for part in parts %}
                 <tr>
                     {% set pngPath = part.visual %}
-                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="true" scope="col">
+                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="false" scope="col">
                         {{ part.id }}
                     </td>
-                    <td id="{{ 'name-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.name }}</td>
-                    <td id="{{ 'type-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.type }}</td>
-                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="true">
+                    <td id="{{ 'name-' ~ part.id }}" class="pt-3-half" contenteditable="false">{{ part.name }}</td>
+                    <td id="{{ 'type-' ~ part.id }}" class="pt-3-half" contenteditable="false">{{ part.type }}</td>
+                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="false">
                         <div class="gc-table-cell-conrtainer">
                             <img class="gc-admin-img" src="{{ pngPath }}">
                             <button type="button" class="gc-btn-upload" data-toggle="modal"
@@ -214,10 +208,10 @@
                         contenteditable="false">{{ part.color }}
                     </td>
                     <td id="{{ 'special_ability-' ~ part.id }}" class="pt-3-half"
-                        contenteditable="true">{{ part.special_ability }}</td>
+                        contenteditable="false">{{ part.special_ability }}</td>
                     <td id="{{ 'strenght-' ~ part.id }}" class="pt-3-half" contenteditable="true">
                         <div class="progress">
-                            <div class="progress-bar font-weight-bold" role="progressbar"
+                            <div id="bstr" class="progress-bar font-weight-bold" role="progressbar"
                                  aria-valuenow="{{ part.strenght }}"
                                  aria-valuemin="0" aria-valuemax="100"
                                  style="width:{{ part.strenght }}%;background-color: black;">
@@ -238,16 +232,10 @@
                     <td id="{{ 'capacity-' ~ part.id }}" class="pt-3-half"
                         contenteditable="true">{{ part.capacity }}</td>
                     <td id="{{ 'charge-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.setmind }}</td>
-                    <td id="{{ 'left-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.left }}</td>
-                    <td id="{{ 'right-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.right }}</td>
-                    <td id="{{ 'bottom-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.bottom }}</td>
-                    <td id="{{ 'top-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.top }}</td>
-                    <td id="{{ 'center-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.center }}</td>
-                    <td id="{{ 'grade-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.grade }}</td>
                     <td id="{{ 'date_creation-' ~ part.id }}" class="pt-3-half"
-                        contenteditable="true">{{ part.date_creation }}</td>
+                        contenteditable="false">{{ part.date_creation }}</td>
                     <td id="{{ 'range_id-' ~ part.id }}" class="pt-3-half"
-                        contenteditable="true">{{ part.range_id }}
+                        contenteditable="false">{{ part.range_id }}
                     </td>
                     <td>
                         <form method="post" action="/Administration/duplicate/{{ part.id }}" class="">
