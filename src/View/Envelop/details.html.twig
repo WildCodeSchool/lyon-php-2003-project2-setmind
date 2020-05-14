@@ -18,6 +18,7 @@
 
 
 
+
 {% block content %}
     <div>
         <h3 class="bl_details" style="color:white;"> You can see the details of the selected envelope </h3>
@@ -29,7 +30,11 @@
     <div>
         <h3 style="color:white;"> Here are the parts of envelope {{ envelop.name }}</h3>
     </div>
-
+    <div>
+        <p class="row gc-myenvelop-h4-versus">Original battery : <br>{{ envelop.battery_name }}</p>
+        <img class="gc-admin-img" src="{{ envelop.battery_visual }}">
+        
+    <h3 style="color:white;"> Here are the parts of envelope {{ envelop.name }}</h3>
     <div>
         <p class="row gc-myenvelop-h4-versus">Original battery : <br>{{ envelop.battery_name }}</p>
         <img class="gc-admin-img" src="{{ envelop.battery_visual }}">
@@ -53,14 +58,16 @@
     <div>
         <p class="row gc-myenvelop-h4-versus">Original lleg: <br>{{ envelop.lleg_name }}</p>
         <img class="gc-admin-img" src="{{ envelop.lleg_visual }}">
+
     </div>
     <div>
         <p class="row gc-myenvelop-h4-versus">Original rleg: <br>{{ envelop.rleg_name }}</p>
         <img class="gc-admin-img" src="{{ envelop.rleg_visual }}">
+
     </div>
     <div>
         <p class="row gc-myenvelop-h4-versus">Original brain: <br>{{ envelop.brain_name }}</p>
         <img class="gc-admin-img" src="{{ envelop.brain_visual }}">
     </div>
-{% endfor %}
+  {% endblock %}
 

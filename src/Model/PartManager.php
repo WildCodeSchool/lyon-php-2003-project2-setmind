@@ -190,17 +190,22 @@ WHERE parts_id_battery =$id
 
     public function updateCapacity(int $id, int $newValue): string
     {
-        if ($newValue > 100) {
-            return "[INSERT REFUSE] Max value is 100.";
-        } elseif ($newValue < 0) {
-            return "[INSERT REFUSE] Min value is 0.";
+
+        try {
+            if ($newValue > 100) {
+                return "[INSERT REFUSE] Max value is 100.";
+            } elseif ($newValue < 0) {
+                return "[INSERT REFUSE] Min value is 0.";
+            }
+            $query = "UPDATE parts SET capacity=:newValue WHERE id=:idVal";
+            $statement = $this->pdo->prepare($query);
+            $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+            $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
+            $statement->execute();
+            return "OK";
+        } catch (\Exception $e) {
+            return "[INSERT REFUSE] unkno error";
         }
-        $query = "UPDATE parts SET capacity=:newValue WHERE id=:idVal";
-        $statement = $this->pdo->prepare($query);
-        $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
-        $statement->bindValue(":newValue", $newValue, \PDO::PARAM_INT);
-        $statement->execute();
-        return "OK";
     }
 
     public function updateSetmind(int $id, int $newValue): string

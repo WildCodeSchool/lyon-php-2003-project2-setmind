@@ -16,8 +16,8 @@
 
 
 {% block content %}
-
     <div class="gc-display-card">
+
         {% for envelop in envelops %}
             {% if not (envelop.id == 19) %}
         {% include 'Envelop/_card_robot.html.twig' %}

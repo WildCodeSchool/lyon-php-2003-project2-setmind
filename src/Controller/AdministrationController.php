@@ -157,12 +157,20 @@ class AdministrationController extends AbstractController
             $value = $_POST["value"];
             $partManager = new PartManager();
             $method = "update" . ucwords($column);
-            if (method_exists($partManager, $method)) {
-                $result = $partManager->{$method}($id, $value);
-                return $result;
-            } else {
-                return "Cete demande ne peut pas etre prise en charge par le serveur.
-                 Valeur : $value / id PHP : $id / column PHP : $column";
+            try {
+                if (method_exists($partManager, $method)) {
+                    if (is_numeric($value)) {
+                        $result = $partManager->{$method}($id, $value);
+                        return $result;
+                    } else {
+                        return "NOK";
+                    }
+                } else {
+                    return "Cete demande ne peut pas etre prise en charge par le serveur.
+                     Valeur : $value / id PHP : $id / column PHP : $column";
+                }
+            } catch (\Exception $e) {
+                return "NOK";
             }
         } else {
             // message retourné a la XmlHttpRequest
@@ -221,7 +229,7 @@ class AdministrationController extends AbstractController
     {
         // todo upgrade errors control and show errors on call  header
         $errorsTrack = []; // use for errors
-        $sizeLimit = 1024000;
+        $sizeLimit = 10024000;
         $errorsTrack = [];
         $authExtentions = ["image/jpg", "image/jpeg", "image/png", "image/gif"];
         $fileRootPath = $_SERVER['DOCUMENT_ROOT'];
