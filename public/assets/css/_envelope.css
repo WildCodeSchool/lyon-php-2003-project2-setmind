@@ -50,13 +50,13 @@
     border-radius: 50%;
 }
 
-
 .mt-5 {
     background-color: black;
     opacity: 0.9;
     border: solid white 1px;
     width: 100%;
     margin-left: 2px;
+    height: 400px;
 }
 .gc-display-card{
     display: flex;
