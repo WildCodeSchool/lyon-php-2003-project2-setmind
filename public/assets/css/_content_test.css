@@ -70,7 +70,6 @@ h3 {
 .LT_content_body {
     display: flex;
     flex-direction: row;
-    width: 80%;
     height: 256px;
     justify-content: space-around;
     align-items: center;
