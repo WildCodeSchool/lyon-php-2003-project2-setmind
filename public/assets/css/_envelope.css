@@ -1,4 +1,10 @@
-
+.result_main {
+    background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: right;
+    background-attachment:fixed;
+}
 
 
 .bnj-result-profile-picture {
@@ -6,12 +12,13 @@
     justify-content: flex-end;
     align-items: center;
     width: 33%;
+
 }
 
 .bnj-result-profile-content-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+
     align-items: center;
     width: 66%;
 }
@@ -23,10 +30,34 @@
 }
 
 .bnj-result-profile-content {
-    width: 60%;
-    height: 50%;
+    width: 65%;
+    height: 200px;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+    letter-spacing: 3px;
+    padding-top: 60px;
+    padding-right: 10px;
+
+}
+.bnj-result-profile-content-title {
+    color: #FFFFFF;
+    padding-top: 30px;
+
 }
 
+.img_profil {
+    border-radius: 50%;
+}
+
+
+.mt-5 {
+    background-color: black;
+    opacity: 0.9;
+    border: solid white 1px;
+    width: 100%;
+    margin-left: 2px;
+}
 .gc-display-card{
     display: flex;
     flex-direction: row;
@@ -37,4 +68,45 @@
 .gc-display-card > *{
     flex: 0 0 25%;
     margin-top: 20px ;
+}
+
+.display_result_profil {
+    display: flex;
+    flex-direction: row;
+
+}
+
+@media screen and (min-width:360px) and (max-width:950px){
+    .mt-5 {
+        height: 650px;
+    }
+    .display_result_profil {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .bnj-result-profile-content {
+        width: 100%;
+    }
+
+    .img_profil {
+        width: 250px ;
+        height: 250px ;
+        margin-left: 20px;
+    }
+
+    .bnj-result-profile-content-title {
+        width: 100%;
+    }
+
+    .bnj-result-profile-content-container {
+        width: 90%;
+    }
+
+    .bnj-result-profile-picture {
+        width: 40%;
+    }
+
+
 }
