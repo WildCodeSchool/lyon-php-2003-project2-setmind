@@ -198,9 +198,9 @@ html {
 .gc-nav-icon-conected:hover {
     background-color: black;
     color: white;
-    box-shadow: 2px 1px 1px orangered;
-    border: solid red 1px;
-    background-image: url("../images/icon/logout-red.png");
+    box-shadow: 2px 1px 1px white;
+    border: solid white 1px;
+    background-image: url("../images/icon/logout-white.png");
 }
 .gc-nav-icon-conexion-connected {
 
