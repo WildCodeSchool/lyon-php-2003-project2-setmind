@@ -104,7 +104,6 @@ html {
 
 /* configuration des bouton de la nav bar en desktop */
 .gc-nav-button {
-
     /* centrage du  texte */
     display: flex;
     justify-content: center;
