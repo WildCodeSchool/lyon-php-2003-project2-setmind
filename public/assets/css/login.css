@@ -12,11 +12,12 @@ main {
 .bnj-login-composants-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 20px;
-    height: auto;
+    height: 100%;
     min-height: 850px;
+    padding-top: 50px;
 }
 
 .bnj-login-tabs {
@@ -75,6 +76,7 @@ main {
 
 #carouselformsignup, #carouselformsignin {
     margin-bottom: 20px;
+    width: 600px !important;
 }
 
 .bnj-login-form-error {
