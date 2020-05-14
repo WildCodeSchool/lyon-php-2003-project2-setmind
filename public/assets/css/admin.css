@@ -23,7 +23,8 @@ footer {
 }
 
 .gc-fullpage{
-    min-height: 95vh;
+    margin-top: 85px;
+    min-height: 90vh;
     margin: 0;
     padding: 0;
 }
@@ -265,7 +266,7 @@ footer {
 }
 .gc-admin-table-central {
     border-radius: 10px;
-    margin-top: 65px;
+    margin-top: 30px;
     background-color:ghostwhite;
 }
 .gc-admin-menu-left{
