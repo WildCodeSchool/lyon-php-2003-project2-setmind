@@ -4,7 +4,7 @@
     color: black;
     font-family: 'Blinker';
     border-radius: 8px;
-    border: solid black 1px;
+    border: solid white 1px;
     width: 30%;
     transition: all 1.5s ease-out;
 }
