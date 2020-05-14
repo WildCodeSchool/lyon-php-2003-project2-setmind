@@ -160,5 +160,8 @@ h3 {
      }
  }
 
-
-
+@media screen and (max-width: 800px) {
+    .LT_content_body {
+        display: none;
+    }
+}
