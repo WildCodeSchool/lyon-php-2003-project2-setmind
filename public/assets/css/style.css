@@ -1,7 +1,9 @@
- {
+ :root{
     font-family: 'Blinker', sans-serif;
 }
-
+ * {
+     font-family: 'Blinker', sans-serif;
+ }
 /*
 
 body {

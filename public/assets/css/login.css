@@ -1,22 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+.lt_button_log {
+    background-color: white;
+    color: black;
+    font-family: 'Blinker';
+    border-radius: 8px;
+    border: solid white 1px;
+    width: 30%;
+    transition: all 1.5s ease-out;
+}
 
+.lt_button_log:hover {
+    background-color: black;
+    color: #FFFFFF;
+    border: solid white 1px;
+
+}
 body {
     display: flex;
     flex-direction: column;
 }
 
 main {
-    background-color: #D4E1DC;
+    background-color: darkgray;
     height: auto;
 }
 
 .bnj-login-composants-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 20px;
-    height: auto;
+    height: 100%;
     min-height: 850px;
+    padding-top: 50px;
 }
 
 .bnj-login-tabs {
@@ -75,6 +92,7 @@ main {
 
 #carouselformsignup, #carouselformsignin {
     margin-bottom: 20px;
+    width: 600px !important;
 }
 
 .bnj-login-form-error {
@@ -83,6 +101,14 @@ main {
 
 input::placeholder {
     font-style: italic;
+}
+
+.carousel {
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
 }
 
 @media (min-width: 600px) {
