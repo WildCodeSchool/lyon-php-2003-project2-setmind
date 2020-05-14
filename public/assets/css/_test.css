@@ -76,7 +76,7 @@ form{
     padding: 5px 8px;
     color: white;
     border-radius: 8px;
-    width: 150px;
+    width: 200px;
     cursor: pointer;
     font-size: 18px;
     transition: all 1s ease-out;
@@ -89,7 +89,7 @@ form{
     color: black;
     border: solid black 1.5px;
     box-shadow: 10px 9px 5px rgb(190, 190, 207);
-    width: 155px;
+    width: 205px;
 }
 
 .LT_bloc_test_button-answer {

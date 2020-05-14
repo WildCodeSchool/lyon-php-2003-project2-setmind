@@ -1,4 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+.lt_button_log {
+    background-color: white;
+    color: black;
+    font-family: 'Blinker';
+    border-radius: 8px;
+    border: solid black 1px;
+    width: 30%;
+    transition: all 1.5s ease-out;
+}
 
+.lt_button_log:hover {
+    background-color: black;
+    color: #FFFFFF;
+    border: solid white 1px;
+
+}
 body {
     display: flex;
     flex-direction: column;
