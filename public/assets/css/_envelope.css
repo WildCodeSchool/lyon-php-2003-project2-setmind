@@ -1,7 +1,6 @@
 
 .result_main{
     width:auto;
-
     background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
     background-repeat: no-repeat ;
     background-size: cover;
@@ -16,6 +15,9 @@
     align-items: center;
     width: 33%;
 
+}
+.gc-margin-top-70p{
+    margin-top: 130px !important;
 }
 
 .bnj-result-profile-content-container {
@@ -52,13 +54,15 @@
     border-radius: 50%;
 }
 
-.mt-5 {
+.lt-border {
+    margin-top: 85px ;
     background-color: black;
     opacity: 0.9;
     border: solid white 1px;
     width: 100%;
     margin-left: 2px;
-    height: 400px;
+    height: auto;
+    padding-bottom: 10px;
 }
 .gc-display-card{
     display: flex;
@@ -75,7 +79,6 @@
 .display_result_profil {
     display: flex;
     flex-direction: row;
-
 }
 
 @media screen and (min-width:360px) and (max-width:950px){

@@ -26,7 +26,6 @@ body {
     grid-template-columns: auto;
     grid-template-rows: 5px minmax(100px,100%) minmax(50px, 50px);
     padding-left: 5px;
-
 }
 
 .gc-layout-body-container footer{
@@ -34,15 +33,12 @@ body {
 }
 
 
-/* -
--------------- traitement du  footer -----------------------------------------------------------------------------*/
+/* --------------- traitement du  footer -----------------------------------------------------------------------------*/
 
 footer {
      background-color: black;
      text-align: center;
      width: 100%;
-
-
 }
 .gc-footer-link{
     opacity: 100%;
@@ -56,7 +52,9 @@ footer {
 }
 
 /* --------------- traitement du  de la page resultat ----------------------------------------------------------------*/
-
+ gc-margin-top-70p{
+     margin-top: 70px;
+ }
 
 /* --------------- traitement du  de la page my envelop---------------------------------------------------------------*/
 
