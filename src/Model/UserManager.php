@@ -17,7 +17,7 @@ class UserManager extends AbstractManager
 
     public function delete(int $id)
     {
-        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id =: id");
+        $statement = $this->pdo->prepare("DELETE FROM " . self::TABLE . " WHERE id =:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
     }
@@ -61,5 +61,16 @@ WHERE user.id = $id";
         $statement = $this->pdo->prepare($query);
         $statement->execute();
         return $statement->fetchAll(\PDO::FETCH_ASSOC);
+    }
+
+    public function updateEnvelopId(int $id, int $newValueEnvelopId)
+    {
+        if ($newValueEnvelopId != 19) { // si l'utilisateur selectione une envelope vide
+            $query = "UPDATE $this->table SET envelop_id=:newValue WHERE id=:idVal";
+            $statement = $this->pdo->prepare($query);
+            $statement->bindValue(":idVal", $id, \PDO::PARAM_INT);
+            $statement->bindValue(":newValue", $newValueEnvelopId, \PDO::PARAM_INT);
+            $statement->execute();
+        }
     }
 }

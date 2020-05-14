@@ -1,5 +1,11 @@
 
-<a class="bl_parts_view" href="/Envelop/details/{{ envelop.id }}">View Details</a>
-
+<form action="/envelop/myEnvelop" method="POST">
+    {% set inText = "View Details" %}
+    {% if page == "resultat" %}
+        {% set inText = "Select this envelop" %}
+        <input type="hidden" name="idSelectedEnvelop" value="{{ envelop.id }}" src="">
+        <button type="submit" class="BL_button_parts_view">{{ inText }}</button>
+    {% endif %}
+</form>
 
 
