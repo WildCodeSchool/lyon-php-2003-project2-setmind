@@ -23,7 +23,8 @@ footer {
 }
 
 .gc-fullpage{
-    min-height: 95vh;
+    margin-top: 85px;
+    min-height: 90vh;
     margin: 0;
     padding: 0;
 }
@@ -162,7 +163,6 @@ footer {
     box-shadow: 1px 1px 1px black;
 }
 
-
 /* uiliser dans les tableaux pour la colone duplicate */
 .gc-btn-duplicate {
     margin-left: 10px;
@@ -266,7 +266,7 @@ footer {
 }
 .gc-admin-table-central {
     border-radius: 10px;
-    margin-top: 65px;
+    margin-top: 30px;
     background-color:ghostwhite;
 }
 .gc-admin-menu-left{
