@@ -25,6 +25,7 @@
     border: solid white 1.5px;
     box-shadow: 10px 9px 5px rgb(190, 190, 207);
     width: 280px;
+    text-decoration: none;
 }
 
 @media all and (min-width: 500px) and (max-width: 900px){
