@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+
+.lt_main_about {
+    height: 1200px;
+    width:auto;
+    background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: right;
+    background-attachment:fixed;
+
+
+}
+
+.lt_article_about {
+    background-color: black;
+    opacity: 0.95;
+    width: 100%;
+    height: 100px;
+    color: #FFFFFF;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Blinker';
+    letter-spacing: 2px;
+}
+
+.lt_article_about3 {
+    background-color: black;
+    opacity: 0.95;
+    width: 100%;
+    height: 200px;
+    color: #FFFFFF;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Blinker';
+    letter-spacing: 2px;
+
+}
+
+.img_about {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+
+.lt_article_about2 {
+    background-color: black;
+    opacity: 0.95;
+    width: 100%;
+    height: 200px;
+    color: #FFFFFF;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Blinker';
+    letter-spacing: 2px;
+
+}
+
+.div_about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    text-align: center;
+    height: 50%;
+}
+
+.section_about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
