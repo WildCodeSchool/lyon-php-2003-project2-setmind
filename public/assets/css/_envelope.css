@@ -1,3 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+.lt_bloc_result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    margin-top: 20px;
+    opacity: 0.8;
+}
+
+.lt_h2_result  {
+    color: black;
+    font-weight: bold;
+    font-family: 'Blinker';
+    width: 100%;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.lt_span_result {
+    color: black;
+    font-family: 'Blinker';
+    letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
+}
+
+.result_main{
+    width:auto;
+    background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: right;
+    background-attachment:fixed;
+}
+
+
+.bnj-result-profile-picture {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33%;
+
+
+}
+.gc-margin-top-70p{
+    margin-top: 130px !important;
+}
+
+.bnj-result-profile-content-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    width: 66%;
+}
+
+.bnj-result-profile-content-title {
+    width: 80%;
+    height: 15%;
+    text-align: center;
+    font-family: 'Blinker';
+}
+
+   .bnj-result-profile-content
+{
+    width: 60%;
+    height: 50%;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-top: 60px;
+    color: #FFFFFF;
+     font-family: 'Blinker';
+}
+
+.bnj-result-profile-content-title {
+    color: #FFFFFF;
+    padding-top: 30px;
+
+}
+
+.img_profil {
+    border-radius: 50%;
+    padding-top: 10px;
+}
+
+.lt-border {
+    margin-top: 85px ;
+    background-color: black;
+    opacity: 0.9;
+    border: solid white 1px;
+    width: 100%;
+    margin-left: 2px;
+    height: auto;
+    padding-bottom: 10px;
+    border-radius: 10px;
+}
 .gc-display-card{
     display: flex;
     flex-direction: row;
@@ -7,5 +107,45 @@
 
 .gc-display-card > *{
     flex: 0 0 25%;
-    margin-top: 20px ;
+    margin-top: 80px ;
+}
+
+.display_result_profil {
+    display: flex;
+    flex-direction: row;
+}
+
+@media screen and (min-width:360px) and (max-width:950px){
+    .mt-5 {
+        height: 650px;
+    }
+    .display_result_profil {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .bnj-result-profile-content {
+        width: 100%;
+    }
+
+    .img_profil {
+        width: 250px ;
+        height: 250px ;
+        margin-left: 20px;
+    }
+
+    .bnj-result-profile-content-title {
+        width: 100%;
+    }
+
+    .bnj-result-profile-content-container {
+        width: 90%;
+    }
+
+    .bnj-result-profile-picture {
+        width: 40%;
+    }
+
+
 }

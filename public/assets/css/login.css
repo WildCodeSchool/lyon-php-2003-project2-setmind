@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
+.lt_button_log {
+    background-color: white;
+    color: black;
+    font-family: 'Blinker';
+    border-radius: 8px;
+    border: solid white 1px;
+    width: 30%;
+    transition: all 1.5s ease-out;
+}
+
+.lt_button_log:hover {
+    background-color: black;
+    color: #FFFFFF;
+    border: solid white 1px;
+
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    background-color: darkgray;
+    height: auto;
+}
+
+.bnj-login-composants-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+    height: 100%;
+    min-height: 850px;
+    padding-top: 50px;
+}
+
+.bnj-login-tabs {
+    display: flex;
+}
+
+.bnj-login-tabs button:first-child {
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.bnj-login-tabs button:last-child {
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.bnj-tab {
+    padding:20px;
+    transition:all 0.2s ease-in-out;
+    cursor:pointer;
+    background-color:black;
+    color:white;
+    font-family: 'Blinker', sans-serif;
+    font-size:16px;
+    text-transform:uppercase;
+    border:1px solid #efefef;
+}
+.bnj-tab:hover {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+.bnj-tab-active {
+    background-color:white;
+    color:black;
+    border:1px solid transparent;
+}
+
+.bnj-form-content {
+    display: none;
+}
+
+.bnj-form-content-visible {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bnj-login-sign-up-catchphrase {
+    font-family: 'Blinker', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+}
+
+#carouselformsignup, #carouselformsignin {
+    margin-bottom: 20px;
+    width: 600px !important;
+}
+
+.bnj-login-form-error {
+    border: solid 1px red;
+}
+
+input::placeholder {
+    font-style: italic;
+}
+
+.carousel {
+    border-radius: 15px 15px 15px 15px;
+    overflow: hidden;
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+
+@media (min-width: 600px) {
+    .bnj-login-form-input {
+        width: 50vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .bnj-login-sign-up-catchphrase {
+        font-size: 2rem;
+    }
+}

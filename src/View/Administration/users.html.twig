@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Administration - Users
+{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/admin.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row flex-nowrap gc-fullpage ">
+            {% include "Administration/_menu.html.twig" %}
+            <div class="container-fluid gc-admin-table-central">
+                <h6> Envelop Administration V2 - Fonctionnality preview : View ( V1 ), Delete ( V2 ), Reset mdp ( V3 )
+                </h6>
+                {% include "Administration/_showusers.html.twig" %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

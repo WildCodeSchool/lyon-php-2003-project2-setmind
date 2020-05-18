@@ -51,7 +51,7 @@ abstract class AbstractManager
         return $this->pdo->query('SELECT * FROM ' . $this->table)->fetchAll();
     }
 
-    /**
+     /**
      * Get one row from database by ID.
      *
      * @param  int $id
@@ -64,7 +64,6 @@ abstract class AbstractManager
         $statement = $this->pdo->prepare("SELECT * FROM $this->table WHERE id=:id");
         $statement->bindValue('id', $id, \PDO::PARAM_INT);
         $statement->execute();
-
         return $statement->fetch();
     }
 }

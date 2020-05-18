@@ -3,7 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
-.LT_button_test{
+.LT_button_test {
     background-color: white;
     border: none;
     padding: 10px 15px;
@@ -15,6 +15,8 @@
     transition: all 1.5s ease-out;
     font-family: 'Blinker';
     box-shadow: 10px 9px 5px rgb(163, 163, 189);
+    text-align: center;
+    text-decoration: none;
 }
 
 .LT_button_test:hover{
@@ -23,8 +25,8 @@
     border: solid white 1.5px;
     box-shadow: 10px 9px 5px rgb(190, 190, 207);
     width: 280px;
+    text-decoration: none;
 }
-
 
 @media all and (min-width: 500px) and (max-width: 900px){
     .LT_button_test {

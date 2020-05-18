@@ -1,0 +1,275 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Parts list</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark indigo mb-4">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <form method="post" action="/Administration/filter" class="col-12 form-inline ml-auto search-form">
+                        <div class="form-group">
+                            <label for="selectFilterParts">Filter By:</label>
+                            <select name="selectFilterParts" id="selectFilterParts"
+                                    class="form-control gc-margin-left-25p">
+                                <option value="Name">Name</option>
+                                <option value="Type">Type</option>
+                                <option value="Color">Color</option>
+                            </select>
+                        </div>
+                        <div class="md-form my-0 gc-margin-left-25p">
+                            <input name="searchFilterParts" id="searchFilterParts" class="form-control" type="text"
+                                   placeholder="filter string" aria-label="Search">
+                        </div>
+                        <button name="btnFilterParts" id="btnFilterParts" class="gc-btn-search gc-btn-search-size"
+                                type="submit">Apply
+                        </button>
+                    </form>
+
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <!--/.Navbar-->
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                {% set functionName = ("/Administration/sort") %}
+                <tr class="flex-nowrap justify-content-center align-items-center border-0">
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Id") %}
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;" id="sortPartsByIdDesc"
+                                       type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <p>Id</p>
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortPartsByIdAsc"
+                                       type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col"
+                    >
+                        <div class="gc-table-cell-conrtainer">
+                            {% set sortByValue = ("Name") %}
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                                <input class="gc-btn-search" style="float:right;" id="sortPartsByNameDesc" type="submit"
+                                       value="&#8593;">
+                            </form>
+                            <P>Name</p>
+                            <form action="{{ functionName }}" method="post">
+                                <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                                <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                                <input class="gc-btn-search" style="float:left;" id="sortPartsByNameAsc" type="submit"
+                                       value="&#8595;">
+                            </form>
+                        </div>
+                    </th>
+                    <th class="flex-nowrap justify-content-center align-items-center border-0" scope="col">
+                        {% set sortByValue = ("Type") %}
+                        <div class="gc-table-cell-conrtainer">
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsByTypeDesc" type="submit"
+                                   value="&#8593;">
+                        </form>
+                            <p>Type</p>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsByTypeAsc" type="submit"
+                                   value="&#8595;">
+                        </form>
+                        </div>
+                    </th>
+                    <th scope="col">Visual</th>
+                    <th scope="col">color</th>
+                    <th scope="col">Special_ability</th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                        {% set sortByValue = ("Strenght") %}
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                            <p>Strength</p>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                        {% set sortByValue = ("Speed") %}
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                            <p>Speed</p>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                        {% set sortByValue = ("Capacity") %}
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                            <p>Capacity</p>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                        </div>
+                    </th>
+                    <th scope="col">
+                        <div class="gc-table-cell-conrtainer">
+                        {% set sortByValue = ("setmind") %}
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Desc">
+                            <input class="gc-btn-search" style="float:right;" id="sortPartsBy{{ sortByValue }}Desc"
+                                   type="submit"
+                                   value="&#8593;">
+                        </form>
+                            <p>SetMind</p>
+                        <form action="{{ functionName }}" method="post">
+                            <input type="hidden" id="sortBy" name="sortBy" value="{{ sortByValue }}">
+                            <input type="hidden" id="orderBy" name="orderBy" value="Asc">
+                            <input class="gc-btn-search" style="float:left;" id="sortPartsBy{{ sortByValue }}Asc"
+                                   type="submit"
+                                   value="&#8595;">
+                        </form>
+                        </div>
+                    </th>
+                    <th scope="col">Creation Date</th>
+                    <th scope="col">Range ID</th>
+                    <th scope="col">Duplicate</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody id="tableid">
+                {% for part in parts %}
+                <tr>
+                    {% set pngPath = part.visual %}
+                    <td id="{{ 'id-' ~ part.id }}" class="pt-3-half" contenteditable="false" scope="col">
+                        {{ part.id }}
+                    </td>
+                    <td id="{{ 'name-' ~ part.id }}" class="pt-3-half" contenteditable="false">{{ part.name }}</td>
+                    <td id="{{ 'type-' ~ part.id }}" class="pt-3-half" contenteditable="false">{{ part.type }}</td>
+                    <td id="{{ 'visual-' ~ part.id }}" class="pt-3-half" contenteditable="false">
+                        <div class="gc-table-cell-conrtainer">
+                            <img class="gc-admin-img" src="{{ pngPath }}">
+                            <button type="button" class="gc-btn-upload" data-toggle="modal"
+                                    data-target="#exampleModalCenter-{{ part.id }}">
+                            </button>
+                            {% include "Administration/_modal_upload_img.html.twig" %}
+                        </div>
+                    </td>
+                    <td id="{{ 'color-' ~ part.id }}" class="pt-3-half gc-admin-color-{{ part.color }}"
+                        contenteditable="false">{{ part.color }}
+                    </td>
+                    <td id="{{ 'special_ability-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="false">{{ part.special_ability }}</td>
+                    <td id="{{ 'strenght-' ~ part.id }}" class="pt-3-half" contenteditable="true">
+                        <div class="progress">
+                            <div id="bstr" class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ part.strenght }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ part.strenght }}%;background-color: black;">
+                                {{ part.strenght }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'speed-' ~ part.id }}" class="pt-3-half" contenteditable="true">
+                        <div class="progress">
+                            <div class="progress-bar font-weight-bold" role="progressbar"
+                                 aria-valuenow="{{ part.speed }}"
+                                 aria-valuemin="0" aria-valuemax="100"
+                                 style="width:{{ part.speed }}%;background-color: yellow;color:black">
+                                {{ part.speed }}
+                            </div>
+                        </div>
+                    </td>
+                    <td id="{{ 'capacity-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="true">{{ part.capacity }}</td>
+                    <td id="{{ 'charge-' ~ part.id }}" class="pt-3-half" contenteditable="true">{{ part.setmind }}</td>
+                    <td id="{{ 'date_creation-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="false">{{ part.date_creation }}</td>
+                    <td id="{{ 'range_id-' ~ part.id }}" class="pt-3-half"
+                        contenteditable="false">{{ part.range_id }}
+                    </td>
+                    <td>
+                        <form method="post" action="/Administration/duplicate/{{ part.id }}" class="">
+                            <button type="submit" class="gc-btn-duplicate">Duplicate</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form method="post" action="/Administration/delete/{{ part.id }}" class="">
+                            <input type="hidden" id="deletePart" name="idKeeper" value="{{ part.id }}">
+                            <button name="btnDeletePart" id="btnDeletePart{{ part.id }}" type="submit"
+                                    class="gc-btn-delete">
+                            </button>
+                        </form>
+                    </td>
+
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+    <script src="/assets/js/admin.js" ;></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            addOnChangeListenerToCells();
+            btnDeletePartsManagement();
+            addListenerToUploadButton();
+        });
+    </script>
+{% endblock %}
+

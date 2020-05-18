@@ -49,7 +49,6 @@ class ItemController extends AbstractController
     {
         $itemManager = new ItemManager();
         $item = $itemManager->selectOneById($id);
-
         return $this->twig->render('Item/show.html.twig', ['item' => $item]);
     }
 
@@ -99,7 +98,6 @@ class ItemController extends AbstractController
 
         return $this->twig->render('Item/add.html.twig');
     }
-
 
     /**
      * Handle item deletion

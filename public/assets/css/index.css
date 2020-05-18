@@ -1,13 +1,11 @@
-body {
+.bnj-index-content-container {
     background-image: url("https://wallpaperaccess.com/full/519164.jpg");
     background-repeat: no-repeat;
-    object-fit: contain;
     background-position: 72% 15%;
-    height: 100vh;
-}
-
-.bnj-index-content-container {
-    height: 100%;
+    object-fit: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
 
 .bnj-catch-phrase-container {
@@ -29,6 +27,7 @@ body {
 
 .bnj-catch-phrase-1 {
     animation: showup 25s;
+    margin-top: 120px;
 }
 
 .bnj-catch-phrase-2 {
@@ -46,6 +45,7 @@ body {
     100% {opacity:1;}
 }
 
+
 @keyframes showup_2 {
     0% {opacity:0;}
     5% {opacity:0;}
@@ -61,32 +61,34 @@ body {
 }
 
 .LT_button_test-container {
-    height: 60%;
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@media (min-width: 992px) {
 
+@media (min-width: 530px)  {
+
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100%;
+        margin: auto;
+    }
     .bnj-catch-phrase-container {
         width: 66%;
         height: 65%;
     }
 
     .bnj-catch-phrase {
-        font-size: 2.5rem;
+        font-size: 2rem;
+        margin-left: 15px;
     }
 
     .LT_button_test-container {
-        height: 35%;
         align-items: flex-start;
     }
 
 }
 
-@media (min-width: 1210px) {
-    body {
-        background-size: cover;
-    }
-}

@@ -1,0 +1,68 @@
+<div class="card">
+    <h3 class="card-header text-center font-weight-bold text-uppercase py-4">Users list</h3>
+    <div class="card-body">
+        <div id="table" class="table-editable">
+
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark indigo mb-4">
+
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#">Navbar</a>
+
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                </div>
+                <!-- Collapsible content -->
+
+            </nav>
+            <table class="table table-bordered table-responsive-md table-striped text-center">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Pseudo</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Date Creation</th>
+                    <th scope="col">Delete</th>
+                </tr>
+                </thead>
+                <tbody id="tableid">
+                {% for user in users %}
+                <tr>
+                    <td id="{{ 'id-' ~ user.id }}" class="pt-3-half" contenteditable="true" scope="col">{{ user.id }}</td>
+                    <td id="{{ 'first_name-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.first_name }}</td>
+                    <td id="{{ 'last_name-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.last_name }}</td>
+                    <td id="{{ 'email-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.email }}</td>
+                    <td id="{{ 'pseudo-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.pseudo }}</td>
+                    <td id="{{ 'password-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.password }}</td>
+                    <td id="{{ 'date_creation-' ~ user.id }}" class="pt-3-half" contenteditable="true">{{ user.date_creation }}</td>
+                    <td>
+                        <form method="post" action="/Administration/deleteUser/{{ user.id }}" class="">
+                            <input type="hidden" id="deleteUser" name="idKeeper" value="{{ user.id }}">
+                            <button name="btnDeleteUser" id="btnDeleteUser{{ user.id }}" type="submit"
+                                    class="gc-btn-delete">
+                            </button>
+                        </form>
+                    </td>
+
+                    {% endfor %}
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
+    <script src="/assets/js/admin.js" ;></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+    </script>
+{% endblock %}

@@ -1,9 +1,4 @@
-body {
-    background-image: url("https://wallpaperaccess.com/full/519164.jpg");
-    background-repeat: repeat;
-    object-fit: contain;
-    background-position: 72% 15%;
-}
+
 .gc-robot-row-top-botom {
     margin-top: 20px;
     margin-bottom: 20px;
@@ -12,7 +7,8 @@ body {
     margin-top: 20px;
 }
 .gc-robot-bg-cadre {
-    background-color:mintcream;
+    background-color:white;
+    opacity:0.95;
     border-radius: 8px;
     width: 650px;
     min-width: 650px;

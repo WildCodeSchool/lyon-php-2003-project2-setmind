@@ -1,33 +1,42 @@
 
+:root{
+     --button-radius: 8px;
+     --button-min-width: 40px;
+     --button-min-height: 40px;
+}
 
 /* tous le documents */
 html {
     height: 100%;
 }
-body {
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0
-}
 * {-moz-box-sizing: border-box; box-sizing: border-box;}
 .gc-header{
-    pading-right: 25px;
+    padding-right: 5px;
     background-color: black;
+    z-index: 100;
+    position:  fixed;
+    min-width: 100%;
 }
 .gc-bgblack{
-    background-color: transparent;
+    background-color: black;
+}
+.gc-bgblack h4{
+    background-color: black;
+    color: white;
 }
 .gc-bgwhite{
     background-color: white;
 }
 
+.gc-admin-btn-min-witdth {
+    min-width: 90%;
+    max-width: 90%;
+    margin-left: 5%;
+}
+
+.gc-margin-top-5{
+    margin-top: 10px;
+}
 
 /* menu burger -------------------------------------------------------------------------------------------------------*/
 .gc-menu-burger{
@@ -38,9 +47,9 @@ footer {
 .gc-burger-icon {
     background-color: black;
     border: none;
-    min-height: 70px;
-    width : 60px;
-    height: 60px;
+    min-height: 50px;
+    width : 50px;
+    height: 50px;
     cursor: pointer;
     padding-left: 20px;
     background-image: url("../images/burger-50x50w.png");
@@ -51,10 +60,9 @@ footer {
     display: flex;
     align-items: center;
     background-color: black;
-    opacity: 0.80;
     color:white;
     border: none;
-    min-height: 60px;
+    min-height: 50px;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     text-align: center;
@@ -67,30 +75,23 @@ footer {
     color:white;
 }
 
-/*
-.gc-connexion-burgeur {
+.gc-connexion-burger {
     grid-column-start: 2;
     grid-row-start: 1;
-    aling-self:end;
+    align-self:end;
 }
-*/
-
-
 
 /*  ----------------------------- Menu desktop -----------------------------------------------------------------------*/
-
-.gc-connexion-desktop {
-    grid-column-start: 7;
-    grid-column-end: 7;
-}
 
 /* conteneur principal de la navbar */
 .gc-container-grid-colomn {
     display: grid;
-    grid-template-columns: 200px 100px 150px minmax(100px,2500px) 100px 1px 80px;
-    grid-template-rows: 60px;
+    grid-template-columns: 200px 100px 150px minmax(100px,3500px) minmax(100px, 150px) auto ;
+    grid-gap: 25px;
+    grid-template-rows: 61px;
     justify-items: start;
     align-items: stretch;
+    padding: 12px;
 }
 
 /* configuration des bouton de la navbar qui  doivent etre de type a  */
@@ -103,63 +104,99 @@ footer {
 
 /* configuration des bouton de la nav bar en desktop */
 .gc-nav-button {
-
     /* centrage du  texte */
     display: flex;
     justify-content: center;
     align-items: center;
-
     /* traitement vuisual et divers */
-    text-decoration: none ;
+    text-decoration: none;
     cursor: pointer;
     font-family: 'Blinker';
     border: none;
     white-space: nowrap;
     color: black;
     background-color: white;
-    color:black;
+    color: black;
     font-size: 1em;
-    transition: all 0.4s ease-in-out;
-    box-shadow: 2px 1px 1px rgb(163, 163, 189);
-    min-height: 50px;
-    border-radius: 4px;
+    transition: all 0.6s ease-in-out;
+    min-height: var(calc(--button-min-height - 2));
+    border-radius: var(--button-radius);
     padding: 5px;
-    margin-top: 5px;
+    opacity: 0.95;
 }
+
 .gc-nav-button:hover {
+    text-decoration: none ;
     background-color: black;
     color:white;
     border: solid white 1.5px;
-    box-shadow: 2px 1px 1px rgb(190, 190, 207);
+    box-shadow: 1px 1px rgb(190, 190, 207);
 }
 
+
 /* traitement de l'icone de login a gauche dans le menu */
+
 .gc-nav-icon-conexion {
+    grid-column-start: 7;
+    grid-column-end: 7;
     background-color: white;
     color:black;
     border: none;
-    min-width: 60px;
-    min-height: 60px;
-    height : 60px;
-    width: 60px;
-    border-radius: 4px;
+    min-width: 58px;
+    min-height:var(--button-min-height);
+    height : 58px;
+    width: 58px;
+    border-radius: var( --button-radius);
     cursor: pointer;
+    background-image: url("../images/icon/man-user_black.png");
     transition: all 0.4s ease-in-out;
     box-shadow: 2px 1px 1px rgb(163, 163, 189);
-    background-image: url("../images/robot40x40.png");
     background-repeat: no-repeat;
     background-size: contain;
-    margin-right: 25px;
-    margin-top: 3px;
+    opacity: 0.9;
 }
 .gc-nav-icon-conexion:hover {
     background-color: black;
-    color:white;
-    border: solid white 1.5px;
-    box-shadow: 2px 1px 1px rgb(190, 190, 207);
-    background-image: url("../images/robot40x40w.png");
+    color: white;
+    border: solid white 1px;
+    background-image: url("../images/icon/man-user_white.png");
 }
 
+.gc-nav-icon-conected {
+    grid-column-start: 7;
+    grid-column-end: 7;
+    background-color: white;
+    color: black;
+    min-width: 58px;
+    min-height: var(--button-min-height);
+    height: 58px;
+    width: 58px;
+    opacity: 0.9;
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
+    background-repeat: no-repeat;
+    margin-right: 10px !important;
+    border: solid white 1px;
+    padding: 5px;
+    background-size: cover;
+    background-image: url("../images/icon/logout-black.png");
+}
+
+.gc-nav-icon-conected:hover {
+    background-color: black;
+    color: white;
+    box-shadow: 2px 1px 1px white;
+    border: solid white 1px;
+    background-image: url("../images/icon/logout-white.png");
+}
+.gc-nav-icon-conexion-connected {
+
+}
+.gc-nav-icon-conexion-connected:hover {
+
+}
 
 /*############ Guillaume ####################################################*/
 /* Css pour le logo SetMind */
@@ -172,36 +209,45 @@ footer {
     text-shadow:1px 1px 2px rgba(0,0,0,0.80); /* une ombre de 8px decalÃ© de 3px et 1px avec une couleur noir Ã  80% d'opacitÃ©*/
 }
 
-
 /* media queries */
-@media (max-width: 960px) {
+@media (max-width: 985px) {
+    .gc-nav-icon-conected{
+        margin: 5px;
+    }
+
+    .gc-menu-burger-margin-child a {
+        margin: 10px;
+    }
     footer .logo-gca {
         font-size: 2em;
     }
     .gc-container-grid-colomn {
         display: none;
+        grid-template-columns: auto;
+        grid-gap: 3px;
+        padding-bottom: 0;
+        padding-left: 0;
     }
+    
     header nav .logo-gca {
         display: block;
     }
     .gc-menu-burger{
         display :inline-flex;
     }
+    .navbar-toggler-icon{
+        display: none !important;
+    }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
     footer nav .logo-gca {
-        font-size: 1em;
+        font-size: 0.5em;
     }
 
 }
 
-/* --------------- traitement du  footer -----------------------------------------------------------------------------*/
 
-footer div a {
-    display: flex;
-    justify-content: center;
-}
 
 
 

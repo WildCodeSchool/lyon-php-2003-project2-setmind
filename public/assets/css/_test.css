@@ -1,21 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;600;700&display=swap');
 
 /*stylisation bloc question_answer test page*/
-body {
 
-
-    margin-left: 0;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: white;
-}
 main{
-    width:100%;
+    width:auto;
+    background-image: url(https://ak.picdn.net/shutterstock/videos/31469686/thumb/1.jpg);
+    background-repeat: no-repeat ;
+    background-size: cover;
+    background-position: right;
+    background-attachment:fixed;
 }
 .LT_card{
-    background-image: url("https://image.freepik.com/photos-gratuite/abstrait-degrades-noir-blanc-pour-conception-toile-fond_1962-1011.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+
+    background-color:whitesmoke;
     height:275px;
     width:65%;
     color:#000;
@@ -47,6 +44,7 @@ main{
 .card_question{
     font-size:1.5em;
     font-family: 'Blinker';
+    text-align: center;
 }
 
 .LT_card_test{
@@ -54,6 +52,10 @@ main{
     justify-content:center;
     align-items:center;
     flex-direction:column;
+    margin-top: 50px;
+    animation-name: fade;
+    animation-duration: 5s;
+    opacity: 0.7;
 }
 
 .LT_card_test .LT_card{
@@ -74,7 +76,7 @@ form{
     padding: 5px 8px;
     color: white;
     border-radius: 8px;
-    width: 150px;
+    width: 200px;
     cursor: pointer;
     font-size: 18px;
     transition: all 1s ease-out;
@@ -87,7 +89,7 @@ form{
     color: black;
     border: solid black 1.5px;
     box-shadow: 10px 9px 5px rgb(190, 190, 207);
-    width: 155px;
+    width: 205px;
 }
 
 .LT_bloc_test_button-answer {
@@ -103,10 +105,10 @@ form{
     color:black;
     font-size: 20px;
     text-align: center;
-    width: 9em;
+    width: 13em;
     margin: 1em;
-    height: 1em;
-    padding: 2em;
+    padding-top: 1em;
+    height: 4em;
     background-color: rgb(223, 219, 219);
     border-radius: 4px;
     position: relative;
@@ -125,8 +127,8 @@ form{
 }
 
 .LT_group_answers {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .LT_brain_digital {
@@ -139,11 +141,11 @@ form{
 @media screen and (min-width:630px) and (max-width:900px){
 
     .LT_card {
-        width: 500px;
+        width: 480px;
     }
     .LT_group_answers label{
         font-size: 1em;
-        height: 1em;
+        
     }
 
     .card_question {
@@ -153,15 +155,14 @@ form{
 
 @media screen and (min-width:440px) and (max-width:630px){
     .LT_group_answers {
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .LT_card {
-        width: 350px;
+        width: 400px;
     }
     .LT_group_answers label{
         font-size: 1em;
-        height: 1em;
     }
     .card_question {
         font-size: 1.2em;
@@ -173,7 +174,7 @@ form{
 
 @media screen and (min-width:300px) and (max-width:440px){
     .LT_group_answers {
-        flex-direction: column;
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .LT_card {

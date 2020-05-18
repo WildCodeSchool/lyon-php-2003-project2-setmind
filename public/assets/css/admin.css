@@ -1,32 +1,280 @@
-.root{
-
-}
-
 html{
     height : 100%;
-
+    font-family: 'Blinker', sans-serif;
 }
-
+.gc-margin-left-25p{
+    margin-left: 20px;
+}
 
 footer {
     display: none;
 }
 
 .gc-bg-blue{
-    background-color: cornflowerblue;
+    background-color: mintcream;
 }
 
 .gc-bg-snow{
     background-color: snow;
 }
 
-
 .gc-bg-gray{
-    background-color: lightgrey;
+    background-color: snow;
 }
 
-.fullpage{
-    min-height: 100vh;
+.gc-fullpage{
+    margin-top: 85px;
+    min-height: 90vh;
     margin: 0;
     padding: 0;
 }
+
+.gc-admin-color-black{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    border-color : white;
+    color: white;
+    pading : 3px;
+}
+.gc-admin-color-red{
+    background-color: red;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: white;
+    border-width: 1px;
+    pading : 3px;
+}
+.gc-admin-color-blue{
+    background-color: blue;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: white;
+    border-width: 1px;
+    pading : 3px;
+}
+.gc-admin-color-white{
+    background-color: white;
+    display: flex;justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading : 3px;
+}
+
+.gc-admin-color-orange {
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
+}
+
+.gc-admin-color-green {
+    background-color: forestgreen;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
+}
+
+.gc-admin-color-violet {
+    background-color: darkviolet;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    border-style: dashed;
+    border-color: black;
+    color: black;
+    border-width: 1px;
+    pading: 3px;
+}
+
+.gc-btn-search {
+    margin-left: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 2px 1px 1px rgb(163, 163, 189);
+}
+.gc-btn-search-size{
+    min-height: 50px;
+    min-width: 100px;
+
+}
+.gc-btn-search:hover {
+    background-color: black;
+    border: solid white 0.5px;
+    box-shadow: 1px 1px 1px rgb(190, 190, 207);
+    color:white;
+}
+
+
+.gc-table-cell-conrtainer{
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.gc-table-cell-conrtainer div p {
+    margin-left: 10px;
+}
+
+/* uiliser dans les tableaux pour la colone visual pour appeler un modal */
+.gc-btn-upload {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 1px 1px 1px rgb(163, 163, 189);
+    min-width: 40px;
+    min-height: 40px;
+    background: url("../images/icon/send.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
+}
+.gc-btn-upload:hover {
+    border: solid;
+    border-width: 1px;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: grab;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px black;
+}
+
+/* uiliser dans les tableaux pour la colone duplicate */
+.gc-btn-duplicate {
+    margin-left: 10px;
+    background-color: yellowgreen;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 4px 3px 3px rgb(163, 163, 189);
+    min-width: 100px;
+    min-height: 30px;
+}
+.gc-btn-duplicate:hover {
+    background-color: white;
+    border: solid white 1.5px;
+    box-shadow: 4px 3px 3px rgb(190, 190, 207);
+    color: black;
+}
+
+/* uiliser dans les tableaux pour la colone delete */
+.gc-btn-delete {
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 1px 1px 1px rgb(163, 163, 189);
+    min-width: 60px;
+    min-height: 40px;
+    background: url("../images/icon/trash-alt-solid.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
+}
+
+/* affecter sur btn delete a l'aide de js  */
+.gc-btn-delete-disabled{
+    border: none;
+    padding: 5px;
+    border-radius: 4px;
+    cursor: not-allowed; ;
+    transition: none;
+    box-shadow: 0px 0px 0px rgb(163, 163, 189);
+    min-width: 60px;
+    min-height: 40px;
+    width: 60px;
+    height: 40px;
+    background: url("../images/icon/trash-alt-solid-desabled.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 80%;
+    background-size: 50% 80%;
+
+}
+.gc-btn-delete:hover {
+    border: solid red 1.5px;
+    box-shadow: 2px 1px 1px rgb(190, 190, 207);
+}
+
+
+/* taille des images dans le tableau  et formulairte des parts */
+.gc-admin-img{
+    max-width: 50px;
+    height: 40px;
+}
+
+
+/* mise en forme pour les elements dans le body  du  modal selection d'image */
+.gc-modalt-height {
+    max-height: 600px !important;
+}
+.gc-admin-grid-modal{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10% 40% 10% 40% ;
+    grid-gap: 5px;
+}
+
+.gc-admin-grid-modal div{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top : 0px;
+    margin-bottom: 20px;
+}
+
+.gc-admin-img-old {
+    max-width: 200px;
+    height: 200px;
+    border-width: 2px;
+    border-style: dotted;
+    padding: 5px;
+}
+.gc-admin-img-new {
+    max-width: 200px;
+    height: 200px;
+    border-width: 2px;
+    border-style: dotted;
+    padding: 5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.gc-admin-table-central {
+    border-radius: 10px;
+    margin-top: 30px;
+    background-color:ghostwhite;
+}
+.gc-admin-menu-left{
+    background-color: white;
+    border-radius: 0px 20px 20px 0px ;
+    margin-top: 30px;
+    margin-right: 2px;
+    min-width: 200px;
+}
+
+

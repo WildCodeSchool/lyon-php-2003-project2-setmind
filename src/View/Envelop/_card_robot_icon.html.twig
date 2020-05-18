@@ -1,4 +1,21 @@
 <div class="BL_icone">
+    {% if envelop.setmind > 85 %}
+        {% set display1 = "block" %}
+        {% set display2 = "block" %}
+        {% set display3 = "block" %}
+    {% elseif envelop.setmind > 70 %}
+        {% set display1 = "block" %}
+        {% set display2 = "block" %}
+        {% set display3 = "none" %}
+    {% elseif envelop.setmind > 49 %}
+        {% set display1 = "block" %}
+        {% set display2 = "none" %}
+        {% set display3 = "none" %}
+    {% else %}
+        {% set display1 = "none" %}
+        {% set display2 = "none" %}
+        {% set display3 = "none" %}
+    {% endif %}
     <div>
         <a><img src="/assets/images/card/battery.png" alt=""/></a>
     </div>
@@ -6,12 +23,12 @@
         <a><img src="/assets/images/card/speed.png" alt=""/></a>
     </div>
     <div>
-        <a><img src="/assets/images/card/cerveau_idea.png" alt=""/></a>
+        <a><img style="display:{{ display1 }}" src="/assets/images/card/cerveau_idea.png" alt=""/></a>
     </div>
     <div>
-        <a><img src="/assets/images/card/smiley.png" alt=""/></a>
+        <a><img style="display:{{ display2 }}" src="/assets/images/card/smiley.png" alt=""/></a>
     </div>
     <div>
-        <a><img src="/assets/images/card/specialgit.png"/></a>
+        <a><img style="display:{{ display3 }}" src="/assets/images/card/specialgit.png"/></a>
     </div>
 </div>
